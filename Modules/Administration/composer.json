@@ -1,0 +1,16 @@
+{
+    "name": "proyectotau/administration",
+    "description": "Administration module for Proyecto TAU",
+    "authors": [
+        {
+            "name": "Javier Garrido",
+            "email": "proyectotau2@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Modules\\Administration\\": "",
+            "Modules\\Administration\\Entities\\": ""
+        }
+    }
+}

@@ -1,5 +1,5 @@
 <?php
-
+// TODO: remove
 namespace App;
 
 use Illuminate\Notifications\Notifiable;

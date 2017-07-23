@@ -1,5 +1,8 @@
 <?php
 
+use Modules\Administration\Entities\User;
+use Modules\Administration\Entities\Group;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -11,14 +14,23 @@
 |
 */
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
+$factory->define(User::class, function (Faker\Generator $faker) {
 
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
+        'ID_USUARIO' => $faker->numberBetween(1), // TODO: must be autoincrement
+        'USUARIO_RED' => $faker->userName,
+        'NOMBRE' => $faker->name,
+        'APELLIDOS' => $faker->lastName
     ];
+
+});
+
+$factory->define(Group::class, function (Faker\Generator $faker) {
+
+    return [
+        'ID_GRUPO' => $faker->numberBetween(1), // TODO: must be autoincrement
+        'NOMBRE' => $faker->word,
+        'DESCRIPCION' => substr($faker->sentence,50)
+    ];
+
 });
