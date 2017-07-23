@@ -1,27 +1,17 @@
 <?php
 
-namespace Tests\GroupEntity;
-
+namespace Modules\Administration\Tests;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-use Modules\Administration\Entities\User;
 use Modules\Administration\Entities\Group;
+use Modules\Administration\Entities\User;
 
 class GroupEntityTest extends TestCase
 {
+    use ConfigTestValues;
     use DatabaseTransactions;
-
-    private $debug = false;
-
-    private $testPrimaryKey = 1;
-    private $testUserName = 'juan.espanol';
-    private $testName = 'Juan';
-    private $testLastName = 'Espanol';
-
-    private $testGroupName = 'Test';
-    private $testGroupDescription = 'Group for Testing';
 
     public function test_Group_Has_No_User(){
         $group = factory(Group::class)->create([
@@ -39,7 +29,7 @@ class GroupEntityTest extends TestCase
         }
 
         $this->assertDatabaseMissing('usuario_grupo', [
-            'ID_GRUPO' => $this->testPrimaryKey
+            'ID_GRUPO' => $group->ID_GRUPO
         ]);
     }
 
@@ -61,23 +51,24 @@ class GroupEntityTest extends TestCase
         $user = factory(User::class)->create([
             'ID_USUARIO' => $this->testPrimaryKey,
             'USUARIO_RED' => $this->testUserName,
-            'NOMBRE' => $this->testName,
+            'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         $this->assertDatabaseHas('usuario', [
             'ID_USUARIO' => $this->testPrimaryKey,
             'USUARIO_RED' => $this->testUserName,
-            'NOMBRE' => $this->testName,
+            'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         if ($this->debug) {
             dd(User::find($this->testPrimaryKey));
         }
 
-        $group->users()->attach($this->testPrimaryKey);
+        // add user as a new member
+        $group->users()->attach($user->ID_USUARIO);
 
         $this->assertDatabaseHas('usuario_grupo', [
-            'ID_USUARIO' => $this->testPrimaryKey, 'ID_GRUPO' => $this->testPrimaryKey
+            'ID_USUARIO' => $user->ID_USUARIO, 'ID_GRUPO' => $group->ID_GRUPO
         ]);
     }
 
@@ -99,13 +90,13 @@ class GroupEntityTest extends TestCase
         $userA = factory(User::class)->create([
             'ID_USUARIO' => $this->testPrimaryKey,
             'USUARIO_RED' => $this->testUserName.'A',
-            'NOMBRE' => $this->testName,
+            'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         $this->assertDatabaseHas('usuario', [
             'ID_USUARIO' => $this->testPrimaryKey,
             'USUARIO_RED' => $this->testUserName.'A',
-            'NOMBRE' => $this->testName,
+            'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         if ($this->debug) {
@@ -115,25 +106,30 @@ class GroupEntityTest extends TestCase
         $userB = factory(User::class)->create([
             'ID_USUARIO' => $this->testPrimaryKey+1,
             'USUARIO_RED' => $this->testUserName.'B',
-            'NOMBRE' => $this->testName,
+            'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         $this->assertDatabaseHas('usuario', [
             'ID_USUARIO' => $this->testPrimaryKey+1,
             'USUARIO_RED' => $this->testUserName.'B',
-            'NOMBRE' => $this->testName,
+            'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         if ($this->debug) {
             dd(User::find($this->testPrimaryKey));
         }
 
-        $group->users()->attach($this->testPrimaryKey);
-        $group->users()->attach($this->testPrimaryKey+1);
+        // add users A and B as new members
+        $group->users()->attach($userA->ID_USUARIO);
+        $group->users()->attach($userB->ID_USUARIO);
+        /*$group->users()->attach([
+            $userA->ID_USUARIO,
+            $userB->ID_USUARIO
+        ]);*/
 
         $this->assertDatabaseHas('usuario_grupo', [
-            'ID_USUARIO' => $this->testPrimaryKey, 'ID_GRUPO' => $this->testPrimaryKey,
-            'ID_USUARIO' => $this->testPrimaryKey+1, 'ID_GRUPO' => $this->testPrimaryKey
+            'ID_USUARIO' => $userA->ID_USUARIO, 'ID_GRUPO' => $group->ID_GRUPO,
+            'ID_USUARIO' => $userB->ID_USUARIO, 'ID_GRUPO' => $group->ID_GRUPO
         ]);
     }
 }

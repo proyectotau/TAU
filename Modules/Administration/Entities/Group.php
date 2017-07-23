@@ -32,4 +32,12 @@ class Group extends Model
     {
         return $this->belongsToMany(User::class,'usuario_grupo','ID_GRUPO','ID_USUARIO');
     }
+
+    /**
+     * The roles that grant access to the group.
+     */
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class,'grupo_perfil','ID_GRUPO','ID_PERFIL');
+    }
 }

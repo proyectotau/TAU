@@ -2,6 +2,7 @@
 
 use Modules\Administration\Entities\User;
 use Modules\Administration\Entities\Group;
+use Modules\Administration\Entities\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,6 @@ $factory->define(User::class, function (Faker\Generator $faker) {
         'NOMBRE' => $faker->firstName,
         'APELLIDOS' => $faker->lastName
     ];
-
 });
 
 $factory->define(Group::class, function (Faker\Generator $faker) {
@@ -36,5 +36,15 @@ $factory->define(Group::class, function (Faker\Generator $faker) {
         'NOMBRE' => $faker->word,
         'DESCRIPCION' => substr($faker->sentence,50)
     ];
+});
 
+$factory->define(Role::class, function (Faker\Generator $faker) {
+
+    $x =$faker->numberBetween(1);
+    //dd('g:'.$x);
+    return [
+        'ID_PERFIL' => $x,
+        'Nombre' => $faker->word,
+        'DESCRIPCION' => substr($faker->sentence,100)
+    ];
 });

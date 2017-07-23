@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\UserEntity;
+namespace Modules\Administration\Tests;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -10,24 +10,15 @@ use Modules\Administration\Entities\Group;
 
 class UserEntityTest extends TestCase
 {
+    use ConfigTestValues;
     use DatabaseTransactions;
-
-    private $debug = false;
-
-    private $testPrimaryKey = 1;
-    private $testUserName = 'juan.espanol';
-    private $testName = 'Juan';
-    private $testLastName = 'Espanol';
-
-    private $testGroupName = 'Test';
-    private $testGroupDescription = 'Group for Testing';
 
     public function test_create_User_Entity()
     {
         $user = factory(User::class)->create([
             'ID_USUARIO' => $this->testPrimaryKey,
             'USUARIO_RED' => $this->testUserName,
-            'NOMBRE' => $this->testName,
+            'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         if ($this->debug) {
@@ -39,7 +30,7 @@ class UserEntityTest extends TestCase
         $this->assertDatabaseHas('usuario', [
             'ID_USUARIO' => $this->testPrimaryKey,
             'USUARIO_RED' => $this->testUserName,
-            'NOMBRE' => $this->testName,
+            'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
     }
@@ -69,7 +60,7 @@ class UserEntityTest extends TestCase
         $user = factory(User::class)->create([
             'ID_USUARIO' => $this->testPrimaryKey,
             'USUARIO_RED' => $this->testUserName,
-            'NOMBRE' => $this->testName,
+            'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         if ($this->debug) {
@@ -86,13 +77,13 @@ class UserEntityTest extends TestCase
         $user = factory(User::class)->create([
             'ID_USUARIO' => $this->testPrimaryKey,
             'USUARIO_RED' => $this->testUserName,
-            'NOMBRE' => $this->testName,
+            'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         $this->assertDatabaseHas('usuario', [
             'ID_USUARIO' => $this->testPrimaryKey,
             'USUARIO_RED' => $this->testUserName,
-            'NOMBRE' => $this->testName,
+            'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         if ($this->debug) {
@@ -126,13 +117,13 @@ class UserEntityTest extends TestCase
         $user = factory(User::class)->create([
             'ID_USUARIO' => $this->testPrimaryKey,
             'USUARIO_RED' => $this->testUserName,
-            'NOMBRE' => $this->testName,
+            'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         $this->assertDatabaseHas('usuario', [
             'ID_USUARIO' => $this->testPrimaryKey,
             'USUARIO_RED' => $this->testUserName,
-            'NOMBRE' => $this->testName,
+            'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         if ($this->debug) {
