@@ -20,6 +20,9 @@
         <testsuite name="Module Tests">
             <directory suffix="Test.php">./tests/Module</directory>
         </testsuite>
+        <testsuite name="Entities for Administration Module Tests">
+            <directory suffix="Test.php">./Modules/Administration/Tests</directory>
+        </testsuite>
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
