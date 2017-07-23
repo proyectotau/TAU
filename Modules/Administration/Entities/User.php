@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
+    public $incrementing = false;
+    public $timestamps = false;
+
     protected $table = 'usuario';
 
     protected $primaryKey = 'ID_USUARIO';
-
-    public $timestamps = false;
 
     protected $casts = [
         'ID_USUARIO' => 'integer',
@@ -20,6 +21,7 @@ class User extends Model
     ];
 
     protected $fillable = [
+        'ID_USUARIO',
         'USUARIO_RED',
         'NOMBRE',
         'APELLIDOS'
@@ -32,9 +34,4 @@ class User extends Model
     {
         return $this->belongsToMany(Group::class,'usuario_grupo','ID_USUARIO','ID_GRUPO');
     }
-
-    public function id(){
-        return $this->ID_USUARIO;
-    }
-
 }

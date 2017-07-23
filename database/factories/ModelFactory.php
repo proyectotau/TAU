@@ -16,10 +16,12 @@ use Modules\Administration\Entities\Group;
 
 $factory->define(User::class, function (Faker\Generator $faker) {
 
+    $x =$faker->numberBetween(1);
+    //dd('u:'.$x);
     return [
-        'ID_USUARIO' => $faker->numberBetween(1), // TODO: must be autoincrement
+        'ID_USUARIO' => $x,
         'USUARIO_RED' => $faker->userName,
-        'NOMBRE' => $faker->name,
+        'NOMBRE' => $faker->firstName,
         'APELLIDOS' => $faker->lastName
     ];
 
@@ -27,8 +29,10 @@ $factory->define(User::class, function (Faker\Generator $faker) {
 
 $factory->define(Group::class, function (Faker\Generator $faker) {
 
+    $x =$faker->numberBetween(1);
+    //dd('g:'.$x);
     return [
-        'ID_GRUPO' => $faker->numberBetween(1), // TODO: must be autoincrement
+        'ID_GRUPO' => $x,
         'NOMBRE' => $faker->word,
         'DESCRIPCION' => substr($faker->sentence,50)
     ];

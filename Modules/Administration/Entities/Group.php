@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Group extends Model
 {
+    public $incrementing = false;
+    public $timestamps = false;
+
     protected $table = 'grupo';
 
     protected $primaryKey = 'ID_GRUPO';
-
-    public $timestamps = false;
 
     protected $casts = [
         'ID_GRUPO' => 'integer',
