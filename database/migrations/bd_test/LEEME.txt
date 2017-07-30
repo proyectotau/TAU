@@ -1,0 +1,18 @@
+Este es el entorno de DESA (o bien el entorno de desarrollo local en los que los desarrolladores prueban las nuevas features o arreglan errores)
+
+Cada desarrollador aporta un script ad-hoc con los cambios que sean necesario para la tarea que está realizando:
+Son de la forma:
+
+	TAUv1.#NumeroDelTiqueEnLaFORJA.NombreDeLaRama.sql
+
+Cuando llega la fase de integrar los parches hay que unir todos los scripts en uno o mas, de nombres:
+
+	TAUv1.XY
+	TAUv1.XZ
+
+Ver http://www.cem.junta-andalucia.es/empleo/forja/wiki/tau/Sistema_de_Versionado
+
+Llegados a este punto, todos los script parciales (TAUv1.#) se han ejecutado ya en DESA
+por lo que los script TAUv1.XY estan destinados a ser ejecutados en PRE
+Aqui se han ejecutado todos los 
+
