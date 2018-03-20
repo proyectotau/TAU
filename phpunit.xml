@@ -8,13 +8,23 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false">
+        <logging>
+            <log type="coverage-html" target="/tmp/TAU/report" lowUpperBound="35" highLowerBound="70"/>
+            <log type="coverage-clover" target="/tmp/TAU/coverage.xml"/>
+            <log type="coverage-php" target="/tmp/TAU/coverage.serialized"/>
+            <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+            <log type="junit" target="/tmp/TAU/logfile.xml"/>
+            <log type="testdox-html" target="/tmp/TAU/testdox.html"/>
+            <log type="testdox-text" target="/tmp/TAU/testdox.txt"/>
+        </logging>
     <testsuites>
+        <!--
         <testsuite name="Feature Tests">
             <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
-
-        <testsuite name="Unit Tests">
-            <directory suffix="Test.php">./tests/Unit</directory>
+        -->
+        <testsuite name="ODBC Integrations Tests">
+            <directory suffix="Test.php">./tests/ODBC</directory>
         </testsuite>
 
         <testsuite name="Module Tests">

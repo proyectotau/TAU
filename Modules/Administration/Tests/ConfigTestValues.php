@@ -15,7 +15,7 @@ trait ConfigTestValues
 {
     private $debug = false;
 
-    private $testPrimaryKey = 1;
+    private $testPrimaryKey = 10;
 
     private $testUserName = 'juan.espanol';
     private $testFirstName = 'Juan';

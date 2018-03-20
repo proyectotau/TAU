@@ -17,11 +17,9 @@ use Modules\Administration\Entities\Role;
 
 $factory->define(User::class, function (Faker\Generator $faker) {
 
-    $x =$faker->numberBetween(1);
-    //dd('u:'.$x);
     return [
-        'ID_USUARIO' => $x,
-        'USUARIO_RED' => $faker->userName,
+        'ID_USUARIO' => $faker->numberBetween(1),
+        'USUARIO_RED' => $faker->unique()->userName,
         'NOMBRE' => $faker->firstName,
         'APELLIDOS' => $faker->lastName
     ];
@@ -29,22 +27,18 @@ $factory->define(User::class, function (Faker\Generator $faker) {
 
 $factory->define(Group::class, function (Faker\Generator $faker) {
 
-    $x =$faker->numberBetween(1);
-    //dd('g:'.$x);
     return [
-        'ID_GRUPO' => $x,
-        'NOMBRE' => $faker->word,
-        'DESCRIPCION' => substr($faker->sentence,50)
+        'ID_GRUPO' => $faker->numberBetween(1),
+        'NOMBRE' => $faker->unique()->word,
+        'DESCRIPCION' => substr($faker->sentence,0,50)
     ];
 });
 
 $factory->define(Role::class, function (Faker\Generator $faker) {
 
-    $x =$faker->numberBetween(1);
-    //dd('g:'.$x);
     return [
-        'ID_PERFIL' => $x,
-        'Nombre' => $faker->word,
-        'DESCRIPCION' => substr($faker->sentence,100)
+        'ID_PERFIL' => $faker->numberBetween(1),
+        'Nombre' => $faker->unique()->word,
+        'DESCRIPCION' => substr($faker->sentence,0,100)
     ];
 });
