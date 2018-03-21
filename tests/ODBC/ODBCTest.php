@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 
-include_once '/var/www/TAU/tauproject/web/config.inc.php'; // TODO: short tag for long tag!
+include_once 'tauproject/web/config.inc.php';
 
 class ODBCTest extends TestCase
 {
