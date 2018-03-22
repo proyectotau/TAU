@@ -73,7 +73,7 @@ return [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'tau_test_codeship'),
+            'database' => env('DB_DATABASE', 'tau'),
             'username' => env('MYSQL_USER', 'root'),
             'password' => env('MYSQL_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
