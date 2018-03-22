@@ -1,4 +1,4 @@
-<php
+<?php
 define("DB_SERVER", 'localhost');
 define("DB_USER", getenv('MYSQL_USER'));
 define("DB_PASS", getenv('MYSQL_PASSWORD'));
