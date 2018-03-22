@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 include_once 'tauproject/web/config.inc.php';
 
-define('DIR', '/var/www/TAU/database/migrations/bd_test/');
+if( !get_defined_constants('DIR') )
+    define('DIR', '/var/www/TAU/database/migrations/bd_test/');
 
 class CreateDatabasesTAUAndINVENTARIOAndTables extends Migration
 {
@@ -23,23 +24,23 @@ class CreateDatabasesTAUAndINVENTARIOAndTables extends Migration
 
         for ($i = 0; $i <= 26; $i++){
             echo $this->mysql_cmd_echo($mysql_cmd, $i);
-            exec($this->mysql_cmd_exec($mysql_cmd, $i) . ' 2>&1', $salida);
-            $this->toConsole($salida);
-            $this->dieIfError($salida);
+            exec($this->mysql_cmd_exec($mysql_cmd, $i) . ' 2>&1', $output);
+            $this->toConsole($output);
+            $this->dieIfError($output);
         }
 
         /*
         echo $this->mysql_cmd_echo($mysql_cmd, 99);
-        exec($this->mysql_cmd_exec($mysql_cmd, 99) . ' 2>&1', $salida);
-        $this->toConsole($salida);
-        $this->dieIfError($salida);
+        exec($this->mysql_cmd_exec($mysql_cmd, 99) . ' 2>&1', $output);
+        $this->toConsole($output);
+        $this->dieIfError($output);
         */
-
-        //$this->createMigration();
     }
 
     public function down(){
-        $tableNames = Schema::getConnection()->getDoctrineSchemaManager()->listTableNames();
+        $tableNames = Schema::getConnection()
+                                ->getDoctrineSchemaManager()
+                                ->listTableNames();
 
         foreach ($tableNames as $name) {
             if ($name == 'migrations') {
@@ -49,76 +50,17 @@ class CreateDatabasesTAUAndINVENTARIOAndTables extends Migration
         }
     }
 
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function downOLD()
-    {
-        $mysql_cmd_drop_databases = 'mysql -h %s -u %s -p%s ' .
-            '--execute="
-                DROP DATABASE IF EXISTS ' . mb_strtolower(DB_ODBC) . '_test;
-                DROP DATABASE IF EXISTS ' . mb_strtolower(Inventario2_DB_ODBC) . '_test"';
-
-        $mysql_cmd_create_databases = 'mysql -h %s -u %s -p%s ' .
-            '--execute="
-                CREATE DATABASE IF NOT EXISTS ' . mb_strtolower(DB_ODBC) . '_test;
-                CREATE DATABASE IF NOT EXISTS ' . mb_strtolower(Inventario2_DB_ODBC) . '_test"';
-
-        echo $this->mysql_cmd_echo($mysql_cmd_drop_databases);
-        exec($this->mysql_cmd_exec($mysql_cmd_drop_databases) . ' 2>&1', $salida);
-        $this->toConsole($salida);
-        $this->dieIfError($salida);
-
-        echo $this->mysql_cmd_echo($mysql_cmd_create_databases);
-        exec($this->mysql_cmd_exec($mysql_cmd_create_databases) . ' 2>&1', $salida);
-        $this->toConsole($salida);
-        $this->dieIfError($salida);
-
-        $this->createMigration();
-    }
-
-    private function createMigration(){
-        /*
-CREATE TABLE migrations
-(
-    id INT(10) unsigned PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    migration VARCHAR(255) NOT NULL,
-    batch INT(11) NOT NULL
-);     */
-
-        $mysql_cmd_insert = 'mysql -h %s -u %s -p%s ' .
-            '--execute="
-            INSERT INTO ' . mb_strtolower(DB_ODBC) . '_test.migrations (
-                id, migration, batch
-            ) VALUES (
-                1, "2017_07_23_182922_create_databases_TAU_and_INVENTARIO_and_Tables", 1
-            );
-            "';
-
-        Schema::create(mb_strtolower(Inventario2_DB_ODBC) . '_test.migrations', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('migration', 255);
-            $table->integer('batch');
-        });
-
-        echo $this->mysql_cmd_echo($mysql_cmd_insert);
-        exec($this->mysql_cmd_exec($mysql_cmd_insert) . ' 2>&1', $salida);
-        $this->toConsole($salida);
-        $this->dieIfError($salida);
-    }
-
     private function mysql_cmd_echo($mysql_cmd, $i = NULL){
         return '-- ' . $this->getSource_TAU_file($i) . PHP_EOL .
-            sprintf($mysql_cmd . (is_null($i)?'':' < ' . DIR . $this->getSource_TAU_file($i)) . PHP_EOL,
-                DB_SERVER, DB_USER, '***');
+            sprintf($mysql_cmd . (is_null($i) ? '' : ' < ' . DIR .
+                                                $this->getSource_TAU_file($i)) . PHP_EOL,
+                                                DB_SERVER, DB_USER, '***');
     }
 
     private function mysql_cmd_exec($mysql_cmd, $i = NULL){
-        return sprintf($mysql_cmd . (is_null($i)?'':' < ' . DIR . $this->getSource_TAU_file($i)) . PHP_EOL,
-                DB_SERVER, DB_USER, DB_PASS);
+        return sprintf($mysql_cmd . (is_null($i)?'':' < ' . DIR .
+                                                $this->getSource_TAU_file($i)) . PHP_EOL,
+                                                DB_SERVER, DB_USER, DB_PASS);
     }
 
     private function getSource_TAU_file($i){
@@ -130,14 +72,14 @@ CREATE TABLE migrations
         return $tau_file;
     }
 
-    private function dieIfError($salida){
-        if( in_array('ERROR', $salida) !== false )
+    private function dieIfError($output){
+        if( in_array('ERROR', $output) !== false )
             die(1);
     }
 
-    private function toConsole($salida){
-        if ($salida) {
-            foreach ($salida as $lin) {
+    private function toConsole($output){
+        if ($output) {
+            foreach ($output as $lin) {
                 echo $lin . PHP_EOL;
             }
         }

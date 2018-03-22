@@ -4,13 +4,13 @@ namespace Tests\Module;
 
 use Tests\TestCase;
 use Nwidart\Modules\Facades\Module;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+//use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 use Illuminate\Support\Facades\Artisan;
 
 class ModuleTest extends TestCase
 {
-    use DatabaseTransactions;
+//    use DatabaseTransactions;
 
     private $debug = false;
 

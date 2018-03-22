@@ -8,6 +8,15 @@ include_once 'tauproject/web/config.inc.php';
 
 class ODBCTest extends TestCase
 {
+    protected function setUp()
+    {
+        if (!extension_loaded('odbc')) {
+            $this->markTestSkipped(
+                'The ODBC extension is not available.'
+            );
+        }
+    }
+
     function test_unixODBC_is_available()
     {
        $this->assertNotFalse( $conn = odbc_connect(DB_ODBC, DB_USER, DB_PASS), 'unixODBC is not available');
