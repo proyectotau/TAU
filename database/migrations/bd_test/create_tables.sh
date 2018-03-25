@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DB_CMD=mysql
-DB_SERVER=${MYSQL_HOST:-localhost}"
+DB_SERVER="${MYSQL_HOST:-localhost}"
 DB_USER="${MYSQL_USER:-root}"
 DB_PASS="${MYSQL_PASSWORD:-test}"
 
