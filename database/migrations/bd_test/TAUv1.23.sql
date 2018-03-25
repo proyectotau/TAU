@@ -1,4 +1,4 @@
-USE inventario_test;
+USE inventario_test
 
 --
 -- Tabla de Prestamos de Equipos (#3359)
@@ -41,7 +41,7 @@ ALTER TABLE `fungible`
       ADD `Referencia` VARCHAR( 50 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Referencia del fabricante' AFTER `id_Fungible` ,
       CHANGE `Nombre` `Descripcion` VARCHAR( 150 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT 'Color' ; -- migra los nombre no normalizados a una mera descripcion
 ALTER TABLE `fungible`      
-      ADD `id_tipofungible` INT( 10 ) NULL DEFAULT NULL COMMENT 'Familia o Categoría' AFTER `Descripcion` ;
+      ADD `id_tipofungible` INT( 10 ) NULL DEFAULT NULL COMMENT 'Familia o Categorï¿½a' AFTER `Descripcion` ;
 ALTER TABLE `fungible`
       ADD INDEX ( `id_tipofungible` ) ;
 ALTER TABLE `fungible`

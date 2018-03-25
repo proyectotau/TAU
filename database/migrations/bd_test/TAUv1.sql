@@ -14,10 +14,8 @@
 -- drop database IF EXISTS `test`;
 -- drop database IF EXISTS `tau_test`;
 -- drop database IF EXISTS `inventario_test`;
--- create database tau_test;
--- create database inventario_test;
 
-use tau_test;
+use tau_test
 
 DROP TABLE IF EXISTS `alerta`;
 CREATE TABLE `alerta` (
@@ -442,7 +440,7 @@ create view `tau_test`.`localizacion_modulo`  as select `localizacion`.`ID_PANEL
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-use inventario_test;
+use inventario_test
 
 --
 -- Table structure for table `aplicacion`

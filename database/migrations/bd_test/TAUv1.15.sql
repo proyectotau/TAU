@@ -1,4 +1,4 @@
-use inventario_test;
+use inventario_test
 DROP TABLE IF EXISTS `mensajes`;
 DROP TABLE IF EXISTS `notifica`;
 

@@ -1,4 +1,4 @@
-USE tau_test;
+USE tau_test
 
 -- ES I M P O R T A N T E
 DROP VIEW IF EXISTS `localizacion_modulo` ;
@@ -75,7 +75,7 @@ INSERT INTO `grupo_perfil` (`ID_GRUPO`, `ID_PERFIL`) VALUES
 
 
 
-USE inventario_test;
+USE inventario_test
 
 --
 -- Renombrado de tablas a minusculas para MySQL en Linux
@@ -127,7 +127,7 @@ DROP TABLE IF EXISTS `situacioncrija`;
 CREATE TABLE `situacioncrija` (
 `id_SituacionCRIJA` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 `Descripcion` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_spanish_ci NULL , UNIQUE (`Descripcion`)
-) ENGINE = InnoDB COMMENT = 'Situaciones o Estados en los que se puede encontrar un Equipo respecto a CRIJA' ;
+) ENGINE = InnoDB COMMENT = 'Estados de un Equipo respecto a CRIJA' ; -- https://bugs.mysql.com/bug.php?id=38597
 
 INSERT INTO `situacioncrija` (`id_SituacionCRIJA`, `Descripcion`) VALUES
 (1, 'ALTA'),

@@ -2,7 +2,7 @@
 -- Modificaciones a KERNEL
 --
 
-use tau_test;
+use tau_test
 
 ALTER TABLE `tau_test`.`localizacion`
  DROP FOREIGN KEY `localizacion_ibfk_1`;

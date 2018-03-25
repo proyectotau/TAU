@@ -2,7 +2,7 @@
 -- Modificaciones a TAU
 --
 
-use tau_test;
+use tau_test
 
 ALTER TABLE `tau_test`.`usuario`
 	MODIFY COLUMN `USUARIO_RED` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL;
@@ -11,7 +11,7 @@ ALTER TABLE `tau_test`.`usuario`
 -- Modificaciones a Inventario
 --
 
-use inventario_test;
+use inventario_test
 
 --
 -- Tabla Fungible

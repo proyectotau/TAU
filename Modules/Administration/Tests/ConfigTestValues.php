@@ -15,7 +15,7 @@ trait ConfigTestValues
 {
     private $debug = false;
 
-    private $testPrimaryKey = 10;
+    //private $testPrimaryKey = 10;
 
     private $testUserName = 'juan.espanol';
     private $testFirstName = 'Juan';
@@ -26,4 +26,16 @@ trait ConfigTestValues
 
     private $testRoleName = 'Test Role';
     private $testRoleDescription = 'Role for Testing';
+
+    public function __get($atr){
+        if($atr == 'testPrimaryKey')
+            return 1000; //rand(1000,2000);
+        else
+            return $this->atr;
+    }
+
+    public function dumperDump($x){
+        (new Dumper)->dump($x);
+        return $x;
+    }
 }

@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 include_once 'tauproject/web/config.inc.php';
 
-if( !get_defined_constants('DIR') )
-    define('DIR', '/var/www/TAU/database/migrations/bd_test/');
+if( !defined('DIR') )
+    define('DIR', 'C:/Users/Usuario/GitHub/proyectotau/TAU/database/migrations/bd_test/');
 
 class CreateDatabasesTAUAndINVENTARIOAndTables extends Migration
 {
@@ -38,15 +38,34 @@ class CreateDatabasesTAUAndINVENTARIOAndTables extends Migration
     }
 
     public function down(){
-        $tableNames = Schema::getConnection()
-                                ->getDoctrineSchemaManager()
-                                ->listTableNames();
+/*
+        $mysql_cmd = "mysql -e 'drop database IF EXISTS `tau_test`'";
 
-        foreach ($tableNames as $name) {
-            if ($name == 'migrations') {
+        echo $this->mysql_cmd_echo($mysql_cmd);
+            exec($this->mysql_cmd_exec($mysql_cmd) . ' 2>&1', $output);
+            $this->toConsole($output);
+            $this->dieIfError($output);
+
+        $mysql_cmd = "mysql -e 'drop database IF EXISTS `inventario_test`'";
+        echo $this->mysql_cmd_echo($mysql_cmd);
+            exec($this->mysql_cmd_exec($mysql_cmd) . ' 2>&1', $output);
+            $this->toConsole($output);
+            $this->dieIfError($output);
+
+        return;
+        */
+        /*$tableNames = Schema::getConnection()
+                                ->getDoctrineSchemaManager()
+                                ->listTableNames();*/
+        $tableNames = \DB::select('show tables');
+
+        foreach ($tableNames as $table) {
+            if ($table == 'migrations') {
+                echo $this.' skipped!';
                 continue;
             }
-            DB::table($name)->truncate();
+            echo $table.' truncated';
+            \DB::table($table)->truncate();
         }
     }
 
@@ -82,6 +101,7 @@ class CreateDatabasesTAUAndINVENTARIOAndTables extends Migration
             foreach ($output as $lin) {
                 echo $lin . PHP_EOL;
             }
+            flush();
         }
     }
 }

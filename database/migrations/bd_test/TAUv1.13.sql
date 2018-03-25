@@ -1,6 +1,6 @@
--- Se añade la capacidad de Historico al Inventario respecto del movimiento de objetos a los Puestos
+-- Se aï¿½ade la capacidad de Historico al Inventario respecto del movimiento de objetos a los Puestos
 
-USE inventario_test;
+USE inventario_test
 
 ALTER TABLE `puesto_equipo`
 					DROP PRIMARY KEY ,

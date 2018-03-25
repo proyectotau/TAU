@@ -2,7 +2,7 @@
 -- Soporte para multiples sedes (Provincializacion #3360)
 --
 
-USE tau_test;
+USE tau_test
 
 CREATE TABLE `grupo_localizacion` (
 `id_grupo` INT( 11 ) NOT NULL ,
@@ -20,7 +20,7 @@ INSERT INTO `perfil_metodos` (`ID_PERFIL` ,`ID_MODULO` ,`NOMBRE_METODO` ,`SUBCLA
 VALUES ('1', '4', 'cambiarinventario_testLoc', NULL , NULL , NULL) ;
 
 
-USE inventario_test;
+USE inventario_test
 
 -- Antes se permitia localizar un objeto en mas de un plano (igual que pueden estar en mas de un puesto)
 -- Ahora solo puede estar en una localizacion (a pesar de que pueden seguir estando en mas de un puesto)

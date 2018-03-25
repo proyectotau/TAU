@@ -1,4 +1,4 @@
-use inventario_test;
+use inventario_test
 CREATE TABLE `notifica` (
  `id_notifica` int(11) NOT NULL auto_increment,
  `mensaje` varchar(300) collate utf8_spanish_ci NOT NULL default '',

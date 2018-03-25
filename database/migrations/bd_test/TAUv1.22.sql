@@ -1,11 +1,11 @@
-USE tau_test;
+USE tau_test
 
 -- Se amplia el campo Nombre del Perfil
 ALTER TABLE `perfil`
 	CHANGE `Nombre` `Nombre` VARCHAR( 100 ) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL ;
 
 
-USE inventario_test;
+USE inventario_test
 
 -- Se amplia el campo Nombre y Ambito del Recurso
 ALTER TABLE `recurso`
@@ -23,11 +23,11 @@ ALTER TABLE `recurso`
 	ADD `normativa` VARCHAR( 2000 ) NULL DEFAULT NULL,
 	ADD `afectadoENS` TINYINT( 1 ) NULL COMMENT 'http://es.wikipedia.org/wiki/Esquema_Nacional_de_Seguridad'; -- Cambiar el valor en config.inc.php ("DEFAULT_AfectadoENS")
 
--- PENDIENTE #4174 (Añadir Ciclo de Vida a las Entidades):
+-- PENDIENTE #4174 (Aï¿½adir Ciclo de Vida a las Entidades):
 -- PENDIENTE: Los pares estan en VistaAplicacion (hard coded): convertir en relacion y establecer integridad referencial
 -- En el caso de Recurso, estado se ha anticipado mal el par (0,'DESARROLLO') cuando ningun campo clave puede ser cero.
 
--- Esto implica que cuando se normalice habrá que migrar este campo sumandole uno a los valores actuales
+-- Esto implica que cuando se normalice habrï¿½ que migrar este campo sumandole uno a los valores actuales
 
 -- PD: Los otros pares son:
 -- 1, PRUEBAS
@@ -65,29 +65,29 @@ CREATE TABLE `recurso_recurso` (
 ) ENGINE = InnoDB COMMENT = 'Relacion de dependencias entre Recursos' ;
 ALTER TABLE `recurso_recurso` ADD UNIQUE `NDX_recursos` (`id_recurso_padre` , `id_recurso_hijo` ) ;
 
--- Se añade un campo nuevo a Equipo y se elimina el que estaba pendiente desde TAUv1.20
+-- Se aï¿½ade un campo nuevo a Equipo y se elimina el que estaba pendiente desde TAUv1.20
 ALTER TABLE `equipo`
 	ADD `id_crihja` VARCHAR( 50 ) NULL DEFAULT NULL,
 	DROP `Expediente` ;
 
--- Se añaden campos a la tabla usuario_perfil
+-- Se aï¿½aden campos a la tabla usuario_perfil
 ALTER TABLE `usuario_perfil`
 	ADD `fecha_fin_vigencia` DATE NULL ,
 	ADD `justificacion` VARCHAR( 2000 ) NULL ,
 	ADD `observaciones` VARCHAR( 255 ) NULL ;
 	
--- Se añaden los mismos campos para el modulo de Gestion de Recursos
+-- Se aï¿½aden los mismos campos para el modulo de Gestion de Recursos
 ALTER TABLE `usuario_perfil_tempo`
 	DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci, 
 	ADD `fecha_fin_vigencia` DATE NULL ,
 	ADD `justificacion` VARCHAR( 2000 ) NULL ,
 	ADD `observaciones` VARCHAR( 255 ) NULL ;
 
--- Se añaden dos campos a la tabla de Cargo
+-- Se aï¿½aden dos campos a la tabla de Cargo
 ALTER TABLE `cargo`
 	ADD `Codigo` VARCHAR( 50 ) NULL AFTER `id_Cargo`,
 	ADD `Nivel` VARCHAR( 50 ) NULL AFTER `Nombre` ;
 
--- Se añade un campos a la tabla de Extension
+-- Se aï¿½ade un campos a la tabla de Extension
 ALTER TABLE `extension`
 	ADD `Publicable` TINYINT( 1 ) NOT NULL DEFAULT '1';

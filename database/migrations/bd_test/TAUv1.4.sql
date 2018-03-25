@@ -1,4 +1,4 @@
-use inventario_test;
+use inventario_test
 
 UPDATE `equipo` SET
 `Nombre` = NULL

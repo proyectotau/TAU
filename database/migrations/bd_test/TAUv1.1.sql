@@ -2,7 +2,7 @@
 -- Modificaciones a TAU
 --
 
-use tau_test;
+use tau_test
 
 --
 -- Table structure for table `inventario2_metodos`
@@ -24,7 +24,7 @@ COMMENT = 'Lista de Subclases y Metodos de acceso';
 -- Modificaciones a Inventario2
 --
 
-use inventario_test;
+use inventario_test
 
 -- 
 -- Tabla de Grupos de gestion de perfiles e recurso

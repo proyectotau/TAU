@@ -14,18 +14,20 @@ class GroupEntityTest extends TestCase
     use DatabaseTransactions;
 
     public function test_Group_Has_No_User(){
+        $testPrimaryKey = $this->testPrimaryKey;
+
         $group = factory(Group::class)->create([
-            'ID_GRUPO' => $this->testPrimaryKey,
+            'ID_GRUPO' => $testPrimaryKey,
             'NOMBRE' => $this->testGroupName,
             'DESCRIPCION' => $this->testGroupDescription
         ]);
         $this->assertDatabaseHas('grupo', [
-            'ID_GRUPO' => $this->testPrimaryKey,
+            'ID_GRUPO' => $testPrimaryKey,
             'NOMBRE' => $this->testGroupName,
             'DESCRIPCION' => $this->testGroupDescription
         ]);
         if ($this->debug) {
-            dd(Group::find($this->testPrimaryKey));
+            dd(Group::find($testPrimaryKey));
         }
 
         $this->assertDatabaseMissing('usuario_grupo', [
@@ -34,34 +36,36 @@ class GroupEntityTest extends TestCase
     }
 
     public function test_Group_Has_An_User_Only(){
+        $testPrimaryKey = $this->testPrimaryKey;
+
         $group = factory(Group::class)->create([
-            'ID_GRUPO' => $this->testPrimaryKey,
+            'ID_GRUPO' => $testPrimaryKey,
             'NOMBRE' => $this->testGroupName,
             'DESCRIPCION' => $this->testGroupDescription
         ]);
         $this->assertDatabaseHas('grupo', [
-            'ID_GRUPO' => $this->testPrimaryKey,
+            'ID_GRUPO' => $testPrimaryKey,
             'NOMBRE' => $this->testGroupName,
             'DESCRIPCION' => $this->testGroupDescription
         ]);
         if ($this->debug) {
-            dd(Group::find($this->testPrimaryKey));
+            dd(Group::find($testPrimaryKey));
         }
 
         $user = factory(User::class)->create([
-            'ID_USUARIO' => $this->testPrimaryKey,
+            'ID_USUARIO' => $testPrimaryKey,
             'USUARIO_RED' => $this->testUserName,
             'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         $this->assertDatabaseHas('usuario', [
-            'ID_USUARIO' => $this->testPrimaryKey,
+            'ID_USUARIO' => $testPrimaryKey,
             'USUARIO_RED' => $this->testUserName,
             'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         if ($this->debug) {
-            dd(User::find($this->testPrimaryKey));
+            dd(User::find($testPrimaryKey));
         }
 
         // add user as a new member
@@ -73,50 +77,52 @@ class GroupEntityTest extends TestCase
     }
 
     public function test_Group_HasMany_Users(){
+        $testPrimaryKey = $this->testPrimaryKey;
+
         $group = factory(Group::class)->create([
-            'ID_GRUPO' => $this->testPrimaryKey,
+            'ID_GRUPO' => $testPrimaryKey,
             'NOMBRE' => $this->testGroupName,
             'DESCRIPCION' => $this->testGroupDescription
         ]);
         $this->assertDatabaseHas('grupo', [
-            'ID_GRUPO' => $this->testPrimaryKey,
+            'ID_GRUPO' => $testPrimaryKey,
             'NOMBRE' => $this->testGroupName,
             'DESCRIPCION' => $this->testGroupDescription
         ]);
         if ($this->debug) {
-            dd(Group::find($this->testPrimaryKey));
+            dd(Group::find($testPrimaryKey));
         }
 
         $userA = factory(User::class)->create([
-            'ID_USUARIO' => $this->testPrimaryKey,
+            'ID_USUARIO' => $testPrimaryKey,
             'USUARIO_RED' => $this->testUserName.'A',
             'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         $this->assertDatabaseHas('usuario', [
-            'ID_USUARIO' => $this->testPrimaryKey,
+            'ID_USUARIO' => $testPrimaryKey,
             'USUARIO_RED' => $this->testUserName.'A',
             'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         if ($this->debug) {
-            dd(User::find($this->testPrimaryKey));
+            dd(User::find($testPrimaryKey));
         }
 
         $userB = factory(User::class)->create([
-            'ID_USUARIO' => $this->testPrimaryKey+1,
+            'ID_USUARIO' => $testPrimaryKey+1,
             'USUARIO_RED' => $this->testUserName.'B',
             'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         $this->assertDatabaseHas('usuario', [
-            'ID_USUARIO' => $this->testPrimaryKey+1,
+            'ID_USUARIO' => $testPrimaryKey+1,
             'USUARIO_RED' => $this->testUserName.'B',
             'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
         if ($this->debug) {
-            dd(User::find($this->testPrimaryKey));
+            dd(User::find($testPrimaryKey));
         }
 
         // add users A and B as new members

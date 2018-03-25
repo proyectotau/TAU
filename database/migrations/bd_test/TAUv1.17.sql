@@ -1,4 +1,4 @@
-USE tau_test;
+USE tau_test
 
 DROP TABLE IF EXISTS informes;
 

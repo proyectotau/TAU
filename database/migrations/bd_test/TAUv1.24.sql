@@ -1,6 +1,6 @@
 -- en TAUv1.23, TAUv1.24 y siguientes va todo lo nuevo de DESA 
 
-USE inventario_test;
+USE inventario_test
 
 --
 -- Estructura de tabla para la tabla `tecnologia` (#3359)

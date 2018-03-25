@@ -2,7 +2,7 @@
 -- Modificaciones a Inventario
 --
 
-use inventario_test;
+use inventario_test
 
 SET AUTOCOMMIT = 0;
 BEGIN;

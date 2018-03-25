@@ -2,7 +2,7 @@
 -- Gestion de Recursos
 --
 
-USE inventario_test;
+USE inventario_test
 
 DROP TABLE IF EXISTS `usuario_perfil_tempo`;
 CREATE TABLE `usuario_perfil_tempo` (
@@ -20,4 +20,4 @@ CREATE TABLE `usuario_perfil_tempo` (
   KEY `FK_usuario_perfil_tempo_2` (`id_Perfil`),
   CONSTRAINT `FK_usuario_perfil_tempo_1` FOREIGN KEY (`id_Usuario`) REFERENCES `usuario` (`id_Usuario`),
   CONSTRAINT `FK_usuario_perfil_tempo_2` FOREIGN KEY (`id_Perfil`) REFERENCES `perfil` (`id_Perfil`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabla para mantener los cambios solicitados por los Jefe de Servicio';
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Mantiene los cambios solicitados por los Jefe de Servicio'; -- https://bugs.mysql.com/bug.php?id=38597

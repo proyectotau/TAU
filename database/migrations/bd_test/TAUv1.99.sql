@@ -1,4 +1,4 @@
-use tau_test;
+use tau_test
 
 DELETE FROM usuario_grupo;
 DELETE FROM grupo_perfil;

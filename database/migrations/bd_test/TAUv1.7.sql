@@ -2,7 +2,7 @@
 -- Modificaciones a Inventario
 --
 
-use tau_test;
+use tau_test
 
 SET AUTOCOMMIT = 0;
 BEGIN;

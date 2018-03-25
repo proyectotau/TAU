@@ -3,7 +3,7 @@
 --
 
 
-USE inventario_test;
+USE inventario_test
 
 
 --
