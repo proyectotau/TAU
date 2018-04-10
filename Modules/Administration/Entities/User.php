@@ -4,6 +4,9 @@ namespace Modules\Administration\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
+//TODO: MUST implements Repository instead of extends Illuminate\Database\Eloquent\Model
+//TODO: interface Respository in Modules/Administration/Repositories/
+//TODO: in Modules/Administration/Repositories/Eloquent
 class User extends Model
 {
     public $incrementing = false;

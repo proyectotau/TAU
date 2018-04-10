@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Administration\Tests;
+namespace Modules\Administration\Tests\Entities;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;

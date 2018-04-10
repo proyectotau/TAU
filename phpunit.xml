@@ -22,8 +22,11 @@
         <testsuite name="Feature Tests">
             <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
+        <testsuite name="CommandBus Integration Tests">
+            <directory suffix="Test.php">./tests/Integration/CommandBus</directory>
+        </testsuite>
         -->
-        <testsuite name="ODBC Integrations Tests">
+        <testsuite name="ODBC Integration Tests">
             <directory suffix="Test.php">./tests/ODBC</directory>
         </testsuite>
 
@@ -31,12 +34,14 @@
             <directory suffix="Test.php">./tests/Module</directory>
         </testsuite>
         <testsuite name="Entities for Administration Module Tests">
-            <directory suffix="Test.php">./Modules/Administration/Tests</directory>
+            <directory suffix="Test.php">./Modules/Administration/Tests/Entities</directory>
+            <directory suffix="Test.php">./Modules/Administration/Tests/Commands</directory>
+            <directory suffix="Test.php">./Modules/Administration/Tests/HttpController</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./app</directory>
+            <directory suffix=".php">./TAU</directory>
         </whitelist>
     </filter>
     <php>

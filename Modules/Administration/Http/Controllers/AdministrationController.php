@@ -21,9 +21,10 @@ class AdministrationController extends Controller
      * Show the form for creating a new resource.
      * @return Response
      */
-    public function create()
+    public function create(Request $data)
     {
-        return view('administration::create');
+        return $data;
+        //return view('administration::create');
     }
 
     /**

@@ -9,7 +9,7 @@
  * Just gathers config values in a place
  */
 
-namespace Modules\Administration\Tests;
+namespace Modules\Administration\Tests\Entities;
 
 trait ConfigTestValues
 {
