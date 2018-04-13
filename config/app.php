@@ -228,7 +228,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Module' => Nwidart\Modules\Facades\Module::class,
-        'CommandBus' => Joselfonseca\LaravelTactician\Bus::class,
     ],
 
 ];
