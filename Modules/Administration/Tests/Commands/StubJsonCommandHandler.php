@@ -9,15 +9,15 @@
 namespace Modules\Administration\Tests\Commands;
 
 /**
- * Class StubEchoCommandHandler
- * This handler echoes input command
+ * Class StubJsonCommandHandler
+ * This handler echoes input command as json
  *
  * @package Modules\Administration\Tests\Commands
  */
-class StubEchoCommandHandler
+class StubJsonCommandHandler
 {
     public function handle($command)
     {
-        return $command;
+        return json_encode($command);
     }
 }

@@ -4,7 +4,7 @@ namespace Modules\Administration\Tests\Commands;
 
 use Tests\TestCase;
 
-use Modules\Administration\Commands\CreateUser;
+use Modules\Administration\Commands\User;
 use Modules\Administration\Tests\Commands\StubEchoCommandHandler;
 use Modules\Administration\Tests\Commands\StubHandledCommandHandler;
 
@@ -12,9 +12,9 @@ class CommandBusTest extends TestCase
 {
     use ConfigTestValues;
 
-    public function test_CreateUser_Command_Exists()
+    public function test_User_Command_Exists()
     {
-        $expected = CreateUser::class;
+        $expected = User::class;
 
         $commandBus = $this->getInstanceOfCommandBus();
         $this->bindCommandToHandler($commandBus, $expected, StubEchoCommandHandler::class);
@@ -27,14 +27,14 @@ class CommandBusTest extends TestCase
         $this->assertInstanceOf($expected, $actual);
     }
 
-    public function test_CreateUser_Command_IsHandled()
+    public function test_User_Command_IsHandled()
     {
         $expected = 'handled';
 
         $commandBus = $this->getInstanceOfCommandBus();
-        $this->bindCommandToHandler($commandBus, CreateUser::class, StubHandledCommandHandler::class);
+        $this->bindCommandToHandler($commandBus, User::class, StubHandledCommandHandler::class);
 
-        $actual = $commandBus->dispatch(CreateUser::class, [
+        $actual = $commandBus->dispatch(User::class, [
             "uno" => "PEPE",
             "dos" => "PACO"
         ], []);

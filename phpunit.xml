@@ -40,8 +40,8 @@
         </testsuite>
     </testsuites>
     <filter>
-        <whitelist addUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./TAU</directory>
+        <whitelist >
+            <directory suffix=".php">TAU</directory>
         </whitelist>
     </filter>
     <php>

@@ -6,15 +6,35 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
+use Modules\Administration\Commands\User;
+use Joselfonseca\LaravelTactician\Bus as CommandBus;
+use Modules\Administration\Tests\Commands\StubEchoCommandHandler;
+use Modules\Administration\Tests\Commands\StubJsonCommandHandler;
+
 class AdministrationController extends Controller
 {
+    private $commandBus;
+
+    private function getInstanceOfCommandBus(){
+        $commandBus = app(CommandBus::class);
+        return $commandBus;
+    }
+
+    private function bindCommandToHandler($commandBus, $command, $handler){
+        $commandBus->addHandler($command, $handler);
+    }
+
     /**
      * Display a listing of the resource.
      * @return Response
      */
     public function index()
     {
-        return view('administration::index');
+        $commandBus = $this->getInstanceOfCommandBus();
+        $this->bindCommandToHandler($commandBus, User::class, StubJsonCommandHandler::class);
+        $response = $commandBus->dispatch(User::class, [], []);
+
+        return $response;
     }
 
     /**
@@ -25,6 +45,7 @@ class AdministrationController extends Controller
     {
         return $data;
         //return view('administration::create');
+
     }
 
     /**
@@ -34,13 +55,26 @@ class AdministrationController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->getContent());
+        //dd($request->json('name'));
+
+        $commandBus = $this->getInstanceOfCommandBus();
+        $this->bindCommandToHandler($commandBus, User::class, StubJsonCommandHandler::class);
+        $response = $commandBus->dispatch(User::class,
+            [
+                'name' => $request->json('name'),
+                'surname' =>$request->json('surname')
+            ], []);
+        //dd($response);
+        return $response;
     }
 
     /**
      * Show the specified resource.
+     * @param int $id
      * @return Response
      */
-    public function show()
+    public function show($id)
     {
         return view('administration::show');
     }

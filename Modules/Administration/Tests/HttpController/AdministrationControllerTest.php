@@ -1,46 +1,76 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Usuario
- * Date: 08/04/2018
- * Time: 17:35
- */
 
 namespace Modules\Administration\Tests\HttpController;
 
-
-//use Illuminate\Foundation\Testing\TestCase;
-//use PHPUnit_Framework_TestCase;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Response;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Modules\Administration\Http\Controllers\AdministrationController;
 
-
-//class AdministrationControllerTest extends PHPUnit_Framework_TestCase
-class AdministrationControllerTestNO extends TestCase
+class AdministrationControllerTest extends TestCase
 {
-    public function NOtest_CreateUser_controller_makes_Command(){
-        $this->markTestSkipped('test_CreateUser_controller_makes_Command pending');
-        return;
-        /*$expected = ['p'=>'PEPE'];
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function testBasicTest()
+    {
+        $response = $this->get('/');
 
-        $this->visit('/Administration.user');
-
-        $userController = new AdministrationController();
-        $actual = $userController->create(new \Illuminate\Http\Request($expected));
-
-        $this->assertSame($expected, $actual);*/
+        $response->assertStatus(200);
     }
 
-    /**
-     * Creates the application.
-     *
-     * Needs to be implemented by subclasses.
-     *
-     * @return \Symfony\Component\HttpKernel\HttpKernelInterface
-     */
-    public function createApplication()
-    {
-        // TODO: Implement createApplication() method.
+    public function test_Administration_Users_Controller_index(){
+        $response = $this->getJson('Administration/users');
+
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJson([
+                'name' => null, 'surname' => null
+            ]);
+    }
+
+    public function test_Administration_Users_Controller_create(){
+        $this->markTestSkipped( 'test_Administration_Users_Controller_create' );
+        return;
+    }
+
+    public function test_Administration_Users_Controller_store(){
+        $response = $this->postJson('Administration/users',
+            array(
+                'name'    => 'The Name',
+                'surname' => 'The Surname')
+        );
+        //dd($response);
+
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJson([
+                'name'    => 'The Name',
+                'surname' => 'The Surname'
+            ]);
+    }
+
+    public function test_Administration_Users_Controller_show(){
+        $this->markTestSkipped( 'test_Administration_Users_Controller_show' );
+        return;
+    }
+
+    public function test_Administration_Users_Controller_edit(){
+        $this->markTestSkipped( 'test_Administration_Users_Controller_edit' );
+        return;
+    }
+
+    public function test_Administration_Users_Controller_update(){
+        $this->markTestSkipped( 'test_Administration_Users_Controller_update' );
+        return;
+    }
+
+    public function test_Administration_Users_Controller_destroy(){
+        $this->markTestSkipped( 'test_Administration_Users_Controller_destroy' );
+        return;
     }
 }
