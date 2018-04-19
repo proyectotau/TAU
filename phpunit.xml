@@ -22,14 +22,16 @@
         <testsuite name="Feature Tests">
             <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
+        -->
         <testsuite name="CommandBus Integration Tests">
             <directory suffix="Test.php">./tests/Integration/CommandBus</directory>
         </testsuite>
-        -->
+        <testsuite name="Providers Integration Tests">
+            <directory suffix="Test.php">./tests/Integration/Providers</directory>
+        </testsuite>
         <testsuite name="ODBC Integration Tests">
             <directory suffix="Test.php">./tests/ODBC</directory>
         </testsuite>
-
         <testsuite name="Module Tests">
             <directory suffix="Test.php">./tests/Module</directory>
         </testsuite>

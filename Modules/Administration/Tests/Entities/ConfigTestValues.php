@@ -17,9 +17,9 @@ trait ConfigTestValues
 
     //private $testPrimaryKey = 10;
 
-    private $testUserName = 'juan.espanol';
+    private $testUserName = 'juan.español';
     private $testFirstName = 'Juan';
-    private $testLastName = 'Espanol';
+    private $testLastName = 'Español';
 
     private $testGroupName = 'Test Group';
     private $testGroupDescription = 'Group for Testing';

@@ -24,6 +24,8 @@ class AdministrationControllerTest extends TestCase
     }
 
     public function test_Administration_Users_Controller_index(){
+        //$this->withoutExceptionHandling();
+
         $response = $this->getJson('Administration/users');
 
         $response

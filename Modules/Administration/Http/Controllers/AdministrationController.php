@@ -11,9 +11,21 @@ use Joselfonseca\LaravelTactician\Bus as CommandBus;
 use Modules\Administration\Tests\Commands\StubEchoCommandHandler;
 use Modules\Administration\Tests\Commands\StubJsonCommandHandler;
 
+use Tests\Integration\Providers\Alguien;
+use Tests\Integration\Providers\Paco;
+use Tests\Integration\Providers\Pepe;
+
 class AdministrationController extends Controller
 {
     private $commandBus;
+
+    public function __construct(Alguien $quien)
+    {
+        //$quien = resolve('Tests\Integration\Providers\Alguien');
+        //dd(get_class($quien));
+        //dd($quien->soy());
+        echo 'Se ha llamado a __construct() de AdministrationController: '. $quien->soy().PHP_EOL;
+    }
 
     private function getInstanceOfCommandBus(){
         $commandBus = app(CommandBus::class);
