@@ -1,8 +1,11 @@
 <?php
 
-use Modules\Administration\Entities\User;
+/*use Modules\Administration\Entities\User;
 use Modules\Administration\Entities\Group;
-use Modules\Administration\Entities\Role;
+use Modules\Administration\Entities\Role;*/
+use Modules\Administration\Repositories\Eloquent\User;
+use Modules\Administration\Repositories\Eloquent\Group;
+use Modules\Administration\Repositories\Eloquent\Role;
 
 /*
 |--------------------------------------------------------------------------

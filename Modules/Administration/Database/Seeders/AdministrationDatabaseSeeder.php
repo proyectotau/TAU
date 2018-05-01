@@ -22,5 +22,7 @@ class AdministrationDatabaseSeeder extends Seeder
         // $this->call("OthersTableSeeder");
         factory(User::class,3)->create();
         factory(Group::class,5)->create();
+        // TODO: Missing Role
+        // factory(Role::class,5)->create();
     }
 }

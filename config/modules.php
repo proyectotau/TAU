@@ -28,7 +28,7 @@ return [
         'files' => [
             'start' => 'start.php',
             'routes' => 'Http/routes.php',
-            'views/index' => 'Resources/views/index.blade.php',
+            'views/index' => 'Resources/views/test.blade.php',
             'views/master' => 'Resources/views/layouts/master.blade.php',
             'scaffold/config' => 'Config/config.php',
             'composer' => 'composer.json',

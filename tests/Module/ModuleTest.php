@@ -25,7 +25,8 @@ class ModuleTest extends TestCase
     /**
      * @link https://laracasts.com/discuss/channels/laravel/getting-artisancall-output
      */
-    public function NO_test_artisan(){
+    /* // TODO: get route list programmatically
+    public function test_artisan_route_list(){
 
         Artisan::call('route:list');
         $o = Artisan::output();
@@ -37,4 +38,5 @@ class ModuleTest extends TestCase
         $b = explode('| ',  $a[3]);
         dd($b);
     }
+    */
 }

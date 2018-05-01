@@ -8,13 +8,15 @@
 
 namespace Modules\Administration\Tests\Commands;
 
+use Modules\Administration\Commands\Handler\Handler;
+
 /**
  * Class StubEchoCommandHandler
  * This handler echoes input command
  *
  * @package Modules\Administration\Tests\Commands
  */
-class StubEchoCommandHandler
+class StubEchoCommandHandler implements Handler
 {
     public function handle($command)
     {

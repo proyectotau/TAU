@@ -6,47 +6,56 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
-use Modules\Administration\Commands\User;
 use Joselfonseca\LaravelTactician\Bus as CommandBus;
+use Modules\Administration\Commands\Handler\Handler;
+use Modules\Administration\Commands\User as IndexUser; // TODO: as CommandUser interface?
+use Modules\Administration\Commands\User as StoreUser;
+use Modules\Administration\Commands\User as ShowUser;
+use Modules\Administration\Commands\User as UpdateUser;
+use Modules\Administration\Commands\User as DestroyUser;
+
+
 use Modules\Administration\Tests\Commands\StubEchoCommandHandler;
 use Modules\Administration\Tests\Commands\StubJsonCommandHandler;
 
-use Tests\Integration\Providers\Alguien;
-use Tests\Integration\Providers\Paco;
-use Tests\Integration\Providers\Pepe;
-
 class AdministrationController extends Controller
 {
-    private $commandBus;
+    protected $commandHandler;
 
-    public function __construct(Alguien $quien)
+    public function __construct(Handler $commandHandler) // TODO: Move to binding in ServiceProvider
     {
-        //$quien = resolve('Tests\Integration\Providers\Alguien');
-        //dd(get_class($quien));
-        //dd($quien->soy());
-        echo 'Se ha llamado a __construct() de AdministrationController: '. $quien->soy().PHP_EOL;
+        $this->commandHandler = $commandHandler;
     }
 
+    // TODO: Move as a helper
     private function getInstanceOfCommandBus(){
         $commandBus = app(CommandBus::class);
         return $commandBus;
     }
 
     private function bindCommandToHandler($commandBus, $command, $handler){
+        // echo 'Binding '.$command.' => '.$handler.PHP_EOL;
         $commandBus->addHandler($command, $handler);
     }
 
     /**
-     * Display a listing of the resource.
-     * @return Response
+     * Display a listing of the resource.User
+     * @ return Response
      */
-    public function index()
+    public function index(Request $request) // TODO: Add criteria
     {
         $commandBus = $this->getInstanceOfCommandBus();
-        $this->bindCommandToHandler($commandBus, User::class, StubJsonCommandHandler::class);
-        $response = $commandBus->dispatch(User::class, [], []);
+        //$this->bindCommandToHandler($commandBus, User::class, StubJsonCommandHandler::class);
+        //$this->bindCommandToHandler($commandBus, User::class, UserIndexCommandHandler::class);
+        $this->bindCommandToHandler($commandBus, IndexUser::class, $this->commandHandler);
+
+        $response = $commandBus->dispatch(IndexUser::class, [], []);
 
         return $response;
+        //return view('administration::test')->with('users', $response);
+        //return view('administration::test', $response);
+        //return view('administration::index')->with('users', $response);
+        //return view('administration::test', ['users' => json_decode($response)]);
     }
 
     /**
@@ -55,9 +64,7 @@ class AdministrationController extends Controller
      */
     public function create(Request $data)
     {
-        return $data;
-        //return view('administration::create');
-
+        return view('administration::create');
     }
 
     /**
@@ -67,28 +74,34 @@ class AdministrationController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->getContent());
-        //dd($request->json('name'));
+        // TODO: Validate inputs
 
         $commandBus = $this->getInstanceOfCommandBus();
-        $this->bindCommandToHandler($commandBus, User::class, StubJsonCommandHandler::class);
-        $response = $commandBus->dispatch(User::class,
+        $this->bindCommandToHandler($commandBus, StoreUser::class, $this->commandHandler);
+        $response = $commandBus->dispatch(StoreUser::class,
             [
-                'name' => $request->json('name'),
-                'surname' =>$request->json('surname')
+                'name'    => $request->json('name'),
+                'surname' => $request->json('surname')
             ], []);
-        //dd($response);
+
         return $response;
     }
 
     /**
      * Show the specified resource.
-     * @param int $id
+     * @param int $user
      * @return Response
      */
-    public function show($id)
+    public function show($user)
     {
-        return view('administration::show');
+        $commandBus = $this->getInstanceOfCommandBus();
+        $this->bindCommandToHandler($commandBus, ShowUser::class, StubJsonCommandHandler::class);
+        $response = $commandBus->dispatch(ShowUser::class,
+            [
+                'id' => $user, //$request->json('user'),
+            ], []);
+
+        return $response;
     }
 
     /**
@@ -102,18 +115,38 @@ class AdministrationController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * @param  int $user
      * @param  Request $request
      * @return Response
      */
-    public function update(Request $request)
+    public function update($user, Request $request)
     {
+        // save
+        $commandBus = $this->getInstanceOfCommandBus();
+        $this->bindCommandToHandler($commandBus, UpdateUser::class, StubJsonCommandHandler::class);
+        $response = $commandBus->dispatch(UpdateUser::class,
+            [
+                'id'      => $user,
+                'name'    => $request->json('name'),
+                'surname' => $request->json('surname'),
+            ], []);
+
+        return $response;
     }
 
     /**
      * Remove the specified resource from storage.
      * @return Response
      */
-    public function destroy()
+    public function destroy($user)
     {
+        $commandBus = $this->getInstanceOfCommandBus();
+        $this->bindCommandToHandler($commandBus, DestroyUser::class, StubJsonCommandHandler::class);
+        $response = $commandBus->dispatch(DestroyUser::class,
+            [
+                'id' => $user, //$request->json('user'),
+            ], []);
+
+        return $response;
     }
 }

@@ -22,13 +22,13 @@ trait ConfigTestValues
         return $commandBus;
     }
 
-    // TODO: move to helper
+    // TODO: Move to helper. But we need inject CommandBus in testing
     public function bindCommandToHandler($commandBus, $command, $handler){
         $commandBus->addHandler($command, $handler);
     }
 
-    public function dumperDump($x){
+    /*public function dumperDump($x){
         (new Dumper)->dump($x);
         return $x;
-    }
+    }*/
 }

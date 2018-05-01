@@ -1,0 +1,15 @@
+Se ha llamado a register() de AppServiceProvider: local
+Se ha llamado a boot() de AppServiceProvider: 
++--------+-----------+----------------------------------+---------------+--------------------------------------------------------------------------+--------------+
+| Domain | Method    | URI                              | Name          | Action                                                                   | Middleware   |
++--------+-----------+----------------------------------+---------------+--------------------------------------------------------------------------+--------------+
+|        | GET|HEAD  | /                                |               | Closure                                                                  | web          |
+|        | GET|HEAD  | Administration/users             | users.index   | Modules\Administration\Http\Controllers\AdministrationController@index   | web          |
+|        | POST      | Administration/users             | users.store   | Modules\Administration\Http\Controllers\AdministrationController@store   | web          |
+|        | GET|HEAD  | Administration/users/create      | users.create  | Modules\Administration\Http\Controllers\AdministrationController@create  | web          |
+|        | GET|HEAD  | Administration/users/{user}      | users.show    | Modules\Administration\Http\Controllers\AdministrationController@show    | web          |
+|        | PUT|PATCH | Administration/users/{user}      | users.update  | Modules\Administration\Http\Controllers\AdministrationController@update  | web          |
+|        | DELETE    | Administration/users/{user}      | users.destroy | Modules\Administration\Http\Controllers\AdministrationController@destroy | web          |
+|        | GET|HEAD  | Administration/users/{user}/edit | users.edit    | Modules\Administration\Http\Controllers\AdministrationController@edit    | web          |
+|        | GET|HEAD  | api/user                         |               | Closure                                                                  | api,auth:api |
++--------+-----------+----------------------------------+---------------+--------------------------------------------------------------------------+--------------+

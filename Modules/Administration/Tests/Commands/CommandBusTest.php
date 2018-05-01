@@ -20,8 +20,8 @@ class CommandBusTest extends TestCase
         $this->bindCommandToHandler($commandBus, $expected, StubEchoCommandHandler::class);
 
         $actual = $commandBus->dispatch($expected, [
-            "uno" => "PEPE",
-            "dos" => "PACO"
+            "param1" => "TAU",
+            "param2" => "Project"
         ], []);
 
         $this->assertInstanceOf($expected, $actual);
@@ -35,8 +35,8 @@ class CommandBusTest extends TestCase
         $this->bindCommandToHandler($commandBus, User::class, StubHandledCommandHandler::class);
 
         $actual = $commandBus->dispatch(User::class, [
-            "uno" => "PEPE",
-            "dos" => "PACO"
+            "param1" => "TAU",
+            "param2" => "Project"
         ], []);
 
         $this->assertSame($expected, $actual);

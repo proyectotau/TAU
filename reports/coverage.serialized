@@ -1,0 +1,1850 @@
+<?php
+$coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
+$coverage->setData(array (
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\ConfigTestValues.php' => 
+  array (
+    21 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+      1 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+    ),
+    22 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+      1 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+    ),
+    23 => NULL,
+    27 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+      1 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+    ),
+    28 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+      1 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+    ),
+  ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\tests\\Module\\ModuleTest.php' => 
+  array (
+    19 => 
+    array (
+      0 => 'Tests\\Module\\ModuleTest::test_Administration_module_exists',
+    ),
+    21 => 
+    array (
+      0 => 'Tests\\Module\\ModuleTest::test_Administration_module_exists',
+    ),
+    22 => 
+    array (
+      0 => 'Tests\\Module\\ModuleTest::test_Administration_module_exists',
+    ),
+  ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\tests\\ODBC\\ODBCTest.php' => 
+  array (
+    11 => 
+    array (
+    ),
+    12 => 
+    array (
+    ),
+    14 => 
+    array (
+    ),
+    15 => 
+    array (
+    ),
+    22 => 
+    array (
+    ),
+    23 => 
+    array (
+    ),
+    25 => 
+    array (
+    ),
+    32 => 
+    array (
+    ),
+    33 => 
+    array (
+    ),
+    34 => 
+    array (
+    ),
+    41 => 
+    array (
+    ),
+    42 => 
+    array (
+    ),
+    43 => 
+    array (
+    ),
+  ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\tests\\Integration\\CommandBus\\CommandBusTest.php' => 
+  array (
+    12 => 
+    array (
+      0 => 'Tests\\Integration\\CommandBus\\CommandBusTest::test_CommandBus_Is_Available',
+    ),
+    13 => 
+    array (
+      0 => 'Tests\\Integration\\CommandBus\\CommandBusTest::test_CommandBus_Is_Available',
+    ),
+    14 => 
+    array (
+      0 => 'Tests\\Integration\\CommandBus\\CommandBusTest::test_CommandBus_Is_Available',
+    ),
+    15 => 
+    array (
+      0 => 'Tests\\Integration\\CommandBus\\CommandBusTest::test_CommandBus_Is_Available',
+    ),
+    16 => 
+    array (
+      0 => 'Tests\\Integration\\CommandBus\\CommandBusTest::test_CommandBus_Is_Available',
+    ),
+    20 => 
+    array (
+      0 => 'Tests\\Integration\\CommandBus\\CommandBusTest::test_CommandBus_Is_Available',
+    ),
+    21 => 
+    array (
+      0 => 'Tests\\Integration\\CommandBus\\CommandBusTest::test_CommandBus_Is_Available',
+    ),
+    22 => 
+    array (
+      0 => 'Tests\\Integration\\CommandBus\\CommandBusTest::test_CommandBus_Is_Available',
+    ),
+  ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\tests\\ODBC\\ExampleTest.php' => 
+  array (
+    18 => 
+    array (
+      0 => 'Tests\\Unit\\ExampleTest::testBasicTest',
+    ),
+    19 => 
+    array (
+      0 => 'Tests\\Unit\\ExampleTest::testBasicTest',
+    ),
+  ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest.php' => 
+  array (
+    20 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    21 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    22 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    23 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    24 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    25 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    26 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    30 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+    ),
+    32 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+    ),
+    33 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+    ),
+    34 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+    ),
+    35 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+    ),
+    36 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+    ),
+    38 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+    ),
+    39 => 
+    array (
+    ),
+    42 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+    ),
+    44 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+    ),
+    45 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+    ),
+    46 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+    ),
+    47 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+    ),
+    48 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+    ),
+    50 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+    ),
+    54 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+    ),
+    56 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+    ),
+    57 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+    ),
+    58 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+    ),
+    59 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+    ),
+    60 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+    ),
+    62 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+    ),
+    63 => 
+    array (
+    ),
+    66 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+    ),
+    67 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+    ),
+    69 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+    ),
+    73 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    75 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    76 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    77 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    78 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    79 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    81 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    82 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    83 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    84 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    85 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    87 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    88 => 
+    array (
+    ),
+    91 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    92 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    93 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    94 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    96 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    97 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    98 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    99 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    101 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    102 => 
+    array (
+    ),
+    106 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    108 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    109 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    111 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+    ),
+    115 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    117 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    118 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    119 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    120 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    121 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    123 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    124 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    125 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    126 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    127 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    129 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    130 => 
+    array (
+    ),
+    133 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    134 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    135 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    136 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    138 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    139 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    140 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    141 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    143 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    144 => 
+    array (
+    ),
+    146 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    147 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    148 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    149 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    151 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    152 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    153 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    154 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    156 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    157 => 
+    array (
+    ),
+    161 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    162 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    166 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    167 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    168 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+    170 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+    ),
+  ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest.php' => 
+  array (
+    17 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::testBasicTest',
+    ),
+    19 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::testBasicTest',
+    ),
+    20 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::testBasicTest',
+    ),
+    23 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
+    ),
+    37 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
+    ),
+    40 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
+    ),
+    41 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
+    ),
+    42 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
+    ),
+    56 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
+    ),
+    58 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
+    ),
+    60 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
+    ),
+    66 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
+    ),
+    67 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
+    ),
+    68 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
+    ),
+    71 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
+    ),
+    74 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
+    ),
+    76 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
+    ),
+    80 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
+    ),
+    81 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
+    ),
+    82 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
+    ),
+    84 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
+    ),
+    92 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
+    ),
+    94 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
+    ),
+    96 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
+    ),
+    101 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
+    ),
+    102 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
+    ),
+    103 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
+    ),
+    107 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
+    ),
+    110 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
+    ),
+    112 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
+    ),
+    115 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
+    ),
+    116 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
+    ),
+    117 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
+    ),
+    119 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
+    ),
+  ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\CommandBusTest.php' => 
+  array (
+    17 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+    ),
+    19 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+    ),
+    20 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+    ),
+    22 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+    ),
+    23 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+    ),
+    25 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+    ),
+    27 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+    ),
+    28 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+    ),
+    32 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+    ),
+    34 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+    ),
+    35 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+    ),
+    37 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+    ),
+    38 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+    ),
+    40 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+    ),
+    42 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+    ),
+    43 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+    ),
+  ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest.php' => 
+  array (
+    20 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    21 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    22 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    23 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    24 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    25 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    26 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    30 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+    ),
+    32 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+    ),
+    33 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+    ),
+    34 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+    ),
+    35 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+    ),
+    37 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+    ),
+    38 => 
+    array (
+    ),
+    41 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+    ),
+    43 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+    ),
+    44 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+    ),
+    45 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+    ),
+    46 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+    ),
+    48 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+    ),
+    51 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+    ),
+    53 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+    ),
+    54 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+    ),
+    55 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+    ),
+    56 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+    ),
+    58 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+    ),
+    59 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+    ),
+    60 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+    ),
+    61 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+    ),
+    63 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+    ),
+    64 => 
+    array (
+    ),
+    67 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+    ),
+    68 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+    ),
+    70 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+    ),
+    73 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    75 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    76 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    77 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    78 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    80 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    81 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    82 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    83 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    85 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    86 => 
+    array (
+    ),
+    89 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    90 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    91 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    92 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    94 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    95 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    96 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    97 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    99 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    100 => 
+    array (
+    ),
+    104 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    106 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    107 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    109 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+    ),
+    112 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    114 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    115 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    116 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    117 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    119 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    120 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    121 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    122 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    124 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    125 => 
+    array (
+    ),
+    128 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    129 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    130 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    131 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    133 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    134 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    135 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    136 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    138 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    139 => 
+    array (
+    ),
+    142 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    143 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    144 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    145 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    147 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    148 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    149 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    150 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    152 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    153 => 
+    array (
+    ),
+    157 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    158 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    164 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    165 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    166 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+    168 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+    ),
+  ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest.php' => 
+  array (
+    23 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity',
+    ),
+    24 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity',
+    ),
+    25 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity',
+    ),
+    26 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity',
+    ),
+    27 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity',
+    ),
+    28 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity',
+    ),
+    29 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity',
+    ),
+    33 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity',
+    ),
+    42 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity',
+    ),
+    54 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity',
+    ),
+    62 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity',
+    ),
+    66 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity',
+    ),
+    68 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity',
+    ),
+    79 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity',
+    ),
+    87 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity',
+    ),
+  ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest.php' => 
+  array (
+    20 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    21 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    22 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    23 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    24 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    25 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    26 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+      1 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    30 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+    ),
+    32 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+    ),
+    33 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+    ),
+    34 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+    ),
+    35 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+    ),
+    37 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+    ),
+    38 => 
+    array (
+    ),
+    41 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+    ),
+    43 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+    ),
+    44 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+    ),
+    45 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+    ),
+    46 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+    ),
+    48 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+    ),
+    51 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+    ),
+    53 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+    ),
+    54 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+    ),
+    55 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+    ),
+    56 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+    ),
+    58 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+    ),
+    59 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+    ),
+    60 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+    ),
+    61 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+    ),
+    63 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+    ),
+    64 => 
+    array (
+    ),
+    67 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+    ),
+    68 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+    ),
+    70 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+    ),
+    73 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    75 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    76 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    77 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    78 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    80 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    81 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    82 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    83 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    85 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    86 => 
+    array (
+    ),
+    89 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    90 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    91 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    92 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    93 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    95 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    96 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    97 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    98 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    99 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    101 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    102 => 
+    array (
+    ),
+    106 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    108 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    109 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    111 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+    ),
+    114 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    116 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    117 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    118 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    119 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    121 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    122 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    123 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    124 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    126 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    127 => 
+    array (
+    ),
+    130 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    131 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    132 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    133 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    134 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    136 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    137 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    138 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    139 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    140 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    142 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    143 => 
+    array (
+    ),
+    146 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    147 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    148 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    149 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    150 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    152 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    153 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    154 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    155 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    156 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    158 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    159 => 
+    array (
+    ),
+    163 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    164 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    170 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    171 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    172 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+    174 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+    ),
+  ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\StubEchoCommandHandler.php' => 
+  array (
+    23 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+    ),
+    24 => NULL,
+  ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\StubHandledCommandHandler.php' => 
+  array (
+    23 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+    ),
+    24 => NULL,
+  ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\StubJsonCommandHandler.php' => 
+  array (
+    26 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
+      1 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
+      2 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
+      3 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
+      4 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
+    ),
+    27 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
+      1 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
+      2 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
+      3 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
+      4 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
+    ),
+    31 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
+      1 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
+      2 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
+      3 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
+      4 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
+    ),
+    32 => NULL,
+    36 => 
+    array (
+    ),
+    37 => NULL,
+  ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Entities\\ArrayRepository\\RoleEntityTest.php' => 
+  array (
+  ),
+));
+$coverage->setTests(array (
+  'Tests\\Integration\\CommandBus\\CommandBusTest::test_CommandBus_Is_Available' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tests\\Module\\ModuleTest::test_Administration_module_exists' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tests\\Unit\\ExampleTest::testBasicTest' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::testBasicTest' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'UNCOVERED_FILES_FROM_WHITELIST' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+));
+
+$filter = $coverage->filter();
+$filter->setWhitelistedFiles(array (
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\tests\\Integration\\CommandBus\\CommandBusTest.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\tests\\ODBC\\ExampleTest.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\tests\\ODBC\\ODBCTest.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\tests\\Module\\ModuleTest.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Entities\\ArrayRepository\\RoleEntityTest.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\CommandBusTest.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\ConfigTestValues.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\StubEchoCommandHandler.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\StubHandledCommandHandler.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\StubJsonCommandHandler.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest.php' => true,
+));
+
+return $coverage;
