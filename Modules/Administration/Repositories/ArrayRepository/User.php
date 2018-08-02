@@ -16,5 +16,12 @@ use Modules\Administration\Repositories\Repository;
 
 class User extends Model implements Repository
 {
+    protected $items = ['ejemplo','uno'];
 
+    public function __construct($items = ['Ejemplo'])
+    {
+        parent::__construct($items);
+
+        $this->items = $items;
+    }
 }

@@ -8,7 +8,7 @@ use Illuminate\Routing\Controller;
 
 use Joselfonseca\LaravelTactician\Bus as CommandBus;
 use Modules\Administration\Commands\Handler\Handler;
-use Modules\Administration\Commands\User as IndexUser; // TODO: as CommandUser interface?
+use Modules\Administration\Commands\IndexUser; // TODO: as CommandUser interface?
 use Modules\Administration\Commands\User as StoreUser;
 use Modules\Administration\Commands\User as ShowUser;
 use Modules\Administration\Commands\User as UpdateUser;
@@ -35,7 +35,10 @@ class AdministrationController extends Controller
 
     private function bindCommandToHandler($commandBus, $command, $handler){
         // echo 'Binding '.$command.' => '.$handler.PHP_EOL;
-        $commandBus->addHandler($command, $handler);
+        $sc = (string)$command;
+        $sh = (string)$handler;
+
+        $commandBus->addHandler($sc, $sh);
     }
 
     /**
@@ -47,9 +50,10 @@ class AdministrationController extends Controller
         $commandBus = $this->getInstanceOfCommandBus();
         //$this->bindCommandToHandler($commandBus, User::class, StubJsonCommandHandler::class);
         //$this->bindCommandToHandler($commandBus, User::class, UserIndexCommandHandler::class);
-        $this->bindCommandToHandler($commandBus, IndexUser::class, $this->commandHandler);
+        ////$this->bindCommandToHandler($commandBus, 'IndexUser'/*::class*/, $this->commandHandler);
+        $this->bindCommandToHandler($commandBus, 'Modules\Administration\Commands\IndexUser', $this->commandHandler);
 
-        $response = $commandBus->dispatch(IndexUser::class, [], []);
+        $response = $commandBus->dispatch('Modules\Administration\Commands\IndexUser', [], []);
 
         return $response;
         //return view('administration::test')->with('users', $response);
@@ -95,8 +99,8 @@ class AdministrationController extends Controller
     public function show($user)
     {
         $commandBus = $this->getInstanceOfCommandBus();
-        $this->bindCommandToHandler($commandBus, ShowUser::class, StubJsonCommandHandler::class);
-        $response = $commandBus->dispatch(ShowUser::class,
+        $this->bindCommandToHandler($commandBus, 'Modules\Administration\Commands\ShowUser', $this->commandHandler);
+        $response = $commandBus->dispatch('Modules\Administration\Commands\ShowUser',
             [
                 'id' => $user, //$request->json('user'),
             ], []);
@@ -123,8 +127,8 @@ class AdministrationController extends Controller
     {
         // save
         $commandBus = $this->getInstanceOfCommandBus();
-        $this->bindCommandToHandler($commandBus, UpdateUser::class, StubJsonCommandHandler::class);
-        $response = $commandBus->dispatch(UpdateUser::class,
+        $this->bindCommandToHandler($commandBus, 'Modules\Administration\Commands\UpdateUser', $this->commandHandler);
+        $response = $commandBus->dispatch('Modules\Administration\Commands\UpdateUser',
             [
                 'id'      => $user,
                 'name'    => $request->json('name'),
@@ -141,8 +145,8 @@ class AdministrationController extends Controller
     public function destroy($user)
     {
         $commandBus = $this->getInstanceOfCommandBus();
-        $this->bindCommandToHandler($commandBus, DestroyUser::class, StubJsonCommandHandler::class);
-        $response = $commandBus->dispatch(DestroyUser::class,
+        $this->bindCommandToHandler($commandBus, 'Modules\Administration\Commands\DestroyUser', $this->commandHandler);
+        $response = $commandBus->dispatch('Modules\Administration\Commands\DestroyUser',
             [
                 'id' => $user, //$request->json('user'),
             ], []);

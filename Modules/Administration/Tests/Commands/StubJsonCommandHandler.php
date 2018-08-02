@@ -17,7 +17,7 @@ use Modules\Administration\Repositories\Repository as UserRepository;
  *
  * @package Modules\Administration\Tests\Commands
  */
-class StubJsonCommandHandler implements Handler // TODO: extends BaseHandler with __toString return __CLASS__;
+class StubJsonCommandHandler implements Handler // TODO: extends BaseHandler with __toString return get_class();
 {
     protected $user;
 
@@ -33,6 +33,6 @@ class StubJsonCommandHandler implements Handler // TODO: extends BaseHandler wit
 
     public function __toString()
     {
-        return __CLASS__;
+        return get_class();
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1525212887">
-  <project timestamp="1525212887">
+<coverage generated="1533235155">
+  <project timestamp="1533235155">
     <package name="Modules\Administration\Tests\Commands">
       <file name="C:\Users\Usuario\GitHub\proyectotau\master\TAU/Modules/Administration/Tests/Commands/CommandBusTest.php">
         <class name="Modules\Administration\Tests\Commands\CommandBusTest" namespace="Modules\Administration\Tests\Commands">
@@ -56,21 +56,21 @@
       </file>
       <file name="C:\Users\Usuario\GitHub\proyectotau\master\TAU/Modules/Administration/Tests/Commands/StubJsonCommandHandler.php">
         <class name="Modules\Administration\Tests\Commands\StubJsonCommandHandler" namespace="Modules\Administration\Tests\Commands" fullPackage="Modules" package="Modules">
-          <metrics complexity="3" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="3" elements="7" coveredelements="5"/>
+          <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
         </class>
         <line num="24" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="5"/>
         <line num="26" type="stmt" count="5"/>
         <line num="27" type="stmt" count="5"/>
         <line num="29" type="method" name="handle" visibility="public" complexity="1" crap="1" count="5"/>
         <line num="31" type="stmt" count="5"/>
-        <line num="34" type="method" name="__toString" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="36" type="stmt" count="0"/>
-        <metrics loc="37" ncloc="23" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="3" elements="7" coveredelements="5"/>
+        <line num="34" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="5"/>
+        <line num="36" type="stmt" count="5"/>
+        <metrics loc="37" ncloc="23" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
       </file>
     </package>
     <package name="Modules\Administration\Tests\Entities\ArrayRepository">
-      <file name="C:\Users\Usuario\GitHub\proyectotau\master\TAU/Modules/Administration/Tests/Entities/ArrayRepository/RoleEntityTest.php">
-        <class name="Modules\Administration\Tests\Entities\ArrayRepository\RoleEntityTest" namespace="Modules\Administration\Tests\Entities\ArrayRepository">
+      <file name="C:\Users\Usuario\GitHub\proyectotau\master\TAU/Modules/Administration/Tests/Entities/ArrayRepository/RoleEntityTestNO.php">
+        <class name="Modules\Administration\Tests\Entities\ArrayRepository\RoleEntityTestNO" namespace="Modules\Administration\Tests\Entities\ArrayRepository">
           <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
         </class>
         <metrics loc="154" ncloc="18" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -510,40 +510,6 @@
         <metrics loc="42" ncloc="21" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
       </file>
     </package>
-    <package name="Tests\Unit">
-      <file name="C:\Users\Usuario\GitHub\proyectotau\master\TAU/tests/ODBC/ExampleTest.php">
-        <class name="Tests\Unit\ExampleTest" namespace="Tests\Unit">
-          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
-        </class>
-        <line num="16" type="method" name="testBasicTest" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="18" type="stmt" count="1"/>
-        <line num="19" type="stmt" count="1"/>
-        <metrics loc="20" ncloc="15" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
-      </file>
-      <file name="C:\Users\Usuario\GitHub\proyectotau\master\TAU/tests/ODBC/ODBCTest.php">
-        <class name="Tests\Unit\ODBCTest" namespace="Tests\Unit">
-          <metrics complexity="5" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="17" coveredelements="0"/>
-        </class>
-        <line num="9" type="method" name="setUp" visibility="protected" complexity="2" crap="6.00" count="0"/>
-        <line num="11" type="stmt" count="0"/>
-        <line num="12" type="stmt" count="0"/>
-        <line num="14" type="stmt" count="0"/>
-        <line num="15" type="stmt" count="0"/>
-        <line num="20" type="method" name="test_unixODBC_is_available" complexity="1" crap="2.00" count="0"/>
-        <line num="22" type="stmt" count="0"/>
-        <line num="23" type="stmt" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <line num="30" type="method" name="test_ODBC_TAU_connection_is_available" complexity="1" crap="2.00" count="0"/>
-        <line num="32" type="stmt" count="0"/>
-        <line num="33" type="stmt" count="0"/>
-        <line num="34" type="stmt" count="0"/>
-        <line num="39" type="method" name="test_ODBC_INVENTARIO_connection_is_available" complexity="1" crap="2.00" count="0"/>
-        <line num="41" type="stmt" count="0"/>
-        <line num="42" type="stmt" count="0"/>
-        <line num="43" type="stmt" count="0"/>
-        <metrics loc="44" ncloc="35" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="17" coveredelements="0"/>
-      </file>
-    </package>
-    <metrics files="15" loc="1292" ncloc="838" classes="14" methods="41" coveredmethods="24" conditionals="0" coveredconditionals="0" statements="398" coveredstatements="363" elements="439" coveredelements="387"/>
+    <metrics files="13" loc="1228" ncloc="788" classes="12" methods="36" coveredmethods="24" conditionals="0" coveredconditionals="0" statements="383" coveredstatements="362" elements="419" coveredelements="386"/>
   </project>
 </coverage>

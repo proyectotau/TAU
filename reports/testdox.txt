@@ -4,14 +4,6 @@ Integration\CommandBus\CommandBus
 Module\Module
  [x] Administration module exists
 
-Unit\Example
- [x] Basic test
-
-Unit\ODBC
- [ ] unixODBC is available
- [ ] ODBC TAU connection is available
- [ ] ODBC INVENTARIO connection is available
-
 Modules\Administration\Tests\Entities\Eloquent\GroupEntity
  [x] create Group Entity
  [x] Group Has No User

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit backupGlobals="false"
+         beStrictAboutTestsThatDoNotTestAnything="false"
          backupStaticAttributes="false"
          bootstrap="bootstrap/autoload.php"
          colors="true"
@@ -7,7 +8,7 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="false">
+         stopOnFailure="true">
         <logging>
             <log type="coverage-html" target="./reports/report" lowUpperBound="35" highLowerBound="70"/>
             <log type="coverage-clover" target="./reports/coverage.xml"/>
@@ -26,12 +27,14 @@
         <testsuite name="CommandBus Integration Tests">
             <directory suffix="Test.php">./tests/Integration/CommandBus</directory>
         </testsuite>
-        <testsuite name="Module Tests">
+        <testsuite name="Module Integration Tests">
             <directory suffix="Test.php">./tests/Module</directory>
         </testsuite>
+        <!--
         <testsuite name="ODBC Integration Tests">
             <directory suffix="Test.php">./tests/ODBC</directory>
         </testsuite>
+        -->
         <testsuite name="Entities for Administration Module Tests">
             <directory suffix="Test.php">./Modules/Administration/Tests/Entities/Eloquent</directory>
             <directory suffix="Test.php">./Modules/Administration/Tests/Entities/ArrayRepository</directory>
@@ -43,7 +46,6 @@
         <whitelist >
             <directory suffix=".php">./tests/Integration/CommandBus</directory>
             <directory suffix=".php">./tests/Integration/Providers</directory>
-            <directory suffix=".php">./tests/ODBC</directory>
             <directory suffix=".php">./tests/Module</directory>
             <directory suffix=".php">./Modules/Administration/Tests/Entities/Eloquent</directory>
             <directory suffix=".php">./Modules/Administration/Tests/Entities/ArrayRepository</directory>
@@ -53,6 +55,7 @@
         <blacklist >
             <directory suffix=".php">./vendor</directory>
             <directory suffix=".php">./tauproject</directory>
+            <directory suffix=".php">./tests/ODBC</directory>
         </blacklist>
     </filter>
     <php>

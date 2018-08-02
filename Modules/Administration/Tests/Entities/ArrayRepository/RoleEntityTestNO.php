@@ -9,7 +9,7 @@ use Modules\Administration\Tests\Entities\ConfigTestValues;
 use Modules\Administration\Entities\Role;
 use Modules\Administration\Entities\Group;
 
-class RoleEntityTest extends TestCase
+class RoleEntityTestNO extends TestCase
 {
     use ConfigTestValues;
 
