@@ -30,11 +30,11 @@ Modules\Administration\Tests\Commands\CommandBus
  [x] User Command Exists
  [x] User Command IsHandled
 
-Modules\Administration\Tests\HttpController\AdministrationController
+Modules\Administration\Tests\HttpController\UserController
  [x] Basic test
- [x] Administration Users Controller index
- [x] Administration Users Controller store
- [x] Administration Users Controller show
- [x] Administration Users Controller update
- [x] Administration Users Controller destroy
+ [x] UsersController index
+ [x] UsersController store
+ [x] UsersController show
+ [x] UsersController update
+ [x] UsersController destroy
 

@@ -1,13 +1,26 @@
 <?php
-
+/*
 Route::group([
     'middleware' => 'web',
     'prefix' => 'Administration',
-    'namespace' => 'Modules\Administration\Http\Controllers'], function() {
+    'namespace' => 'Modules\Administration\Http\Controllers\Api\V1'], function() {
             Route::resource('users', 'AdministrationController'); // TODO: Move to apiResource()
     }
 );
 
 Route::prefix('Administration')
-     ->namespace('Modules\Administration\Http\Controllers')
-     ->get('/test', 'Modules\Administration\Http\Controllers\AdministrationController@index');
+     ->namespace('Modules\Administration\Http\Controllers\Api\V1')
+     ->get('/test', 'Modules\Administration\Http\Controllers\Api\V1\AdministrationController@index');
+*/
+
+Route::group([
+    /*'middleware' => ['auth:api'],*/'middleware' => ['web'],
+    'namespace' => 'Modules\Administration\Http\Controllers\Api\V1',
+    'prefix' => 'v1/admin',
+    'as' => 'apiv1.admin.'], function () {
+    Route::apiResource('users', 'UsersController')->parameters(['users' => 'id']);
+    /*Route::apiResource('groups', 'GroupsController');
+    Route::apiResource('roles', 'RolesController');*/
+    /*Route::apiResource('companies', 'CompaniesController');
+    Route::apiResource('employees', 'EmployeesController');*/
+});

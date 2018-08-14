@@ -18,7 +18,7 @@ class User extends Model implements Repository
 {
     protected $items = ['ejemplo','uno'];
 
-    public function __construct($items = ['Ejemplo'])
+    public function __construct($items = ['Ejemplo']) // TODO: Ejemplo? ValueObject? Compare to ...\Eloquent\User
     {
         parent::__construct($items);
 

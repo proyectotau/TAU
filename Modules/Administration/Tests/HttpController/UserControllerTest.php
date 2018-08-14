@@ -5,7 +5,7 @@ namespace Modules\Administration\Tests\HttpController;
 use Illuminate\Http\Response;
 use Tests\TestCase;
 
-class AdministrationControllerTest extends TestCase
+class UserControllerTest extends TestCase
 {
     /**
      * A basic test example.
@@ -19,8 +19,10 @@ class AdministrationControllerTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_Administration_Users_Controller_index(){
+    public function test_UsersController_index(){
         $this->withoutExceptionHandling();
+
+        //$this->actingAs(); // TODO
 
         /*
          * Things to do in order to test pass:
@@ -34,15 +36,16 @@ class AdministrationControllerTest extends TestCase
          *    Respository is delayed until CommandHandler is created and CommandHandler is binding in Service Provider
          * 5. We receive response from CommandHandler
          */
-        $response = $this->getJson('Administration/users');
+        $url = route('apiv1.admin.users.index');
+        $response = $this->getJson($url);
 
         $response
             ->assertStatus(Response::HTTP_OK)
             ->assertJson([]);
     }
 
-    /*public function test_Administration_Users_Controller_create(){
-        $this->markTestSkipped( 'test_Administration_Users_Controller_update' );
+    /*public function test_UsersController_create(){
+        $this->markTestSkipped( 'test_UsersController_update' );
         return;
 
         $response = $this->get(route('users.create'));
@@ -52,47 +55,59 @@ class AdministrationControllerTest extends TestCase
             ->assert([]);
     }*/
 
-    public function test_Administration_Users_Controller_store(){
+    public function test_UsersController_store(){
         $this->withoutExceptionHandling();
 
-        $response = $this->postJson('Administration/users',
+        $url = route('apiv1.admin.users.store');
+        $response = $this->postJson($url, [
+            'id'      => 1,
+            'name'    => 'The Name',
+            'surname' => 'The Surname'
+        ]);
+
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJson([
+                'id'      => 1,
+                'name'    => 'The Name',
+                'surname' => 'The Surname'
+            ]);
+    }
+
+    public function test_UsersController_show(){
+        $this->withoutExceptionHandling();
+
+        $url = route('apiv1.admin.users.show', [
+            'id' => 1
+        ]);
+        $response = $this->getJson($url,
             [
-                'name'    => 'The Name',
-                'surname' => 'The Surname'
-            ]
-        );
+                'id' => 1
+            ]);
 
         $response
             ->assertStatus(Response::HTTP_OK)
             ->assertJson([
+                'id'      => 1,
                 'name'    => 'The Name',
                 'surname' => 'The Surname'
             ]);
     }
 
-    public function test_Administration_Users_Controller_show(){
-        $this->withoutExceptionHandling();
-
-        $response = $this->getJson('Administration/users/1');
-        //$response = $this->getJson(route('users.show', 1));
-
-        $response
-            ->assertStatus(Response::HTTP_OK)
-            ->assertJson([
-                'id'    => 1,
-            ]);
-    }
-
-    /*public function test_Administration_Users_Controller_edit(){
-        $this->markTestSkipped( 'test_Administration_Users_Controller_edit' );
+    /*public function test_UsersController_edit(){
+        $this->markTestSkipped( 'test_UsersController_edit' );
         return;
     }*/
 
-    public function test_Administration_Users_Controller_update(){
+    public function test_UsersController_update(){
         $this->withoutExceptionHandling();
 
-        $response = $this->putJson(route('users.update',1),
+        $url = route('apiv1.admin.users.update',[
+            'id'    => 1
+        ]);
+        $response = $this->putJson($url,
             [
+                'id'      => 1,
                 'name'    => 'The Name',
                 'surname' => 'The Surname'
             ]);
@@ -100,21 +115,29 @@ class AdministrationControllerTest extends TestCase
         $response
             ->assertStatus(Response::HTTP_OK)
             ->assertJson([
-                'id'    => 1,
+                'id'      => 1,
                 'name'    => 'The Name',
                 'surname' => 'The Surname'
             ]);
     }
 
-    public function test_Administration_Users_Controller_destroy(){
+    public function test_UsersController_destroy(){
         $this->withoutExceptionHandling();
 
-       $response = $this->deleteJson(route('users.destroy',1));
+       $url = route('apiv1.admin.users.destroy',[
+            'id'    => 1
+        ]);
+       $response = $this->deleteJson($url,
+           [
+               'id'      => 1,
+           ]);
 
         $response
             ->assertStatus(Response::HTTP_OK)
             ->assertJson([
                 'id'    => 1,
+                'name'    => null,
+                'surname' => null
             ]);
     }
 }

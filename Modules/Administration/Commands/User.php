@@ -11,9 +11,9 @@ use \JsonSerializable;
 class User implements JsonSerializable {
 
     // TODO: rename params as a ValueObject
-    protected $id;
-    protected $name;
-    protected $surname;
+    public $id;
+    public $name;
+    public $surname;
 
     public function __construct($id = null, $name = null, $surname = null)
     {

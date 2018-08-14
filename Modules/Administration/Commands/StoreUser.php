@@ -2,4 +2,5 @@
 
 namespace Modules\Administration\Commands;
 
-class ShowUser extends User{}
+
+class StoreUser extends User{}

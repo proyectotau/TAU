@@ -4,6 +4,7 @@ namespace Modules\Administration\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Joselfonseca\LaravelTactician\Bus as CommandBus;
 
 class AdministrationServiceProvider extends ServiceProvider
 {
@@ -13,6 +14,20 @@ class AdministrationServiceProvider extends ServiceProvider
      * @var bool
      */
     protected $defer = false;
+
+    /**
+     * @var array
+     */
+    protected $commandsHandlersForTesting = [
+        'Modules\Administration\Commands\IndexUser'   => 'Modules\Administration\Tests\Commands\StubJsonCommandHandler',
+        'Modules\Administration\Commands\StoreUser'   => 'Modules\Administration\Tests\Commands\StubJsonShowCommandHandler',
+        'Modules\Administration\Commands\ShowUser'    => 'Modules\Administration\Tests\Commands\StubJsonShowCommandHandler',
+        'Modules\Administration\Commands\UpdateUser'  => 'Modules\Administration\Tests\Commands\StubJsonCommandHandler',
+        'Modules\Administration\Commands\DestroyUser' => 'Modules\Administration\Tests\Commands\StubJsonCommandHandler',
+    ];
+
+    protected $commandsHandlers = [
+    ];
 
     /**
      * Boot the application events.
@@ -25,6 +40,9 @@ class AdministrationServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->registerFactories();
+
+        // According to https://gist.github.com/joselfonseca/c53132658f74419060065c13846e7c06#file-busserviceprovider2-php
+        $this->registerCommandsHandlerBindings();
     }
 
     /**
@@ -34,7 +52,15 @@ class AdministrationServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        //echo 'Se ha llamado a register() de AppServiceProvider: '.$this->app->environment().PHP_EOL;
+
+        //$this->registerCommandsHandlerBindings();
+
+        /**/
+
+        /*$this->app->when('Modules\Administration\Http\Controllers')
+            ->needs('$who')
+            ->give($this->app->make('SomeInterface'));*/
     }
 
     /**
@@ -107,5 +133,57 @@ class AdministrationServiceProvider extends ServiceProvider
     public function provides()
     {
         return [];
+    }
+
+    private function registerCommandsHandlerBindings(){
+        if( $this->app->environment() === 'testing' ){ // TODO: Move to phpunit's App bootstrap
+            $this->registerUserRepositoryForTesting();
+            //$this->registerCommandsHandlerForTesting();
+            $commandsHandlers = $this->commandsHandlersForTesting;
+        }else{
+            $this->registerUserRepository();
+            //$this->registerCommandsHandler();
+            $commandsHandlers = $this->commandsHandlers;
+        }
+
+        /*$this->app->singleton(CommandBus::class,
+                function (\Illuminate\Contracts\Foundation\Application $app) use ($commandsHandlers) {
+                    $bus = $app->make(CommandBus::class);
+                    foreach($commandsHandlers as $command => $handler) {
+                        $bus->addHandler($command, $handler);
+                    }
+                    $this->app->instance('admin.bus', $bus);
+                    return $bus;
+        });*/
+
+        $bus = $this->app->make(CommandBus::class);
+        foreach($commandsHandlers as $command => $handler)
+        {
+            $bus->addHandler($command, $handler);
+        }
+        $this->app->instance('admin.bus', $bus);
+
+    }
+
+    private function registerUserRepositoryForTesting(){
+        $this->app->bind('Modules\Administration\Repositories\Repository',
+            'Modules\Administration\Repositories\ArrayRepository\User');
+    }
+
+    private function registerCommandsHandlerForTesting(){
+        $this->app->bind('Modules\Administration\Commands\ShowUser',
+            'Modules\Administration\Tests\Commands\StubJsonShowCommandHandler');
+        $this->app->bind('Modules\Administration\Commands\Handler\Handler',
+            'Modules\Administration\Tests\Commands\StubJsonCommandHandler');
+    }
+
+     private function registerUserRepository(){
+        $this->app->bind('Modules\Administration\Repositories\Repository',
+            'Modules\Administration\Repositories\Eloquent\User');
+    }
+
+    private function registerCommandsHandler(){
+        $this->app->bind('Modules\Administration\Commands\Handler\Handler',
+            'Modules\Administration\Commands\Handler\IndexUser'); // TODO: Use a different CommandHandler for each Command
     }
 }

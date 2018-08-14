@@ -75,6 +75,185 @@ $coverage->setData(array (
       0 => 'Tests\\Integration\\CommandBus\\CommandBusTest::test_CommandBus_Is_Available',
     ),
   ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\HttpController\\UserControllerTest.php' => 
+  array (
+    17 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::testBasicTest',
+    ),
+    19 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::testBasicTest',
+    ),
+    20 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::testBasicTest',
+    ),
+    23 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_index',
+    ),
+    39 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_index',
+    ),
+    40 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_index',
+    ),
+    43 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_index',
+    ),
+    44 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_index',
+    ),
+    45 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_index',
+    ),
+    59 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+    ),
+    61 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+    ),
+    62 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+    ),
+    63 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+    ),
+    69 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+    ),
+    70 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+    ),
+    71 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+    ),
+    75 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+    ),
+    78 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
+    ),
+    80 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
+    ),
+    81 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
+    ),
+    83 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
+    ),
+    85 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
+    ),
+    89 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
+    ),
+    90 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
+    ),
+    91 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
+    ),
+    95 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
+    ),
+    103 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_update',
+    ),
+    105 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_update',
+    ),
+    106 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_update',
+    ),
+    108 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_update',
+    ),
+    110 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_update',
+    ),
+    116 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_update',
+    ),
+    117 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_update',
+    ),
+    118 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_update',
+    ),
+    122 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_update',
+    ),
+    125 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_destroy',
+    ),
+    127 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_destroy',
+    ),
+    128 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_destroy',
+    ),
+    130 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_destroy',
+    ),
+    132 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_destroy',
+    ),
+    136 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_destroy',
+    ),
+    137 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_destroy',
+    ),
+    138 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_destroy',
+    ),
+    142 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_destroy',
+    ),
+  ),
   'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest.php' => 
   array (
     20 => 
@@ -488,144 +667,87 @@ $coverage->setData(array (
       0 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
     ),
   ),
-  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest.php' => 
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\StubJsonShowCommandHandler.php' => 
   array (
-    17 => 
+    26 => 
     array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::testBasicTest',
+      0 => 'Tests\\Integration\\CommandBus\\CommandBusTest::test_CommandBus_Is_Available',
+      1 => 'Tests\\Module\\ModuleTest::test_Administration_module_exists',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+      4 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+      5 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+      6 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+      7 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+      8 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+      9 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+      10 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+      11 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+      12 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+      13 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+      14 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity',
+      15 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity',
+      16 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+      17 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+      18 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::testBasicTest',
+      19 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_index',
+      20 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+      21 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
+      22 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_update',
+      23 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_destroy',
     ),
-    19 => 
+    27 => 
     array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::testBasicTest',
+      0 => 'Tests\\Integration\\CommandBus\\CommandBusTest::test_CommandBus_Is_Available',
+      1 => 'Tests\\Module\\ModuleTest::test_Administration_module_exists',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+      4 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+      5 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+      6 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+      7 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+      8 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+      9 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+      10 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+      11 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+      12 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+      13 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+      14 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity',
+      15 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity',
+      16 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+      17 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+      18 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::testBasicTest',
+      19 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_index',
+      20 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+      21 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
+      22 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_update',
+      23 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_destroy',
     ),
-    20 => 
+    32 => 
     array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::testBasicTest',
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+      1 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
     ),
-    23 => 
+    33 => 
     array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+      1 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
     ),
-    37 => 
+    34 => 
     array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+      1 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
     ),
-    40 => 
+    36 => 
     array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+      1 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
     ),
+    37 => NULL,
     41 => 
     array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
     ),
-    42 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
-    ),
-    56 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
-    ),
-    58 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
-    ),
-    60 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
-    ),
-    66 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
-    ),
-    67 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
-    ),
-    68 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
-    ),
-    71 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
-    ),
-    74 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
-    ),
-    76 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
-    ),
-    80 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
-    ),
-    81 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
-    ),
-    82 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
-    ),
-    84 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
-    ),
-    92 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
-    ),
-    94 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
-    ),
-    96 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
-    ),
-    101 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
-    ),
-    102 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
-    ),
-    103 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
-    ),
-    107 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
-    ),
-    110 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
-    ),
-    112 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
-    ),
-    115 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
-    ),
-    116 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
-    ),
-    117 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
-    ),
-    119 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
-    ),
+    42 => NULL,
   ),
   'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\CommandBusTest.php' => 
   array (
@@ -693,6 +815,74 @@ $coverage->setData(array (
     array (
       0 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
     ),
+  ),
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\StubJsonCommandHandler.php' => 
+  array (
+    26 => 
+    array (
+      0 => 'Tests\\Integration\\CommandBus\\CommandBusTest::test_CommandBus_Is_Available',
+      1 => 'Tests\\Module\\ModuleTest::test_Administration_module_exists',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+      4 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+      5 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+      6 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+      7 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+      8 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+      9 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+      10 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+      11 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+      12 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+      13 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+      14 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity',
+      15 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity',
+      16 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+      17 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+      18 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::testBasicTest',
+      19 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_index',
+      20 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+      21 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
+      22 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_update',
+      23 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_destroy',
+    ),
+    27 => 
+    array (
+      0 => 'Tests\\Integration\\CommandBus\\CommandBusTest::test_CommandBus_Is_Available',
+      1 => 'Tests\\Module\\ModuleTest::test_Administration_module_exists',
+      2 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_create_Group_Entity',
+      3 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_No_User',
+      4 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_Has_An_User_Only',
+      5 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\GroupEntityTest::test_Group_HasMany_Users',
+      6 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_create_Role_Entity',
+      7 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_No_Role',
+      8 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_Has_An_Role_Only',
+      9 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest::test_Group_HasMany_Roles',
+      10 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_create_User_Entity',
+      11 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_No_Groups',
+      12 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_BelongsTo_A_One_Group_Only',
+      13 => 'Modules\\Administration\\Tests\\Entities\\Eloquent\\UserEntityTest::test_User_HasMany_Groups',
+      14 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_User_Entity',
+      15 => 'Modules\\Administration\\Tests\\Entities\\ArrayRepository\\UserEntityTest::test_create_Group_Entity',
+      16 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_Exists',
+      17 => 'Modules\\Administration\\Tests\\Commands\\CommandBusTest::test_User_Command_IsHandled',
+      18 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::testBasicTest',
+      19 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_index',
+      20 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store',
+      21 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show',
+      22 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_update',
+      23 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_destroy',
+    ),
+    31 => 
+    array (
+      0 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_index',
+      1 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_update',
+      2 => 'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_destroy',
+    ),
+    32 => NULL,
+    36 => 
+    array (
+    ),
+    37 => NULL,
   ),
   'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Entities\\Eloquent\\RoleEntityTest.php' => 
   array (
@@ -1606,43 +1796,6 @@ $coverage->setData(array (
     ),
     24 => NULL,
   ),
-  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\StubJsonCommandHandler.php' => 
-  array (
-    26 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
-      1 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
-      2 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
-      3 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
-      4 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
-    ),
-    27 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
-      1 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
-      2 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
-      3 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
-      4 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
-    ),
-    31 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
-      1 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
-      2 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
-      3 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
-      4 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
-    ),
-    32 => NULL,
-    36 => 
-    array (
-      0 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index',
-      1 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store',
-      2 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show',
-      3 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update',
-      4 => 'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy',
-    ),
-    37 => NULL,
-  ),
   'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Entities\\ArrayRepository\\RoleEntityTestNO.php' => 
   array (
   ),
@@ -1738,32 +1891,32 @@ $coverage->setTests(array (
     'size' => 'unknown',
     'status' => 0,
   ),
-  'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::testBasicTest' => 
+  'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::testBasicTest' => 
   array (
     'size' => 'unknown',
     'status' => 0,
   ),
-  'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_index' => 
+  'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_index' => 
   array (
     'size' => 'unknown',
     'status' => 0,
   ),
-  'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_store' => 
+  'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_store' => 
   array (
     'size' => 'unknown',
     'status' => 0,
   ),
-  'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_show' => 
+  'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_show' => 
   array (
     'size' => 'unknown',
     'status' => 0,
   ),
-  'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_update' => 
+  'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_update' => 
   array (
     'size' => 'unknown',
     'status' => 0,
   ),
-  'Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest::test_Administration_Users_Controller_destroy' => 
+  'Modules\\Administration\\Tests\\HttpController\\UserControllerTest::test_UsersController_destroy' => 
   array (
     'size' => 'unknown',
     'status' => 0,
@@ -1789,7 +1942,8 @@ $filter->setWhitelistedFiles(array (
   'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\StubEchoCommandHandler.php' => true,
   'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\StubHandledCommandHandler.php' => true,
   'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\StubJsonCommandHandler.php' => true,
-  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\HttpController\\AdministrationControllerTest.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\Commands\\StubJsonShowCommandHandler.php' => true,
+  'C:\\Users\\Usuario\\GitHub\\proyectotau\\master\\TAU\\Modules\\Administration\\Tests\\HttpController\\UserControllerTest.php' => true,
 ));
 
 return $coverage;
