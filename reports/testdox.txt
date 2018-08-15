@@ -1,35 +1,3 @@
-Integration\CommandBus\CommandBus
- [x] CommandBus Is Available
-
-Module\Module
- [x] Administration module exists
-
-Modules\Administration\Tests\Entities\Eloquent\GroupEntity
- [x] create Group Entity
- [x] Group Has No User
- [x] Group Has An User Only
- [x] Group HasMany Users
-
-Modules\Administration\Tests\Entities\Eloquent\RoleEntity
- [x] create Role Entity
- [x] Group Has No Role
- [x] Group Has An Role Only
- [x] Group HasMany Roles
-
-Modules\Administration\Tests\Entities\Eloquent\UserEntity
- [x] create User Entity
- [x] User BelongsTo No Groups
- [x] User BelongsTo A One Group Only
- [x] User HasMany Groups
-
-Modules\Administration\Tests\Entities\ArrayRepository\UserEntity
- [x] create User Entity
- [x] create Group Entity
-
-Modules\Administration\Tests\Commands\CommandBus
- [x] User Command Exists
- [x] User Command IsHandled
-
 Modules\Administration\Tests\HttpController\UserController
  [x] Basic test
  [x] UsersController index

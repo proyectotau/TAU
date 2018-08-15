@@ -7,16 +7,6 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
 use Joselfonseca\LaravelTactician\Bus as CommandBus;
-use Modules\Administration\Commands\Handler\Handler;
-use Modules\Administration\Commands\IndexUser; // TODO: as CommandUser interface?
-use Modules\Administration\Commands\User as StoreUser;
-use Modules\Administration\Commands\User as ShowUser;
-use Modules\Administration\Commands\User as UpdateUser;
-use Modules\Administration\Commands\User as DestroyUser;
-
-
-use Modules\Administration\Tests\Commands\StubEchoCommandHandler;
-use Modules\Administration\Tests\Commands\StubJsonCommandHandler;
 
 class UsersController extends Controller
 {
@@ -24,7 +14,7 @@ class UsersController extends Controller
 
     public function __construct() // TODO: Move to binding in ServiceProvider
     {
-        $this->commandBus = app('admin.bus');
+        $this->commandBus = resolve('AdminCommandBus');
     }
 
     /**
