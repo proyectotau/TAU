@@ -4,6 +4,7 @@ namespace Modules\Administration\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Config;
 use Joselfonseca\LaravelTactician\Bus as CommandBus;
 
 class AdministrationServiceProvider extends ServiceProvider
@@ -27,6 +28,11 @@ class AdministrationServiceProvider extends ServiceProvider
     ];
 
     protected $commandsHandlers = [
+        'Modules\Administration\Commands\IndexUser'   => 'Modules\Administration\Commands\Handler\IndexUser',
+        'Modules\Administration\Commands\StoreUser'   => 'Modules\Administration\Commands\Handler\StoreUser',
+        'Modules\Administration\Commands\ShowUser'    => 'Modules\Administration\Commands\Handler\ShowUser',
+        'Modules\Administration\Commands\UpdateUser'  => 'Modules\Administration\Commands\Handler\UpdateUser',
+        'Modules\Administration\Commands\DestroyUser' => 'Modules\Administration\Commands\Handler\DestroyUser',
     ];
 
     /**
@@ -41,7 +47,6 @@ class AdministrationServiceProvider extends ServiceProvider
         $this->registerViews();
         $this->registerFactories();
 
-        // According to https://gist.github.com/joselfonseca/c53132658f74419060065c13846e7c06#file-busserviceprovider2-php
         $this->registerCommandsHandlerBindings();
     }
 
@@ -95,7 +100,7 @@ class AdministrationServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
             return $path . '/modules/administration';
-        }, \Config::get('view.paths')), [$sourcePath]), 'administration');
+        }, Config::get('view.paths')), [$sourcePath]), 'administration');
     }
 
     /**
@@ -135,6 +140,7 @@ class AdministrationServiceProvider extends ServiceProvider
         return [];
     }
 
+    // According to https://gist.github.com/joselfonseca/c53132658f74419060065c13846e7c06#file-busserviceprovider2-php
     private function registerCommandsHandlerBindings(){
         if( $this->app->environment() === 'testing' ){ // TODO: Move to phpunit's App bootstrap
             $this->registerUserRepositoryForTesting();
@@ -144,7 +150,7 @@ class AdministrationServiceProvider extends ServiceProvider
             $commandsHandlers = $this->commandsHandlers;
         }
 
-        $this->app->singleton('AdminCommandBus',
+        $this->app->singleton('admin.commandbus',
                 function (\Illuminate\Contracts\Foundation\Application $app) use ($commandsHandlers) {
                     $bus = $app->make(CommandBus::class);
                     foreach($commandsHandlers as $command => $handler) {
@@ -152,6 +158,13 @@ class AdministrationServiceProvider extends ServiceProvider
                     }
                     return $bus;
         });
+
+        /*$bus = $this->app->make(CommandBus::class);
+        foreach($commandsHandlers as $command => $handler)
+        {
+            $bus->addHandler($command, $handler);
+        }
+        $this->app->instance('admin.bus', $bus);*/
     }
 
     private function registerUserRepositoryForTesting(){

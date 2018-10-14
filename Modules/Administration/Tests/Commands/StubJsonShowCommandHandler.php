@@ -29,7 +29,7 @@ class StubJsonShowCommandHandler implements Handler // TODO: extends BaseHandler
     public function handle($command)
     {
         $result = [
-            'id'      => $command->id,
+            'id'      => 1,
             'name'    => 'The Name',
             'surname' => 'The Surname'
         ];

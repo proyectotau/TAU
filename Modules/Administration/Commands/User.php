@@ -10,16 +10,34 @@ use \JsonSerializable;
  */
 class User implements JsonSerializable {
 
-    // TODO: rename params as a ValueObject
-    public $id;
+    // TODO: rename params as a ValueObject with _magic members
+    private $data = [];
+    /*public $id;
+    public $login;
     public $name;
-    public $surname;
+    public $surname;*/
 
-    public function __construct($id = null, $name = null, $surname = null)
+    /*public function __construct($id = null, $login = null, $name = null, $surname = null)
     {
+        dxd($id , $login , $name , $surname );
         $this->id = $id;
+        $this->login = $login;
         $this->name = $name;
         $this->surname = $surname;
+    }*/
+
+    public function __construct(array $data = []){
+        $this->data = $data;
+    }
+
+    /*public function __set($name, $value)
+    {
+        // TODO: Implement __set() method.
+    }*/
+
+    public function __get($name)
+    {
+        return $this->data[$name];
     }
 
     // https://stackoverflow.com/questions/401908/php-tostring-and-json-encode-not-playing-well-together
@@ -32,10 +50,12 @@ class User implements JsonSerializable {
      */
     public function jsonSerialize()
     {
-        return [
+        return $this->data;
+        /*return [
             'id' => $this->id,
+            'login' => $this->login,
             'name' => $this->name,
             'surname' => $this->surname,
-        ];
+        ];*/
     }
 }

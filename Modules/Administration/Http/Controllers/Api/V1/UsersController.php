@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
 use Joselfonseca\LaravelTactician\Bus as CommandBus;
+use Modules\Administration\AdminUsersManager;
 
 class UsersController extends Controller
 {
@@ -14,27 +15,19 @@ class UsersController extends Controller
 
     public function __construct() // TODO: Move to binding in ServiceProvider
     {
-        $this->commandBus = resolve('AdminCommandBus');
+        //$this->commandBus = resolve('admin.commandbus');
+        //$this->commandBus = app('admin.bus');
     }
 
     /**
      * Display a listing of the resource User
      * @return Response
      */
-    public function index(Request $request) // TODO: Add criteria
+    public function index() // TODO: Add criteria
     {
-        $response = $this->commandBus->dispatch('Modules\Administration\Commands\IndexUser', [], []);
+        $response = AdminUsersManager::index();
 
         return $response;
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     * @return Response
-     */
-    public function create(Request $data)
-    {
-        return view('administration::create');
     }
 
     /**
@@ -45,12 +38,11 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         // TODO: Validate inputs
-        $response = $this->commandBus->dispatch('Modules\Administration\Commands\StoreUser',
-            [
-                'id'      => $request->json('id'),
-                'name'    => $request->json('name'),
-                'surname' => $request->json('surname')
-            ], []);
+        $response = AdminUsersManager::store([
+            'login'   => $request->json('login'),
+            'name'    => $request->json('name'),
+            'surname' => $request->json('surname')
+        ]);
 
         return $response;
     }
@@ -62,21 +54,11 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $response = $this->commandBus->dispatch('Modules\Administration\Commands\ShowUser',
-            [
+        $response = AdminUsersManager::show([
                 'id' => $id
-            ], []);
+         ]);
 
         return $response;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @return Response
-     */
-    public function edit()
-    {
-        return view('administration::edit');
     }
 
     /**
@@ -86,13 +68,11 @@ class UsersController extends Controller
      */
     public function update(Request $request)
     {
-        //dd($request->getContent());
-        $response = $this->commandBus->dispatch('Modules\Administration\Commands\UpdateUser',
-            [
+        $response = AdminUsersManager::update([
                 'id'      => $request->json('id'),
                 'name'    => $request->json('name'),
                 'surname' => $request->json('surname'),
-            ], []);
+            ]);
 
         return $response;
     }
@@ -104,10 +84,9 @@ class UsersController extends Controller
      */
     public function destroy(Request $request)
     {
-        $response = $this->commandBus->dispatch('Modules\Administration\Commands\DestroyUser',
-            [
-                'id' => $request->json('id'),
-            ], []);
+        $response = AdminUsersManager::destroy([
+            'id' => $request->json('id'),
+        ]);
 
         return $response;
     }

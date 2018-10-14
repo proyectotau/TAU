@@ -13,7 +13,7 @@ use Modules\Administration\Repositories\Repository as UserRepository;
 
 /**
  * Class StubJsonCommandHandler
- * This handler echoes input command as json
+ * This handler echos input command as json
  *
  * @package Modules\Administration\Tests\Commands
  */
@@ -28,6 +28,7 @@ class StubJsonCommandHandler implements Handler // TODO: extends BaseHandler wit
 
     public function handle($command)
     {
+        // TODO: Extract criteria from $command and echos back
         return json_encode($command);
     }
 

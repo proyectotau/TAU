@@ -94,17 +94,13 @@ class UserControllerTest extends TestCase
             ]);
     }
 
-    /*public function test_UsersController_edit(){
-        $this->markTestSkipped( 'test_UsersController_edit' );
-        return;
-    }*/
-
     public function test_UsersController_update(){
         $this->withoutExceptionHandling();
 
         $url = route('apiv1.admin.users.update',[
             'id'    => 1
         ]);
+
         $response = $this->putJson($url,
             [
                 'id'      => 1,
@@ -129,15 +125,13 @@ class UserControllerTest extends TestCase
         ]);
        $response = $this->deleteJson($url,
            [
-               'id'      => 1,
+               'id'      => 1
            ]);
 
         $response
             ->assertStatus(Response::HTTP_OK)
             ->assertJson([
-                'id'    => 1,
-                'name'    => null,
-                'surname' => null
+                'id'    => 1
             ]);
     }
 }

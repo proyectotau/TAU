@@ -1,8 +1,0 @@
-Modules\Administration\Tests\HttpController\UserController
- [x] Basic test
- [x] UsersController index
- [x] UsersController store
- [x] UsersController show
- [x] UsersController update
- [x] UsersController destroy
-
