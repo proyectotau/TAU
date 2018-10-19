@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28374a3c639a5c789f5a83329d654203",
+    "content-hash": "7a731dfa550921bbbdf2eee99e4e664d",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -455,30 +455,36 @@
         },
         {
             "name": "joselfonseca/laravel-tactician",
-            "version": "0.3.3",
+            "version": "0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/joselfonseca/laravel-tactician.git",
-                "reference": "760546852bb0785928ea37fda0ec3f4d41282757"
+                "reference": "00367bb789856be2210542fb8b3589d58aa6653b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joselfonseca/laravel-tactician/zipball/760546852bb0785928ea37fda0ec3f4d41282757",
-                "reference": "760546852bb0785928ea37fda0ec3f4d41282757",
+                "url": "https://api.github.com/repos/joselfonseca/laravel-tactician/zipball/00367bb789856be2210542fb8b3589d58aa6653b",
+                "reference": "00367bb789856be2210542fb8b3589d58aa6653b",
                 "shasum": ""
             },
             "require": {
                 "league/tactician": "1.0.*",
-                "php": ">=5.5.0"
+                "php": ">=5.6.0"
             },
             "require-dev": {
                 "mockery/mockery": "0.9.*",
-                "orchestra/testbench": "~3.1",
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1",
-                "squizlabs/php_codesniffer": "~2.3"
+                "orchestra/testbench": "~3.5",
+                "phpunit/phpunit": "7.*",
+                "scrutinizer/ocular": "~1.1"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Joselfonseca\\LaravelTactician\\Providers\\LaravelTacticianServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Joselfonseca\\LaravelTactician\\": "src/"
@@ -501,7 +507,7 @@
                 "laravel-tactician",
                 "tactician"
             ],
-            "time": "2016-12-09T13:05:13+00:00"
+            "time": "2018-10-19T12:33:39+00:00"
         },
         {
             "name": "laravel/framework",
