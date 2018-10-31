@@ -9,7 +9,7 @@
 namespace Modules\Administration\Tests\Commands;
 
 use Modules\Administration\Commands\Handler\Handler;
-use Modules\Administration\Repositories\Repository as UserRepository;
+//use Modules\Administration\Repositories\Repository as UserRepository;
 
 /**
  * Class StubJsonCommandHandler
@@ -17,14 +17,14 @@ use Modules\Administration\Repositories\Repository as UserRepository;
  *
  * @package Modules\Administration\Tests\Commands
  */
-class StubJsonShowCommandHandler implements Handler // TODO: extends BaseHandler with __toString return get_class();
+class StubShowCommandHandler implements Handler // TODO: extends BaseHandler with __toString return get_class();
 {
-    protected $user;
+    /*protected $user;
 
     public function __construct(UserRepository $user)
     {
         $this->user = $user;
-    }
+    }*/
 
     public function handle($command)
     {
@@ -33,11 +33,11 @@ class StubJsonShowCommandHandler implements Handler // TODO: extends BaseHandler
             'name'    => 'The Name',
             'surname' => 'The Surname'
         ];
-        return json_encode($result);
+        return $result;
     }
 
-    public function __toString()
+    /*public function __toString()
     {
         return get_class();
-    }
+    }*/
 }

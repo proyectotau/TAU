@@ -30,6 +30,10 @@ class User implements JsonSerializable {
         $this->data = $data;
     }
 
+    public function getData(){
+        return $this->data;
+    }
+
     /*public function __set($name, $value)
     {
         // TODO: Implement __set() method.
@@ -51,11 +55,5 @@ class User implements JsonSerializable {
     public function jsonSerialize()
     {
         return $this->data;
-        /*return [
-            'id' => $this->id,
-            'login' => $this->login,
-            'name' => $this->name,
-            'surname' => $this->surname,
-        ];*/
     }
 }

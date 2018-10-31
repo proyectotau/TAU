@@ -1,14 +1,10 @@
 @extends('administration::layouts.master')
 
+@section('title', 'Module Administration')
+
 @section('content')
-    @include('administration::partials._navbar');
 
     <h1>List of Users</h1>
-
-    <!-- will be used to show any messages -->
-    @if (Session::has('message'))
-        <div class="alert alert-info">{{ Session::get('message') }}</div>
-    @endif
 
     <table class="table table-striped table-bordered">
         <thead>
@@ -35,7 +31,7 @@
                        href="{{ route('admin.users.edit', [ 'id' => $user->id ]) }}">Edit this User</a>
                 </td>
                 <td>
-                    <form action="{{ route('admin.users.destroy', [ 'id' => $user->id ]) }}" method="POST">
+                    <form method="POST" action="{{ route('admin.users.destroy', [ 'id' => $user->id ]) }}">
                         @method('DELETE')
                         @csrf
                         <button type="submit" class="btn btn-danger">Delete this User</button>

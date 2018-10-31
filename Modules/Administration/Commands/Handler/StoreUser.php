@@ -22,12 +22,12 @@ class StoreUser implements Handler
 
     public function handle($command)
     {
-        $this->user->id = ($this->user->all()->max('id'))+1;
+        $this->user->id = ($this->user->all()->max('id'))+1; // TODO
         $this->user->login = $command->login;
         $this->user->name = $command->name;
         $this->user->surname = $command->surname;
         $this->user->save();
 
-        return json_encode($this->user);
+        return $this->user;
     }
 }

@@ -25,6 +25,6 @@ class DestroyUser implements Handler
         $user = $this->user->find($command->id);
         $user->delete();
 
-        return json_encode($user);
+        return $user;
     }
 }

@@ -19,14 +19,6 @@ class AdministrationServiceProvider extends ServiceProvider
     /**
      * @var array
      */
-    protected $commandsHandlersForTesting = [
-        'Modules\Administration\Commands\IndexUser'   => 'Modules\Administration\Tests\Commands\StubJsonCommandHandler',
-        'Modules\Administration\Commands\StoreUser'   => 'Modules\Administration\Tests\Commands\StubJsonShowCommandHandler',
-        'Modules\Administration\Commands\ShowUser'    => 'Modules\Administration\Tests\Commands\StubJsonShowCommandHandler',
-        'Modules\Administration\Commands\UpdateUser'  => 'Modules\Administration\Tests\Commands\StubJsonCommandHandler',
-        'Modules\Administration\Commands\DestroyUser' => 'Modules\Administration\Tests\Commands\StubJsonCommandHandler',
-    ];
-
     protected $commandsHandlers = [
         'Modules\Administration\Commands\IndexUser'   => 'Modules\Administration\Commands\Handler\IndexUser',
         'Modules\Administration\Commands\StoreUser'   => 'Modules\Administration\Commands\Handler\StoreUser',
@@ -144,7 +136,7 @@ class AdministrationServiceProvider extends ServiceProvider
     private function registerCommandsHandlerBindings(){
         if( $this->app->environment() === 'testing' ){ // TODO: Move to phpunit's App bootstrap
             $this->registerUserRepositoryForTesting();
-            $commandsHandlers = $this->commandsHandlersForTesting;
+            return;
         }else{
             $this->registerUserRepository();
             $commandsHandlers = $this->commandsHandlers;
@@ -159,12 +151,6 @@ class AdministrationServiceProvider extends ServiceProvider
                     return $bus;
         });
 
-        /*$bus = $this->app->make(CommandBus::class);
-        foreach($commandsHandlers as $command => $handler)
-        {
-            $bus->addHandler($command, $handler);
-        }
-        $this->app->instance('admin.bus', $bus);*/
     }
 
     private function registerUserRepositoryForTesting(){

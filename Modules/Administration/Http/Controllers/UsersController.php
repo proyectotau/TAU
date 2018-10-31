@@ -11,19 +11,15 @@ class UsersController extends Controller
 {
     protected $commandBus;
 
-    public function __construct() // TODO: Move to binding in Service App
-    {
-        //$this->commandBus = resolve('admin.commandbus');
-        //$this->commandBus = app('admin.bus');
-    }
-
     /**
      * Display a listing of the resource.
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = AdminUsersManager::index();
+        $users = AdminUsersManager::index([
+            /* 'criteria'   => $request->json('criteria') */ // TODO
+        ])->toObject();
 
         return view('administration::index', compact('users'));
     }
@@ -48,9 +44,9 @@ class UsersController extends Controller
             'login'   => $request->login,
             'name'    => $request->name,
             'surname' => $request->surname
-        ]);
+        ])->toObject();
 
-        return $this->index(); // TODO: visual feedback of recently stored user
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -61,7 +57,7 @@ class UsersController extends Controller
     {
         $user = AdminUsersManager::show([
             'id' => $id
-        ]);
+        ])->toObject();
 
         return view('administration::show', compact('user'));
     }
@@ -88,7 +84,7 @@ class UsersController extends Controller
             'surname' => $request->surname
         ]);
 
-        return $this->index(); // TODO: visual feedback of recently stored user
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -100,8 +96,8 @@ class UsersController extends Controller
     {
         AdminUsersManager::destroy([
             'id' => $request->id,
-        ]);
+        ])->toJson();
 
-        return $this->index(); // TODO: visual feedback of recently deleted user
+        return redirect()->route('admin.users.index');
     }
 }

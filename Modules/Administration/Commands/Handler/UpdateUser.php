@@ -28,6 +28,6 @@ class UpdateUser implements Handler
         $this->user->surname = $command->surname;
         $this->user->save();
 
-        return json_encode($this->user);
+        return $this->user;
     }
 }

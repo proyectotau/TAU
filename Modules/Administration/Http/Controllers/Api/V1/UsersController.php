@@ -6,26 +6,28 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
-use Joselfonseca\LaravelTactician\Bus as CommandBus;
 use Modules\Administration\AdminUsersManager;
 
 class UsersController extends Controller
 {
-    protected $commandBus;
-
-    public function __construct() // TODO: Move to binding in ServiceProvider
+    public function test(Request $request)
     {
-        //$this->commandBus = resolve('admin.commandbus');
-        //$this->commandBus = app('admin.bus');
+        return AdminUsersManager::test([
+            'id'      => $request->json('id'),
+            'name'    => $request->json('name'),
+            'surname' => $request->json('surname')
+        ])->toJson();
     }
 
     /**
      * Display a listing of the resource User
      * @return Response
      */
-    public function index() // TODO: Add criteria
+    public function index(/*Request $request*/)
     {
-        $response = AdminUsersManager::index();
+        $response = AdminUsersManager::index([
+                /* 'criteria'   => $request->json('criteria') ?? '' */ // TODO
+        ])->toJson();
 
         return $response;
     }
@@ -42,7 +44,7 @@ class UsersController extends Controller
             'login'   => $request->json('login'),
             'name'    => $request->json('name'),
             'surname' => $request->json('surname')
-        ]);
+        ])->toJson();
 
         return $response;
     }
@@ -56,7 +58,7 @@ class UsersController extends Controller
     {
         $response = AdminUsersManager::show([
                 'id' => $id
-         ]);
+         ])->toJson();
 
         return $response;
     }
@@ -72,7 +74,7 @@ class UsersController extends Controller
                 'id'      => $request->json('id'),
                 'name'    => $request->json('name'),
                 'surname' => $request->json('surname'),
-            ]);
+        ])->toJson();
 
         return $response;
     }
@@ -86,7 +88,7 @@ class UsersController extends Controller
     {
         $response = AdminUsersManager::destroy([
             'id' => $request->json('id'),
-        ]);
+        ])->toJson();
 
         return $response;
     }
