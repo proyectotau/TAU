@@ -17,9 +17,9 @@ class User implements JsonSerializable {
     public $name;
     public $surname;*/
 
-    /*public function __construct($id = null, $login = null, $name = null, $surname = null)
+    /* Alternative
+     public function __construct($id = null, $login = null, $name = null, $surname = null)
     {
-        dxd($id , $login , $name , $surname );
         $this->id = $id;
         $this->login = $login;
         $this->name = $name;

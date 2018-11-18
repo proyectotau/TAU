@@ -10,7 +10,6 @@ use Tests\TestCase;
 
 class UserControllerTest extends TestCase
 {
-    //use RefreshDatabase;
     use DatabaseTransactions;
 
     private function bindsCommandToHandler(array $commandsHandlers)

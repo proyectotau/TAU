@@ -66,9 +66,13 @@ class UsersController extends Controller
      * Show the form for editing the specified resource.
      * @return Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return view('administration::edit');
+        $user = AdminUsersManager::show([
+            'id' => $id
+        ])->toObject();
+
+        return view('administration::edit', compact('user'));
     }
 
     /**
@@ -78,7 +82,8 @@ class UsersController extends Controller
      */
     public function update(Request $request)
     {
-        $user = AdminUsersManager::store([
+        AdminUsersManager::update([
+            'id'      => $request->id,
             'login'   => $request->login,
             'name'    => $request->name,
             'surname' => $request->surname
@@ -96,7 +101,7 @@ class UsersController extends Controller
     {
         AdminUsersManager::destroy([
             'id' => $request->id,
-        ])->toJson();
+        ]);
 
         return redirect()->route('admin.users.index');
     }

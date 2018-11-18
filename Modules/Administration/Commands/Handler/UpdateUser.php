@@ -22,7 +22,8 @@ class UpdateUser implements Handler
 
     public function handle($command)
     {
-        $this->user->id = $command->id;
+        $user = $this->user->find($command->id);
+
         $this->user->login = $command->login;
         $this->user->name = $command->name;
         $this->user->surname = $command->surname;
