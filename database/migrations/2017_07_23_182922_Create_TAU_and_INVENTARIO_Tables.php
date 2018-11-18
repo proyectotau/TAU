@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 use Illuminate\Support\Facades\DB;
 
-include_once 'tauproject/web/config.inc.php';
+include_once 'config.inc.php.codeship';
 
 if( !defined('DIR') )
     define('DIR', base_path() . '/database/migrations/bd_test/');
