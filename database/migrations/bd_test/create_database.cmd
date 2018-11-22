@@ -2,6 +2,7 @@ set DB_CMD=mysql
 set DB_SERVER=localhost
 set DB_USER=root
 set DB_PASS=%MYSQL_PASSWORD%
+REM set DB_DATABASE=
 
 %DB_CMD% --line-numbers -v -v -v -h %DB_SERVER% -u %DB_USER% -p%DB_PASS% -e 'create database tau_test;'
 %DB_CMD% --line-numbers -v -v -v -h %DB_SERVER% -u %DB_USER% -p%DB_PASS% -e 'create database inventario_test;'

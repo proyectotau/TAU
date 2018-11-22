@@ -17,7 +17,7 @@ ALTER TABLE `grupo_localizacion`
 
 -- MisPreferencias agrega el nuevo metodo al Perfil Base
 INSERT INTO `perfil_metodos` (`ID_PERFIL` ,`ID_MODULO` ,`NOMBRE_METODO` ,`SUBCLASS` ,`SUBMETODO` ,`VISTA`)
-VALUES ('1', '4', 'cambiarinventario_testLoc', NULL , NULL , NULL) ;
+VALUES ('1', '4', 'cambiarinventarioLoc', NULL , NULL , NULL) ;
 
 
 USE inventario_test

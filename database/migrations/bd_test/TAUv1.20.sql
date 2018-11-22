@@ -93,8 +93,8 @@ USE inventario_test
 ALTER TABLE `impresora` ADD INDEX ( `Subtipo` ) ;
 ALTER TABLE `impresora` ADD
  	FOREIGN KEY ( `Subtipo` )
- 	REFERENCES `subtipoimpresora` (`id_SubtipoImpresora`) ON DELETE SET NULL ON UPDATE CASCADE ;
-ALTER TABLE `Inventariolog`  COMMENT = 'Bitacora del Inventario' ;
+ 	REFERENCES `SubtipoImpresora` (`id_SubtipoImpresora`) ON DELETE SET NULL ON UPDATE CASCADE ;
+ALTER TABLE `InventarioLog`  COMMENT = 'Bitacora del Inventario' ;
 -- ES I M P O R T A N T E
 
 -- Aprovecha la migracion de CEM para ligar los Modelos a las Marcas
@@ -220,9 +220,9 @@ BEGIN
 	-- Seleccionamos todos los equipos con el mismo Expediente e iteramos sobre la tabla equipo,
 	-- para ir migrando registro a registro, partiendo del valor almacenado en el campo/columna 'antiguo' llamado 'Expediente',
 	-- y vamos insertando el nuevo registro migrado a la tabla expediente
-	INSERT INTO Expediente (noexpediente)
-		SELECT Expediente
-		FROM Equipo
+	INSERT INTO expediente (noexpediente)
+		SELECT expediente
+		FROM equipo
 		WHERE NOT (Expediente is null OR length(trim(Expediente)) = 0)
 		GROUP BY Expediente;
 

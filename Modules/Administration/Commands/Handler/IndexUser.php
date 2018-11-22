@@ -22,6 +22,7 @@ class IndexUser implements Handler
     public function handle($command)
     {
         // TODO: Extract criteria from $command and use find() instead of all()
+        //$user = $this->user->find($command->criteria);
         $users = $this->user->all();
         return $users;
     }

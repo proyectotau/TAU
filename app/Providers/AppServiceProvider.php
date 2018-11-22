@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Laravel\Dusk\DuskServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,7 +16,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //echo 'Se ha llamado a boot() de AppServiceProvider: '. get_class($this->app->make('Tests\Integration\Providers\Alguien')).PHP_EOL;
+        //echo 'Se ha llamado a boot() de AppServiceProvider: '.
+        //                              get_class($this->app->make('Tests\Integration\Providers\Alguien')).PHP_EOL;
         //echo 'Se ha llamado a boot() de AppServiceProvider: '.PHP_EOL;
     }
 
@@ -26,7 +28,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        if ($this->app->environment('local', 'testing')) {
+            $this->app->register(DuskServiceProvider::class);
+        }
     }
 
     public function provides()

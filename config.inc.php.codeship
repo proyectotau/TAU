@@ -4,5 +4,5 @@ define("DB_USER", getenv('MYSQL_USER'));
 define("DB_PASS", getenv('MYSQL_PASSWORD'));
 define("DB_ODBC", "TAU");
 define("Inventario2_DB_ODBC","INVENTARIO");
-define('DIR', 'database/migrations/bd_test/');
+define('DIR', base_path() . '/database/migrations/bd_test/');
 ?>

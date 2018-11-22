@@ -22,8 +22,8 @@ class ShowUser implements Handler
 
     public function handle($command)
     {
-        $users = $this->user->find($command->id);
+        $user = $this->user->find($command->id);
 
-        return json_encode($users);
+        return $user;
     }
 }

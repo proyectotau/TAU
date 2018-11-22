@@ -6,45 +6,30 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
-use Joselfonseca\LaravelTactician\Bus as CommandBus;
-use Modules\Administration\Commands\Handler\Handler;
-use Modules\Administration\Commands\IndexUser; // TODO: as CommandUser interface?
-use Modules\Administration\Commands\User as StoreUser;
-use Modules\Administration\Commands\User as ShowUser;
-use Modules\Administration\Commands\User as UpdateUser;
-use Modules\Administration\Commands\User as DestroyUser;
-
-
-use Modules\Administration\Tests\Commands\StubEchoCommandHandler;
-use Modules\Administration\Tests\Commands\StubJsonCommandHandler;
+use Modules\Administration\AdminUsersManager;
 
 class UsersController extends Controller
 {
-    protected $commandBus;
-
-    public function __construct() // TODO: Move to binding in ServiceProvider
+    public function test(Request $request)
     {
-        $this->commandBus = app('admin.bus');
+        return AdminUsersManager::test([
+            'id'      => $request->json('id'),
+            'name'    => $request->json('name'),
+            'surname' => $request->json('surname')
+        ])->toJson();
     }
 
     /**
      * Display a listing of the resource User
      * @return Response
      */
-    public function index(Request $request) // TODO: Add criteria
+    public function index(/*Request $request*/)
     {
-        $response = $this->commandBus->dispatch('Modules\Administration\Commands\IndexUser', [], []);
+        $response = AdminUsersManager::index([
+                /* 'criteria'   => $request->json('criteria') ?? '' */ // TODO
+        ])->toJson();
 
         return $response;
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     * @return Response
-     */
-    public function create(Request $data)
-    {
-        return view('administration::create');
     }
 
     /**
@@ -55,12 +40,11 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         // TODO: Validate inputs
-        $response = $this->commandBus->dispatch('Modules\Administration\Commands\StoreUser',
-            [
-                'id'      => $request->json('id'),
-                'name'    => $request->json('name'),
-                'surname' => $request->json('surname')
-            ], []);
+        $response = AdminUsersManager::store([
+            'login'   => $request->json('login'),
+            'name'    => $request->json('name'),
+            'surname' => $request->json('surname')
+        ])->toJson();
 
         return $response;
     }
@@ -72,21 +56,11 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $response = $this->commandBus->dispatch('Modules\Administration\Commands\ShowUser',
-            [
+        $response = AdminUsersManager::show([
                 'id' => $id
-            ], []);
+         ])->toJson();
 
         return $response;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @return Response
-     */
-    public function edit()
-    {
-        return view('administration::edit');
     }
 
     /**
@@ -96,13 +70,11 @@ class UsersController extends Controller
      */
     public function update(Request $request)
     {
-        //dd($request->getContent());
-        $response = $this->commandBus->dispatch('Modules\Administration\Commands\UpdateUser',
-            [
+        $response = AdminUsersManager::update([
                 'id'      => $request->json('id'),
                 'name'    => $request->json('name'),
                 'surname' => $request->json('surname'),
-            ], []);
+        ])->toJson();
 
         return $response;
     }
@@ -114,10 +86,9 @@ class UsersController extends Controller
      */
     public function destroy(Request $request)
     {
-        $response = $this->commandBus->dispatch('Modules\Administration\Commands\DestroyUser',
-            [
-                'id' => $request->json('id'),
-            ], []);
+        $response = AdminUsersManager::destroy([
+            'id' => $request->json('id'),
+        ])->toJson();
 
         return $response;
     }
