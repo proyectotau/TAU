@@ -3,9 +3,9 @@
 namespace Modules\Administration\Tests\Entities\Eloquent;
 
 use Tests\TestCase;
+use Tests\DetectRepeatedQueries;
 use Illuminate\Container\Container;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-
 use Modules\Administration\Tests\Entities\ConfigTestValues;
 use Modules\Administration\Repositories\Eloquent\User;
 use Modules\Administration\Repositories\Eloquent\Group;
@@ -14,15 +14,25 @@ class UserEntityTest extends TestCase
 {
     use ConfigTestValues;
     use DatabaseTransactions;
+    use DetectRepeatedQueries;
 
     public function setUp()
     {
         parent::setUp();
+
+        $this->enableQueryLog();
+
         $app = Container::getInstance();
         $this->app->bind('Modules\Administration\Entities\User',
             'Modules\Administration\Repositories\Eloquent\User');
         $this->app->bind('Modules\Administration\Entities\Group',
             'Modules\Administration\Repositories\Eloquent\Group');
+    }
+
+    public function tearDown()
+    {
+        $this->flushQueryLog();
+        parent::tearDown();
     }
 
     public function test_create_User_Entity()
@@ -47,6 +57,8 @@ class UserEntityTest extends TestCase
             'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
+
+        $this->assertNotRepeatedQueries();
     }
 
     public function test_User_BelongsTo_No_Groups()
@@ -66,6 +78,8 @@ class UserEntityTest extends TestCase
         $this->assertDatabaseMissing('usuario_grupo', [
             'ID_USUARIO' => $testPrimaryKey
         ]);
+
+        $this->assertNotRepeatedQueries();
     }
 
     public function test_User_BelongsTo_A_One_Group_Only()
@@ -108,6 +122,12 @@ class UserEntityTest extends TestCase
         $this->assertDatabaseHas('usuario_grupo', [
             'ID_USUARIO' => $testPrimaryKey, 'ID_GRUPO' => $testPrimaryKey,
         ]);
+
+        $this->assertDatabaseCountExpected('usuario_grupo', 1, [
+            'ID_USUARIO' => $testPrimaryKey,
+        ]);
+
+        $this->assertNotRepeatedQueries();
     }
 
     public function test_User_HasMany_Groups()
@@ -143,6 +163,7 @@ class UserEntityTest extends TestCase
         if ($this->debug) {
             dd(Group::find($testPrimaryKey));
         }
+
         $groupB = factory(Group::class)->create([
             'ID_GRUPO' => $testPrimaryKey + 1,
             'NOMBRE' => $this->testGroupName . 'B',
@@ -157,6 +178,8 @@ class UserEntityTest extends TestCase
             dd(Group::find($testPrimaryKey + 1));
         }
 
+        //TODO FAIL here $this->assertNotRepeatedQueries();
+
         // add relations
         $user->groups()->attach($groupA->ID_GRUPO);
         $user->groups()->attach($groupB->ID_GRUPO);
@@ -167,5 +190,20 @@ class UserEntityTest extends TestCase
             'ID_USUARIO' => $testPrimaryKey, 'ID_GRUPO' => $testPrimaryKey,
             'ID_USUARIO' => $testPrimaryKey, 'ID_GRUPO' => $testPrimaryKey + 1
         ]);
+
+        $this->assertDatabaseCountExpected('usuario_grupo', 2, [
+            'ID_USUARIO' => $testPrimaryKey,
+        ]);
+
+        // $this->assertNotRepeatedQueries(); // TODO uncomment when it does't fail
+    }
+
+    public function test_Administrator_User_Cant_be_deleted(){
+        $this->expectException(\Exception::class);
+
+        $user = User::find(0);
+        $user->delete();
+
+        $this->assertNotRepeatedQueries();
     }
 }

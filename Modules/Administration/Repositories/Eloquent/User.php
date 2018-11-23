@@ -37,6 +37,14 @@ class User extends Model implements Repository
         'APELLIDOS'
     ];
 
+    public function delete()
+    {
+        if( $this->id == 0) // Administrator user created during migrations
+            throw new \Exception("User with id == 0 can't be deleted");
+
+        return parent::delete();
+    }
+
     /**
      * The groups that belong to the user.
      */

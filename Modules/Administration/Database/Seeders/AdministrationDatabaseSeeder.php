@@ -24,5 +24,7 @@ class AdministrationDatabaseSeeder extends Seeder
         factory(Group::class,5)->create();
         // TODO: Missing Role
         // factory(Role::class,5)->create();
+
+        Model::reguard();
     }
 }
