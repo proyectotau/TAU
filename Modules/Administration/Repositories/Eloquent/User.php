@@ -1,15 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Usuario
- * Date: 20/04/2018
- * Time: 21:36
- */
 
 namespace Modules\Administration\Repositories\Eloquent;
 
 use Illuminate\Database\Eloquent\Model;
 use Modules\Administration\Repositories\Repository;
+use Modules\Administration\Exceptions\EntityException;
 
 //TODO: MUST implements Repository instead of extends Illuminate\Database\Eloquent\Model
 //TODO: interface Respository in Modules/Administration/Repositories/
@@ -39,8 +34,9 @@ class User extends Model implements Repository
 
     public function delete()
     {
-        if( $this->id == 0) // Administrator user created during migrations
-            throw new \Exception("User with id == 0 can't be deleted");
+        if( $this->id == 0) { // Administrator user created during migrations
+            throw new EntityException("User with id == 0 can't be deleted");
+        }
 
         return parent::delete();
     }

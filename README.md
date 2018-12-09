@@ -19,12 +19,18 @@ We use Nwidart's Laravel-Modules to modules become into an independent app, beca
 [nWidart/laravel-modules](https://github.com/nWidart/laravel-modules) is a must-have!
 
 # Getting Started
-
-1. git clone --branch "master" https://github.com/proyectotau/TAU.git
-1. mkdir -p ./bootstrap/cache
-1. composer install --prefer-dist
-1. export MYSQL_USER=root
-1. export MYSQL_PASSWORD=secret
-1. database/migrations/bd_test/create_database.sh
-1. database/migrations/bd_test/create_tables.sh
-1. vendor/bin/phpunit
+```sh
+ 1. git clone --branch "master" https://github.com/proyectotau/TAU.git
+ 2. mkdir -p ./bootstrap/cache
+ 3. composer install --prefer-dist
+ 4. export MYSQL_USER=root
+ 5. export MYSQL_PASSWORD=secret
+# Have a look at database/migrations/bd_test/*
+ 6. php artisan migrate --force --verbose
+ 7. vendor/bin/phpunit
+ 8. cp .env.dusk.local .env
+# Workaround bug. See link https://github.com/GoogleChrome/puppeteer/issues/1925#issuecomment-398520641
+ 9. nohup bash -c "./vendor/laravel/dusk/bin/chromedriver-linux --no-gpu --disable-software-rasterizer --headless --mute-audio --hide-scrollbars --remote-debugging-port=9222 2>&1 &" && sleep 3
+10. nohup bash -c "php artisan serve 2>&1 &" && sleep 5
+11. php artisan dusk
+```

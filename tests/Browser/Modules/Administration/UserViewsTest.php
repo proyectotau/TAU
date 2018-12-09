@@ -15,7 +15,7 @@ class UserViewsTest extends DuskTestCase
     //use DatabaseMigrations;
     use DatabaseTransactions;
 
-    public function test_createuser_view()
+    public function skip_test_createuser_view()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit(new CreateUser())
@@ -38,6 +38,7 @@ class UserViewsTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit(new IndexUser())
                 ->assertSee('Id')
+                ->assertSee('Login as')
                 ->assertSee('Name')
                 ->assertSee('Surname')
                 ->assertSee('Actions');
@@ -54,10 +55,14 @@ class UserViewsTest extends DuskTestCase
                 ->type('@login', 'john.doe')->assertInputValue('@login', 'john.doe')
                 ->type('@name', 'John')->assertInputValue('@name', 'John')
                 ->type('@surname', 'Doe')->assertInputValue('@surname', 'Doe')
-                ->press('@dusk-button-submit');
-
-            $browserDestroy->visit(new IndexUser())
+                ->press('@dusk-button-submit')
+                ->on(new IndexUser())
+                //->waitFor('@dusk-button-destroy', 600)
+                ->assertSee('john.doe')
+                ->assertSee('John')
+                ->assertSee('Doe')
                 ->press('@dusk-button-destroy')
+                ->on(new IndexUser())
                 ->assertDontSee('john.doe')
                 ->assertDontSee('John')
                 ->assertDontSee('Doe');
@@ -67,7 +72,7 @@ class UserViewsTest extends DuskTestCase
     public function skip_test_last_id(){
         $this->browse(function (Browser $browser){
             $browser->visit(new IndexUser())
-                ->assertSeeIn('@dusk-last-id', '102')
+                ->assertSeeIn('@dusk-last-id', '1')
                 ;
         });
     }

@@ -23,8 +23,12 @@
                     <input type="text" class="form-control" id="surname" name="surname" placeholder="Surname">
                 </div>
                 <a class="btn btn-small btn-success"
-                   href="{{ route('admin.users.index') }}" {{ insertTagForDuskTesting('link-back') }}>Back to Index</a>
-                <button type="submit" class="btn btn-primary" {{ insertTagForDuskTesting('button-submit') }}>Submit</button>
+                   href="{{ route('admin.users.index') }}"
+                            {{ insertTagForDuskTesting('link-back', true, true) }}
+                        >Back to Index</a>
+                <button type="submit" class="btn btn-primary"
+                        {{ insertTagForDuskTesting('button-submit', true, true) }}
+                    >Submit</button>
             </form>
         </div>
     </div>

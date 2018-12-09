@@ -4,6 +4,7 @@ namespace Modules\Administration\Repositories\Eloquent;
 
 use Illuminate\Database\Eloquent\Model;
 use Modules\Administration\Repositories\Repository;
+use Modules\Administration\Exceptions\EntityException;
 
 class Group extends Model implements Repository
 {
@@ -26,6 +27,15 @@ class Group extends Model implements Repository
         'DESCRIPCION'
     ];
 
+    public function delete()
+    {
+        if( $this->id == 0) { // Administrator group created during migrations
+            throw new EntityException("Group with id == 0 can't be deleted");
+        }
+
+        return parent::delete();
+    }
+
     /**
      * The users that belong to the group.
      */
@@ -40,5 +50,20 @@ class Group extends Model implements Repository
     public function roles()
     {
         return $this->belongsToMany(Role::class,'grupo_perfil','ID_GRUPO','ID_PERFIL');
+    }
+
+	public function getIdAttribute()
+    {
+        return $this->ID_GRUPO;
+    }
+
+	public function getNameAttribute()
+    {
+        return $this->NOMBRE;
+    }
+
+	public function getDescriptionAttribute()
+    {
+        return $this->DESCRIPCION;
     }
 }

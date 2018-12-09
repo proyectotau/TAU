@@ -1,9 +1,10 @@
 <?php
 
 if (! function_exists('insertTagForDuskTesting')) {
-    function insertTagForDuskTesting($selector)
+    function insertTagForDuskTesting($selector, $actual = true, $expected = false)
     {
-        return (env('APP_ENV', 'production') !== 'production')
-        ? "data-dusk=dusk-{$selector}" : '';
+        if ($actual === $expected)
+            return (env('APP_ENV', 'production') !== 'production')
+                    ? "data-dusk=dusk-{$selector}" : '';
     }
 }

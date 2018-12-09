@@ -125,6 +125,7 @@ class UserControllerTest extends TestCase
         $response = $this->json('POST', $url, $data);
 
         $response
+            //->assertStatus(Response::HTTP_CREATED) // TODO
             ->assertStatus(Response::HTTP_OK)
             ->assertJson($data);
     }

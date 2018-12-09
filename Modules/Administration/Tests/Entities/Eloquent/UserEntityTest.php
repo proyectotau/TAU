@@ -9,6 +9,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Modules\Administration\Tests\Entities\ConfigTestValues;
 use Modules\Administration\Repositories\Eloquent\User;
 use Modules\Administration\Repositories\Eloquent\Group;
+use Modules\Administration\Exceptions\EntityException;
 
 class UserEntityTest extends TestCase
 {
@@ -71,6 +72,12 @@ class UserEntityTest extends TestCase
             'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
+		$this->assertDatabaseHas('usuario', [
+            'ID_USUARIO' => $testPrimaryKey,
+            'USUARIO_RED' => $this->testUserName,
+            'NOMBRE' => $this->testFirstName,
+            'APELLIDOS' => $this->testLastName
+        ]);
         if ($this->debug) {
             dd(User::find($testPrimaryKey));
         }
@@ -116,8 +123,8 @@ class UserEntityTest extends TestCase
             dd(Group::find($testPrimaryKey));
         }
 
-        // add relation
-        $user->groups()->attach($testPrimaryKey);
+        // add user membership
+        $user->groups()->attach($group->ID_GRUPO); // $testPrimaryKey
 
         $this->assertDatabaseHas('usuario_grupo', [
             'ID_USUARIO' => $testPrimaryKey, 'ID_GRUPO' => $testPrimaryKey,
@@ -152,12 +159,12 @@ class UserEntityTest extends TestCase
 
         $groupA = factory(Group::class)->create([
             'ID_GRUPO' => $testPrimaryKey,
-            'NOMBRE' => $this->testGroupName . 'A',
+            'NOMBRE' => $this->testGroupName.'A',
             'DESCRIPCION' => $this->testGroupDescription . 'A'
         ]);
         $this->assertDatabaseHas('grupo', [
             'ID_GRUPO' => $testPrimaryKey,
-            'NOMBRE' => $this->testGroupName . 'A',
+            'NOMBRE' => $this->testGroupName.'A',
             'DESCRIPCION' => $this->testGroupDescription . 'A'
         ]);
         if ($this->debug) {
@@ -165,13 +172,13 @@ class UserEntityTest extends TestCase
         }
 
         $groupB = factory(Group::class)->create([
-            'ID_GRUPO' => $testPrimaryKey + 1,
-            'NOMBRE' => $this->testGroupName . 'B',
+            'ID_GRUPO' => $testPrimaryKey+1,
+            'NOMBRE' => $this->testGroupName. 'B',
             'DESCRIPCION' => $this->testGroupDescription . 'B'
         ]);
         $this->assertDatabaseHas('grupo', [
-            'ID_GRUPO' => $testPrimaryKey + 1,
-            'NOMBRE' => $this->testGroupName . 'B',
+            'ID_GRUPO' => $testPrimaryKey+1,
+            'NOMBRE' => $this->testGroupName.'B',
             'DESCRIPCION' => $this->testGroupDescription . 'B'
         ]);
         if ($this->debug) {
@@ -181,11 +188,11 @@ class UserEntityTest extends TestCase
         //TODO FAIL here $this->assertNotRepeatedQueries();
 
         // add relations
-        $user->groups()->attach($groupA->ID_GRUPO);
-        $user->groups()->attach($groupB->ID_GRUPO);
-        //$user->groups()->attach($testPrimaryKey);
-        //$user->groups()->attach($testPrimaryKey+1);
-
+        $user->groups()->attach([
+			$groupA->ID_GRUPO,  // $testPrimaryKey
+        	$groupB->ID_GRUPO,   // $testPrimaryKey + 1
+		]);
+        
         $this->assertDatabaseHas('usuario_grupo', [
             'ID_USUARIO' => $testPrimaryKey, 'ID_GRUPO' => $testPrimaryKey,
             'ID_USUARIO' => $testPrimaryKey, 'ID_GRUPO' => $testPrimaryKey + 1
@@ -199,7 +206,7 @@ class UserEntityTest extends TestCase
     }
 
     public function test_Administrator_User_Cant_be_deleted(){
-        $this->expectException(\Exception::class);
+        $this->expectException(EntityException::class);
 
         $user = User::find(0);
         $user->delete();

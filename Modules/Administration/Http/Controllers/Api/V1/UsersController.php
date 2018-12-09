@@ -46,7 +46,7 @@ class UsersController extends Controller
             'surname' => $request->json('surname')
         ])->toJson();
 
-        return $response;
+        return $response; //->setStatusCode(Response::HTTP_CREATED); // TODO
     }
 
     /**
