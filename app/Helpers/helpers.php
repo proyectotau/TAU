@@ -5,6 +5,6 @@ if (! function_exists('insertTagForDuskTesting')) {
     {
         if ($actual === $expected)
             return (env('APP_ENV', 'production') !== 'production')
-                    ? "data-dusk=dusk-{$selector}" : '';
+                ? "data-dusk=dusk-{$selector}" : '';
     }
 }
