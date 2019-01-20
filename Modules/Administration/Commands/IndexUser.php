@@ -3,4 +3,4 @@
 namespace Modules\Administration\Commands;
 
 
-class IndexUser extends User{}
+class IndexUser extends CommandBase{}

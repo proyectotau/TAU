@@ -38,6 +38,7 @@ class AdminUsersManager
     }
 
     static public function show(array $data, array $middleware = []){
+        //self::validateOrFails($data);
         static::$response = resolve('admin.commandbus')
             ->dispatch('Modules\Administration\Commands\ShowUser', $data, $middleware);
         return new static();
@@ -71,4 +72,11 @@ class AdminUsersManager
     static public function toObject(){
         return (object)static::$response;
     }
+
+/*    private static function validateOrFails(array $data) // TODO
+    {
+        $value = $data['id'];
+        if( ! (is_int($value) || ctype_digit($value)) )
+            throw Symfony\Component\Debug\Exception\Thr
+    }*/
 }

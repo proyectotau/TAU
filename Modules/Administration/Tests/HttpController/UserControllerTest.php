@@ -30,12 +30,16 @@ class UserControllerTest extends TestCase
      */
     public function testBasicTest()
     {
+        $this->markTestSkipped('For purpose to test the tests only');
+
         $response = $this->get('/');
 
         $response->assertStatus(200);
     }
 
-    public function skip_test_UsersController_test(){
+    public function test_UsersController_test(){
+        $this->markTestSkipped('For purpose to test the tests only');
+
         $url = 'test/';
         $response = $this->json('GET', $url,
             [
@@ -85,7 +89,7 @@ class UserControllerTest extends TestCase
             ->assertJson([]);
     }
 
-    public function skip_test_UsersController_index_with_criteria(){
+    public function test_UsersController_index_with_criteria(){
         $this->withoutExceptionHandling();
 
         //$this->actingAs(); // TODO
@@ -95,16 +99,17 @@ class UserControllerTest extends TestCase
             'Modules\Administration\Tests\Commands\StubEchoCommandHandler'
         ]);
 
-        $url = route('apiv1.admin.users.index');
-        $response = $this->json('GET', $url, [
+        $data = [
             'criteria' => 'ALL'
-        ]);
+        ];
+
+        $url = route('apiv1.admin.users.criteria', $data);
+
+        $response = $this->json('GET', $url, $data);
 
         $response
             ->assertStatus(Response::HTTP_OK)
-            ->assertJson([
-                'criteria' => 'ALL'
-            ]);
+            ->assertJson($data);
     }
 
      public function test_UsersController_store(){
@@ -135,7 +140,8 @@ class UserControllerTest extends TestCase
 
         $this->bindsCommandToHandler([
             'Modules\Administration\Commands\ShowUser' =>
-            'Modules\Administration\Tests\Commands\StubShowCommandHandler'
+            'Modules\Administration\Tests\Commands\StubUserShowCommandHandler'
+            //'Modules\Administration\Commands\Handler\ShowUser',
         ]);
 
         $url = route('apiv1.admin.users.show', [

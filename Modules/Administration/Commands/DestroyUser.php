@@ -3,4 +3,4 @@
 namespace Modules\Administration\Commands;
 
 
-class DestroyUser extends User{}
+class DestroyUser extends CommandBase{}

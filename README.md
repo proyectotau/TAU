@@ -7,7 +7,7 @@ Brand new, enhanced, rewriting of popular 10-years-old legacy application coded 
 
 Visit our primary website for downloading from http://tauproject.sourceforge.net/
 
-We're about to release v1.28
+We're about to release v1.29RC
 
 Stay tuned !!!
 

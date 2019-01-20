@@ -8,14 +8,13 @@
 
 namespace Modules\Administration\Commands\Handler;
 
-use Modules\Administration\Entities\User;
-use Modules\Administration\Repositories\Repository as UserRepository;
+use Modules\Administration\Repositories\Repository;
 
 class ShowUser implements Handler
 {
     protected $user;
 
-    public function __construct(UserRepository $user)
+    public function __construct(Repository $user)
     {
         $this->user = $user;
     }

@@ -3,4 +3,4 @@
 namespace Modules\Administration\Commands;
 
 
-class UpdateUser extends User{}
+class UpdateUser extends CommandBase{}

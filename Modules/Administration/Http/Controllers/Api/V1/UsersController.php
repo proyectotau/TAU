@@ -23,10 +23,10 @@ class UsersController extends Controller
      * Display a listing of the resource User
      * @return Response
      */
-    public function index(/*Request $request*/)
+    public function index(Request $request)
     {
         $response = AdminUsersManager::index([
-                /* 'criteria'   => $request->json('criteria') ?? '' */ // TODO
+            'criteria'   => $request->criteria
         ])->toJson();
 
         return $response;

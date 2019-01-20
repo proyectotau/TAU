@@ -1,13 +1,14 @@
 @extends('administration::layouts.master')
 
-@section('title', 'Module Administration')
+@section('title', 'Index User - Module Administration')
 
 @section('content')
 
     <div class="card">
         <h2 class="card-header">
-            List of Users
+            List of Users [{{count($users)}}]
         </h2>
+
         <div class="card-body">
             <table class="table table-striped table-bordered">
                 <thead>
@@ -53,6 +54,7 @@
                 </tbody>
             </table>
         </div>
+
     </div>
 
 @stop

@@ -45,9 +45,6 @@ class GroupEntityTest extends TestCase
             'NOMBRE' => $this->testGroupName,
             'DESCRIPCION' => $this->testGroupDescription
         ]);
-        if ($this->debug) {
-            dd(Group::find($testPrimaryKey));
-        }
 
         $this->assertNotNull($group, 'Can not create Administration\Entities\Group');
 
@@ -74,9 +71,6 @@ class GroupEntityTest extends TestCase
             'NOMBRE' => $this->testGroupName,
             'DESCRIPCION' => $this->testGroupDescription
         ]);
-        if ($this->debug) {
-            dd(Group::find($testPrimaryKey));
-        }
 
         $this->assertDatabaseMissing('usuario_grupo', [
             'ID_GRUPO' => $testPrimaryKey
@@ -85,7 +79,7 @@ class GroupEntityTest extends TestCase
         $this->assertNotRepeatedQueries();
     }
 
-    public function test_Group_Has_An_User_Only()
+    public function test_Group_Has_One_User_Only()
 	{
         $testPrimaryKey = $this->testPrimaryKey;
 
@@ -101,9 +95,6 @@ class GroupEntityTest extends TestCase
             'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
-        if ($this->debug) {
-            dd(User::find($testPrimaryKey));
-        }
 
 		$group = factory(Group::class)->create([
             'ID_GRUPO' => $testPrimaryKey,
@@ -115,9 +106,6 @@ class GroupEntityTest extends TestCase
             'NOMBRE' => $this->testGroupName,
             'DESCRIPCION' => $this->testGroupDescription
         ]);
-        if ($this->debug) {
-            dd(Group::find($testPrimaryKey));
-        }
 
         // add user as a new member
         $group->users()->attach($user->ID_USUARIO); // $testPrimaryKey
@@ -146,9 +134,6 @@ class GroupEntityTest extends TestCase
             'NOMBRE' => $this->testGroupName,
             'DESCRIPCION' => $this->testGroupDescription
         ]);
-        if ($this->debug) {
-            dd(Group::find($testPrimaryKey));
-        }
 
         $userA = factory(User::class)->create([
             'ID_USUARIO' => $testPrimaryKey,
@@ -162,9 +147,6 @@ class GroupEntityTest extends TestCase
             'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
-        if ($this->debug) {
-            dd(User::find($testPrimaryKey));
-        }
 
         $userB = factory(User::class)->create([
             'ID_USUARIO' => $testPrimaryKey+1,
@@ -178,9 +160,6 @@ class GroupEntityTest extends TestCase
             'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
-        if ($this->debug) {
-            dd(User::find($testPrimaryKey + 1));
-        }
 
         //TODO FAIL here $this->assertNotRepeatedQueries();
 
@@ -208,7 +187,5 @@ class GroupEntityTest extends TestCase
 
         $group = Group::find(0);
         $group->delete();
-
-        $this->assertNotRepeatedQueries();
     }
 }

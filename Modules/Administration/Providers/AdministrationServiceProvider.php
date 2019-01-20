@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Factory;
 use Config;
 use Joselfonseca\LaravelTactician\Bus as CommandBus;
 
+use Modules\Administration\Repositories\Repository;
+use Modules\Administration\Repositories\Eloquent\{User, Group, Role};
+
+use Modules\Administration\Commands\Handler\{IndexUser, StoreUser, ShowUser, UpdateUser, DestroyUser};
+use Modules\Administration\Commands\Handler\{IndexGroup, StoreGroup, ShowGroup, UpdateGroup, DestroyGroup};
+use Modules\Administration\Commands\Handler\{IndexRole, StoreRole, ShowRole, UpdateRole, DestroyRole};
+
 class AdministrationServiceProvider extends ServiceProvider
 {
     /**
@@ -20,11 +27,24 @@ class AdministrationServiceProvider extends ServiceProvider
      * @var array
      */
     protected $commandsHandlers = [
+        // Users Admin Commands
         'Modules\Administration\Commands\IndexUser'   => 'Modules\Administration\Commands\Handler\IndexUser',
         'Modules\Administration\Commands\StoreUser'   => 'Modules\Administration\Commands\Handler\StoreUser',
         'Modules\Administration\Commands\ShowUser'    => 'Modules\Administration\Commands\Handler\ShowUser',
         'Modules\Administration\Commands\UpdateUser'  => 'Modules\Administration\Commands\Handler\UpdateUser',
         'Modules\Administration\Commands\DestroyUser' => 'Modules\Administration\Commands\Handler\DestroyUser',
+        // Groups Admin Commands
+        'Modules\Administration\Commands\IndexGroup'   => 'Modules\Administration\Commands\Handler\IndexGroup',
+        'Modules\Administration\Commands\StoreGroup'   => 'Modules\Administration\Commands\Handler\StoreGroup',
+        'Modules\Administration\Commands\ShowGroup'    => 'Modules\Administration\Commands\Handler\ShowGroup',
+        'Modules\Administration\Commands\UpdateGroup'  => 'Modules\Administration\Commands\Handler\UpdateGroup',
+        'Modules\Administration\Commands\DestroyGroup' => 'Modules\Administration\Commands\Handler\DestroyGroup',
+        // Groups Admin Commands
+        'Modules\Administration\Commands\IndexRole'   => 'Modules\Administration\Commands\Handler\IndexRole',
+        'Modules\Administration\Commands\StoreRole'   => 'Modules\Administration\Commands\Handler\StoreRole',
+        'Modules\Administration\Commands\ShowRole'    => 'Modules\Administration\Commands\Handler\ShowRole',
+        'Modules\Administration\Commands\UpdateRole'  => 'Modules\Administration\Commands\Handler\UpdateRole',
+        'Modules\Administration\Commands\DestroyRole' => 'Modules\Administration\Commands\Handler\DestroyRole',
     ];
 
     /**
@@ -136,9 +156,13 @@ class AdministrationServiceProvider extends ServiceProvider
     private function registerCommandsHandlerBindings(){
         if( $this->app->environment() === 'testing' ){ // TODO: Move to phpunit's App bootstrap
             $this->registerUserRepositoryForTesting();
+            $this->registerGroupRepositoryForTesting();
+            $this->registerRoleRepositoryForTesting();
             return;
         }else{
             $this->registerUserRepository();
+            $this->registerGroupRepository();
+            $this->registerRoleRepository();
             $commandsHandlers = $this->commandsHandlers;
         }
 
@@ -154,12 +178,43 @@ class AdministrationServiceProvider extends ServiceProvider
     }
 
     private function registerUserRepositoryForTesting(){
-        $this->app->bind('Modules\Administration\Repositories\Repository',
+        $this->app->bind('Modules\Administration\Repositories\UserRepository',
             'Modules\Administration\Repositories\ArrayRepository\User');
     }
 
+    private function registerGroupRepositoryForTesting(){
+        $this->app->bind('Modules\Administration\Repositories\GroupRepository',
+            'Modules\Administration\Repositories\ArrayRepository\Group');
+    }
+
+    private function registerRoleRepositoryForTesting(){
+        $this->app->bind('Modules\Administration\Repositories\RoleRepository',
+            'Modules\Administration\Repositories\ArrayRepository\Role');
+    }
+
     private function registerUserRepository(){
-        $this->app->bind('Modules\Administration\Repositories\Repository',
-            'Modules\Administration\Repositories\Eloquent\User');
+        /*$this->app->bind('Modules\Administration\Repositories\UserRepository',
+            'Modules\Administration\Repositories\Eloquent\User');*/
+        $this->app->when(IndexUser::class)->needs(Repository::class)->give(User::class);
+        $this->app->when(StoreUser::class)->needs(Repository::class)->give(User::class);
+        $this->app->when(ShowUser::class)->needs(Repository::class)->give(User::class);
+        $this->app->when(UpdateUser::class)->needs(Repository::class)->give(User::class);
+        $this->app->when(DestroyUser::class)->needs(Repository::class)->give(User::class);
+    }
+
+    private function registerGroupRepository(){
+        $this->app->when(IndexGroup::class)->needs(Repository::class)->give(Group::class);
+        $this->app->when(StoreGroup::class)->needs(Repository::class)->give(Group::class);
+        $this->app->when(ShowGroup::class)->needs(Repository::class)->give(Group::class);
+        $this->app->when(UpdateGroup::class)->needs(Repository::class)->give(Group::class);
+        $this->app->when(DestroyGroup::class)->needs(Repository::class)->give(Group::class);
+    }
+
+    private function registerRoleRepository(){
+        $this->app->when(IndexRole::class)->needs(Repository::class)->give(Role::class);
+        $this->app->when(StoreRole::class)->needs(Repository::class)->give(Role::class);
+        $this->app->when(ShowRole::class)->needs(Repository::class)->give(Role::class);
+        $this->app->when(UpdateRole::class)->needs(Repository::class)->give(Role::class);
+        $this->app->when(DestroyRole::class)->needs(Repository::class)->give(Role::class);
     }
 }

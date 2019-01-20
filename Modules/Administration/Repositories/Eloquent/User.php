@@ -32,6 +32,13 @@ class User extends Model implements Repository
         'APELLIDOS'
     ];
 
+    protected static $attributes2fields = [
+        'id' => 'ID_USUARIO',
+        'login' => 'USUARIO_RED',
+        'name' => 'NOMBRE',
+        'surname' => 'APELLIDOS'
+    ];
+
     public function delete()
     {
         if( $this->id == 0) { // Administrator user created during migrations
@@ -42,7 +49,7 @@ class User extends Model implements Repository
     }
 
     /**
-     * The groups that belong to the user.
+     * The groups that user belongs to.
      */
     public function groups()
     {
@@ -93,6 +100,11 @@ class User extends Model implements Repository
     public function setSurnameAttribute($surname)
     {
         $this->APELLIDOS = $surname;
+    }
+
+    public static function getFieldByAttribute($attribute)
+    {
+        return self::$attributes2fields[$attribute];
     }
 
     private function tmp(){

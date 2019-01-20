@@ -14,6 +14,8 @@ Route::prefix('Administration')
      ->get('/test', 'Modules\Administration\Http\Controllers\Api\V1\AdministrationController@index');
 */
 
+//Route::pattern('id', '[0-9]+');
+
 // TODO: Move to api
 
 Route::group([
@@ -21,13 +23,15 @@ Route::group([
     'middleware' => ['web'], // TODO: auth:api
     'namespace' => 'Modules\Administration\Http\Controllers\Api\V1',
     'prefix' => 'v1/admin',
-    'as' => 'apiv1.admin.'], function () {
+    'as' => 'apiv1.admin.',
+    'where' => ['id', '[0-9]+'],
+    ], function () {
+    Route::get('users/{criteria}/criteria', 'UsersController@index')->name('users.criteria');
+    Route::get('groups/{criteria}/criteria', 'GroupsController@index')->name('groups.criteria');
+    Route::get('roles/{criteria}/criteria', 'RolesController@index')->name('roles.criteria');
     Route::apiResource('users', 'UsersController'/*, ['except' => ['index']]*/)->parameters(['users' => 'id']);
-    //Route::get('users/{criteria?}', 'UsersController@index')->name('users.index');
-    /*Route::apiResource('groups', 'GroupsController');
-    Route::apiResource('roles', 'RolesController');*/
-    /*Route::apiResource('companies', 'CompaniesController');
-    Route::apiResource('employees', 'EmployeesController');*/
+    Route::apiResource('groups', 'GroupsController'/*, ['except' => ['index']]*/)->parameters(['groups' => 'id']);
+    Route::apiResource('roles', 'RolesController'/*, ['except' => ['index']]*/)->parameters(['roles' => 'id']);
 });
 
 // TODO: Move to web
@@ -37,13 +41,15 @@ Route::group([
     'middleware' => ['web'],
     'namespace' => 'Modules\Administration\Http\Controllers',
     'prefix' => 'admin',
-    'as' => 'admin.'], function () {
-    //Route::get('users/{criteria?}', 'UsersController@index')->name('users.index');
+    'as' => 'admin.',
+    'where' => ['id', '[0-9]+'],
+    ], function () {
+    Route::get('users/{criteria}/criteria', 'UsersController@index')->name('users.criteria');
+    Route::get('groups/{criteria}/criteria', 'GroupsController@index')->name('groups.criteria');
+    Route::get('roles/{criteria}/criteria', 'RolesController@index')->name('roles.criteria');
     Route::resource('users', 'UsersController'/*, ['except' => ['index']]*/)->parameters(['users' => 'id']);
-    /*Route::apiResource('groups', 'GroupsController');
-    Route::apiResource('roles', 'RolesController');*/
-    /*Route::apiResource('companies', 'CompaniesController');
-    Route::apiResource('employees', 'EmployeesController');*/
+    Route::resource('groups', 'GroupsController'/*, ['except' => ['index']]*/)->parameters(['groups' => 'id']);
+    Route::resource('roles', 'RolesController'/*, ['except' => ['index']]*/)->parameters(['roles' => 'id']);
 });
 
 Route::get('test/', 'Modules\Administration\Http\Controllers\Api\V1\UsersController@test');

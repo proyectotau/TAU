@@ -13,8 +13,6 @@ namespace Modules\Administration\Tests\Entities;
 
 trait ConfigTestValues
 {
-    private $debug = false;
-
     //private $testPrimaryKey = 10;
 
     private $testUserName = 'juan.español';

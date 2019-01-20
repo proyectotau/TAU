@@ -1,5 +1,7 @@
 @extends('administration::layouts.master')
 
+@section('title', 'Show User - Module Administration')
+
 @section('content')
 
     <div class="card">

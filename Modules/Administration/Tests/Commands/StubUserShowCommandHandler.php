@@ -17,7 +17,7 @@ use Modules\Administration\Commands\Handler\Handler;
  *
  * @package Modules\Administration\Tests\Commands
  */
-class StubShowCommandHandler implements Handler // TODO: extends BaseHandler with __toString return get_class();
+class StubUserShowCommandHandler implements Handler // TODO: extends BaseHandler with __toString return get_class();
 {
     /*protected $user;
 
@@ -29,7 +29,7 @@ class StubShowCommandHandler implements Handler // TODO: extends BaseHandler wit
     public function handle($command)
     {
         $result = [
-            'id'      => 1,
+            'id'      => $command->id,
             'name'    => 'The Name',
             'surname' => 'The Surname'
         ];

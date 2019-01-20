@@ -18,10 +18,10 @@ class UsersController extends Controller
     public function index(Request $request)
     {
         $users = AdminUsersManager::index([
-            /* 'criteria'   => $request->json('criteria') */ // TODO
+            'criteria'   => $request->criteria
         ])->toObject();
 
-        return view('administration::index', compact('users'));
+        return view('administration::users.index', compact('users'));
     }
 
     /**
@@ -30,7 +30,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('administration::create');
+        return view('administration::users.create');
     }
 
     /**
@@ -59,7 +59,7 @@ class UsersController extends Controller
             'id' => $id
         ])->toObject();
 
-        return view('administration::show', compact('user'));
+        return view('administration::users.show', compact('user'));
     }
 
     /**
@@ -72,7 +72,7 @@ class UsersController extends Controller
             'id' => $id
         ])->toObject();
 
-        return view('administration::edit', compact('user'));
+        return view('administration::users.edit', compact('user'));
     }
 
     /**

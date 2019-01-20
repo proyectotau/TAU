@@ -6,6 +6,7 @@ use Tests\TestCase;
 use Tests\DetectRepeatedQueries;
 use Illuminate\Container\Container;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+
 use Modules\Administration\Tests\Entities\ConfigTestValues;
 use Modules\Administration\Repositories\Eloquent\User;
 use Modules\Administration\Repositories\Eloquent\Group;
@@ -24,6 +25,7 @@ class UserEntityTest extends TestCase
         $this->enableQueryLog();
 
         $app = Container::getInstance();
+
         $this->app->bind('Modules\Administration\Entities\User',
             'Modules\Administration\Repositories\Eloquent\User');
         $this->app->bind('Modules\Administration\Entities\Group',
@@ -46,9 +48,6 @@ class UserEntityTest extends TestCase
             'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
-        if ($this->debug) {
-            dd(User::find($testPrimaryKey));
-        }
 
         $this->assertNotNull($user, 'Can not create Administration\Entities\User');
 
@@ -62,7 +61,7 @@ class UserEntityTest extends TestCase
         $this->assertNotRepeatedQueries();
     }
 
-    public function test_User_BelongsTo_No_Groups()
+    public function test_User_BelongsTo_No_Group()
     {
         $testPrimaryKey = $this->testPrimaryKey;
 
@@ -78,9 +77,6 @@ class UserEntityTest extends TestCase
             'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
-        if ($this->debug) {
-            dd(User::find($testPrimaryKey));
-        }
 
         $this->assertDatabaseMissing('usuario_grupo', [
             'ID_USUARIO' => $testPrimaryKey
@@ -89,7 +85,7 @@ class UserEntityTest extends TestCase
         $this->assertNotRepeatedQueries();
     }
 
-    public function test_User_BelongsTo_A_One_Group_Only()
+    public function test_User_BelongsTo_One_Group_Only()
     {
         $testPrimaryKey = $this->testPrimaryKey;
 
@@ -105,9 +101,6 @@ class UserEntityTest extends TestCase
             'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
-        if ($this->debug) {
-            dd(User::find($testPrimaryKey));
-        }
 
         $group = factory(Group::class)->create([
             'ID_GRUPO' => $testPrimaryKey,
@@ -119,9 +112,6 @@ class UserEntityTest extends TestCase
             'NOMBRE' => $this->testGroupName,
             'DESCRIPCION' => $this->testGroupDescription
         ]);
-        if ($this->debug) {
-            dd(Group::find($testPrimaryKey));
-        }
 
         // add user membership
         $user->groups()->attach($group->ID_GRUPO); // $testPrimaryKey
@@ -153,9 +143,6 @@ class UserEntityTest extends TestCase
             'NOMBRE' => $this->testFirstName,
             'APELLIDOS' => $this->testLastName
         ]);
-        if ($this->debug) {
-            dd(User::find($testPrimaryKey));
-        }
 
         $groupA = factory(Group::class)->create([
             'ID_GRUPO' => $testPrimaryKey,
@@ -167,9 +154,6 @@ class UserEntityTest extends TestCase
             'NOMBRE' => $this->testGroupName.'A',
             'DESCRIPCION' => $this->testGroupDescription . 'A'
         ]);
-        if ($this->debug) {
-            dd(Group::find($testPrimaryKey));
-        }
 
         $groupB = factory(Group::class)->create([
             'ID_GRUPO' => $testPrimaryKey+1,
@@ -181,16 +165,13 @@ class UserEntityTest extends TestCase
             'NOMBRE' => $this->testGroupName.'B',
             'DESCRIPCION' => $this->testGroupDescription . 'B'
         ]);
-        if ($this->debug) {
-            dd(Group::find($testPrimaryKey + 1));
-        }
 
         //TODO FAIL here $this->assertNotRepeatedQueries();
 
-        // add relations
+        // add relations users belongs to group
         $user->groups()->attach([
 			$groupA->ID_GRUPO,  // $testPrimaryKey
-        	$groupB->ID_GRUPO,   // $testPrimaryKey + 1
+        	$groupB->ID_GRUPO,  // $testPrimaryKey + 1
 		]);
         
         $this->assertDatabaseHas('usuario_grupo', [
@@ -210,7 +191,5 @@ class UserEntityTest extends TestCase
 
         $user = User::find(0);
         $user->delete();
-
-        $this->assertNotRepeatedQueries();
     }
 }

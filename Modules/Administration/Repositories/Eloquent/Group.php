@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Administration\Repositories\Repository;
 use Modules\Administration\Exceptions\EntityException;
 
+//TODO: MUST implements Repository instead of extends Illuminate\Database\Eloquent\Model
+//TODO: interface Respository in Modules/Administration/Repositories/
+//TODO: in Modules/Administration/Repositories/Eloquent
 class Group extends Model implements Repository
 {
     public $incrementing = false;
@@ -27,9 +30,15 @@ class Group extends Model implements Repository
         'DESCRIPCION'
     ];
 
+	protected static $attributes2fields = [
+        'id' => 'ID_GRUPO',
+        'name' => 'NOMBRE',
+        'description' => 'DESCRIPCION'
+    ];
+
     public function delete()
     {
-        if( $this->id == 0) { // Administrator group created during migrations
+        if( $this->id == 0) { // Administration group created during migrations
             throw new EntityException("Group with id == 0 can't be deleted");
         }
 
@@ -65,5 +74,24 @@ class Group extends Model implements Repository
 	public function getDescriptionAttribute()
     {
         return $this->DESCRIPCION;
+    }
+	public function setIdAttribute($id)
+    {
+        $this->ID_GRUPO = $id;
+    }
+
+    public function setNameAttribute($name)
+    {
+        $this->NOMBRE = $name;
+    }
+
+    public function setDescriptionAttribute($description)
+    {
+        $this->DESCRIPCION = $description;
+    }
+
+	public static function getFieldByAttribute($attribute)
+    {
+        return self::$attributes2fields[$attribute];
     }
 }

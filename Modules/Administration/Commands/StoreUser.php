@@ -3,4 +3,4 @@
 namespace Modules\Administration\Commands;
 
 
-class StoreUser extends User{}
+class StoreUser extends CommandBase{}

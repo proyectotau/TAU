@@ -5,10 +5,10 @@ namespace Modules\Administration\Commands;
 use \JsonSerializable;
 
 /**
- * Class Command User is a DTO
+ * Class CommandBase is a DTO
  * @package Modules\Administration\Commands
  */
-class User implements JsonSerializable {
+class CommandBase implements JsonSerializable {
 
     // TODO: rename params as a ValueObject with _magic members
     private $data = [];

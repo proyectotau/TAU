@@ -15,8 +15,10 @@ class UserViewsTest extends DuskTestCase
     //use DatabaseMigrations;
     use DatabaseTransactions;
 
-    public function skip_test_createuser_view()
+    public function test_createuser_view()
     {
+        $this->markTestSkipped('For purpose to test the tests only');
+
         $this->browse(function (Browser $browser) {
             $browser->visit(new CreateUser())
                     ->assertPresent('@login')
@@ -69,7 +71,9 @@ class UserViewsTest extends DuskTestCase
         });
     }
 
-    public function skip_test_last_id(){
+    public function test_last_id(){
+        $this->markTestSkipped('For purpose to test the tests only');
+
         $this->browse(function (Browser $browser){
             $browser->visit(new IndexUser())
                 ->assertSeeIn('@dusk-last-id', '1')

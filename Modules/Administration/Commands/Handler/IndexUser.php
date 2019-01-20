@@ -8,6 +8,7 @@
 
 namespace Modules\Administration\Commands\Handler;
 
+use Modules\Administration\Repositories\Eloquent\User;
 use Modules\Administration\Repositories\Repository;
 
 class IndexUser implements Handler
@@ -21,9 +22,15 @@ class IndexUser implements Handler
 
     public function handle($command)
     {
-        // TODO: Extract criteria from $command and use find() instead of all()
-        //$user = $this->user->find($command->criteria);
-        $users = $this->user->all();
+        if ($command->criteria == null){
+            $users = $this->user->get();
+        } else {
+            $users = $this->user
+                ->  where(User::getFieldByAttribute('login'), 'like', '%'.$command->criteria.'%')
+                ->orWhere(User::getFieldByAttribute('name'), 'like', '%'.$command->criteria.'%')
+                ->orWhere(User::getFieldByAttribute('surname'), 'like', '%'.$command->criteria.'%')
+                ->get();
+        }
         return $users;
     }
 
