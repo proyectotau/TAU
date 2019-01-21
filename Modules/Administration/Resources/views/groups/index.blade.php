@@ -8,7 +8,10 @@
         <h2 class="card-header">
             List of Groups [{{count($groups)}}]
         </h2>
+
         <div class="card-body">
+           @include('administration::partials._searchByCriteria', ['onObject' => 'groups', 'criteria' => $criteria ])
+
             <table class="table table-striped table-bordered">
                 <thead>
                 <tr>

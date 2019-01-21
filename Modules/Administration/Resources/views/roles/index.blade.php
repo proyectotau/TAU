@@ -9,6 +9,8 @@
             List of Roles [{{count($roles)}}]
         </h2>
         <div class="card-body">
+           @include('administration::partials._searchByCriteria', ['onObject' => 'roles', 'criteria' => $criteria ])
+
             <table class="table table-striped table-bordered">
                 <thead>
                 <tr>

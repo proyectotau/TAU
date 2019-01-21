@@ -44,9 +44,9 @@ Route::group([
     'as' => 'admin.',
     'where' => ['id', '[0-9]+'],
     ], function () {
-    Route::get('users/{criteria}/criteria', 'UsersController@index')->name('users.criteria');
-    Route::get('groups/{criteria}/criteria', 'GroupsController@index')->name('groups.criteria');
-    Route::get('roles/{criteria}/criteria', 'RolesController@index')->name('roles.criteria');
+    Route::get('users/{criteria?}/criteria', 'UsersController@index')->name('users.criteria');
+    Route::get('groups/{criteria?}/criteria', 'GroupsController@index')->name('groups.criteria');
+    Route::get('roles/{criteria?}/criteria', 'RolesController@index')->name('roles.criteria');
     Route::resource('users', 'UsersController'/*, ['except' => ['index']]*/)->parameters(['users' => 'id']);
     Route::resource('groups', 'GroupsController'/*, ['except' => ['index']]*/)->parameters(['groups' => 'id']);
     Route::resource('roles', 'RolesController'/*, ['except' => ['index']]*/)->parameters(['roles' => 'id']);

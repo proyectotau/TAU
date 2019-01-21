@@ -10,6 +10,8 @@
         </h2>
 
         <div class="card-body">
+           @include('administration::partials._searchByCriteria', ['onObject' => 'users', 'criteria' => $criteria ])
+
             <table class="table table-striped table-bordered">
                 <thead>
                 <tr>
@@ -54,7 +56,6 @@
                 </tbody>
             </table>
         </div>
-
     </div>
 
 @stop

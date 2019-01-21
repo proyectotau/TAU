@@ -17,11 +17,12 @@ class GroupsController extends Controller
      */
     public function index(Request $request)
     {
+        $criteria  = $request->criteria;
         $groups = AdminGroupsManager::index([
-            'criteria'   => $request->criteria
+            'criteria'   => $criteria
         ])->toObject();
 
-        return view('administration::groups.index', compact('groups'));
+        return view('administration::groups.index', compact('groups', 'criteria'));
     }
 
     /**

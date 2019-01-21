@@ -17,11 +17,12 @@ class RolesController extends Controller
      */
     public function index(Request $request)
     {
+        $criteria = $request->criteria;
         $roles = AdminRolesManager::index([
-            'criteria'   => $request->criteria // TODO
+            'criteria'   => $criteria
         ])->toObject();
 
-        return view('administration::roles.index', compact('roles'));
+        return view('administration::roles.index', compact('roles', 'criteria'));
     }
 
     /**

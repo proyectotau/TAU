@@ -17,11 +17,12 @@ class UsersController extends Controller
      */
     public function index(Request $request)
     {
+        $criteria  = $request->criteria;
         $users = AdminUsersManager::index([
-            'criteria'   => $request->criteria
+            'criteria'   => $criteria
         ])->toObject();
 
-        return view('administration::users.index', compact('users'));
+        return view('administration::users.index', compact('users', 'criteria'));
     }
 
     /**
