@@ -91,4 +91,21 @@ class RolesController extends Controller
 
         return $response;
     }
+
+    public function rolesGroups(Request $request){
+        $response = AdminRolesManager::rolesGroups([
+            'id' => $request->json('id'),
+        ])->toJson();
+
+        return $response;
+    }
+
+    public function rolesGroupsNotIn(Request $request){
+        $response = AdminRolesManager::rolesGroupsNotIn([
+            'id' => $request->json('id'),
+        ])->toJson();
+
+        return $response;
+    }
+
 }

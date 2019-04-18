@@ -30,7 +30,6 @@ interface Repository extends ArrayAccess, Arrayable, Jsonable, JsonSerializable,
         Concerns\HidesAttributes,
         Concerns\GuardsAttributes;*/
 
-
     /**
      * Dynamically retrieve attributes on the model.
      */

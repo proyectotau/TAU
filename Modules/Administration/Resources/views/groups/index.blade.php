@@ -8,7 +8,6 @@
         <h2 class="card-header">
             List of Groups [{{count($groups)}}]
         </h2>
-
         <div class="card-body">
            @include('administration::partials._searchByCriteria', ['onObject' => 'groups', 'criteria' => $criteria ])
 
@@ -18,7 +17,7 @@
                     <td>Id</td>
                     <td>Name</td>
                     <td>Description</td>
-                    <td colspan="3">Actions</td>
+                    <td colspan="5">Actions</td>
                 </tr>
                 </thead>
                 <tbody>
@@ -48,6 +47,18 @@
                                         {{ insertTagForDuskTesting('button-destroy', $group->id, 1) }}
                                     >Delete this Group</button>
                             </form>
+                        </td>
+                        <td>
+                            <a class="btn btn-small btn-info"
+                               href="{{ route('admin.groups.users', $group->id) }}"
+                                    {{ insertTagForDuskTesting('link-groupsusers', $group->id, 1) }}
+                            >Group's Users</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-small btn-info"
+                               href="{{ route('admin.groups.roles', $group->id) }}"
+                                    {{ insertTagForDuskTesting('link-groupsroles', $group->id, 1) }}
+                            >Group's Roles</a>
                         </td>
                     </tr>
                 @endforeach

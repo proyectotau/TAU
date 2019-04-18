@@ -23,10 +23,11 @@ class UpdateRole implements Handler
     {
         $role = $this->role->find($command->id);
 
-        $this->role->name = $command->name;
-        $this->role->description = $command->description;
-        $this->role->save();
+        $role->name = $command->name;
+        $role->description = $command->description;
 
-        return $this->role;
+        $role->update();
+
+        return $role;
     }
 }

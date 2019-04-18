@@ -61,6 +61,38 @@ class UserEntityTest extends TestCase
         $this->assertNotRepeatedQueries();
     }
 
+    public function test_update_User_Entity()
+    {
+        $this->withoutExceptionHandling();
+
+        $testPrimaryKey = $this->testPrimaryKey;
+
+        $user = factory(User::class)->create([
+            'ID_USUARIO' => $testPrimaryKey,
+            'USUARIO_RED' => $this->testUserName,
+            'NOMBRE' => $this->testFirstName,
+            'APELLIDOS' => $this->testLastName
+        ]);
+
+        $this->assertNotNull($user, 'Can not create Administration\Entities\User');
+
+        $user = $user->find($testPrimaryKey);
+        $user->login =$this->testUserName.'X';
+        $user->name =$this->testFirstName.'X';
+        $user->surname = $this->testLastName.'X';
+
+        $user->update();
+
+        $this->assertDatabaseHas('usuario', [
+            'ID_USUARIO' => $testPrimaryKey,
+            'USUARIO_RED' => $this->testUserName.'X',
+            'NOMBRE' => $this->testFirstName.'X',
+            'APELLIDOS' => $this->testLastName.'X'
+        ]);
+
+        $this->assertNotRepeatedQueries();
+    }
+
     public function test_User_BelongsTo_No_Group()
     {
         $testPrimaryKey = $this->testPrimaryKey;

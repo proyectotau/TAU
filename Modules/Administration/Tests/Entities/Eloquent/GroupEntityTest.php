@@ -57,6 +57,35 @@ class GroupEntityTest extends TestCase
         $this->assertNotRepeatedQueries();
     }
 
+    public function test_update_Group_Entity()
+    {
+        $this->withoutExceptionHandling();
+
+        $testPrimaryKey = $this->testPrimaryKey;
+
+        $group = factory(Group::class)->create([
+            'ID_GRUPO' => $testPrimaryKey,
+            'NOMBRE' => $this->testGroupName,
+            'DESCRIPCION' => $this->testGroupDescription
+        ]);
+
+        $this->assertNotNull($group, 'Can not create Administration\Entities\Group');
+
+        $group = $group->find($testPrimaryKey);
+        $group->name =$this->testGroupName.'X';
+        $group->description = $this->testGroupDescription.'X';
+
+        $group->update();
+
+        $this->assertDatabaseHas('grupo', [
+            'ID_GRUPO' => $testPrimaryKey,
+            'NOMBRE' => $this->testGroupName.'X',
+            'DESCRIPCION' => $this->testGroupDescription.'X'
+        ]);
+
+        $this->assertNotRepeatedQueries();
+    }
+
     public function test_Group_Has_No_User()
 	{
         $testPrimaryKey = $this->testPrimaryKey;

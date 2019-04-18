@@ -7,15 +7,18 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Joselfonseca\LaravelTactician\Bus as CommandBus;
 use Illuminate\Http\Response;
 use Tests\TestCase;
+use Tests\DetectRepeatedQueries;
 
 class UserControllerTest extends TestCase
 {
     use DatabaseTransactions;
+    use DetectRepeatedQueries;
 
     private function bindsCommandToHandler(array $commandsHandlers)
     {
         $bus = $this->app->make(CommandBus::class);
         foreach ($commandsHandlers as $command => $handler) {
+            echo("$command => $handler");
             $bus->addHandler($command, $handler);
         }
         $this->app->instance('admin.commandbus', $bus);
@@ -86,7 +89,9 @@ class UserControllerTest extends TestCase
 
         $response
             ->assertStatus(Response::HTTP_OK)
-            ->assertJson([]);
+            ->assertExactJson([
+                'criteria' => null
+            ]);
     }
 
     public function test_UsersController_index_with_criteria(){
@@ -204,5 +209,114 @@ class UserControllerTest extends TestCase
             ->assertJson([
                 'id'    => 1
             ]);
+    }
+
+    public function test_UsersController_All_Groups(){
+        $this->bindsCommandToHandler([
+            'Modules\Administration\Commands\UsersGroups' =>
+            'Modules\Administration\Commands\Handler\UsersGroups', // Real, not stub
+        ]);
+
+        $url = route('apiv1.admin.users.groups', [
+            'id'      => 0
+        ]);
+        $response = $this->json('GET', $url, [
+            'id'      => 0
+        ]);
+
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJsonFragment([
+                'ID_GRUPO'    => 0,
+                'NOMBRE'      => 'Administradores',
+                'DESCRIPCION' => 'Grupo de Administradores de TAU'
+            ]);
+
+        $this->assertNotRepeatedQueries();
+    }
+
+    public function test_UsersController_Available_Groups(){
+        $this->withoutExceptionHandling();
+
+        $this->bindsCommandToHandler([
+            'Modules\Administration\Commands\UsersGroupsNotIn' =>
+            'Modules\Administration\Commands\Handler\UsersGroupsNotIn', // Real, not stub
+        ]);
+
+        $url = route('apiv1.admin.users.groupsnotin', [
+            'id'      => 0
+        ]);
+        $response = $this->json('GET', $url, [
+            'id'      => 0
+        ]);
+
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJsonFragment([
+                'ID_GRUPO'    => 1,
+                'NOMBRE'      => 'Base',
+                'DESCRIPCION' => 'Grupo Base'
+            ]);
+
+        $this->assertNotRepeatedQueries();
+    }
+
+    public function test_UsersController_Sync_New_List_Of_Groups(){
+        $this->withoutExceptionHandling();
+
+        $this->bindsCommandToHandler([
+            'Modules\Administration\Commands\UsersGroupsUpdate' =>
+            'Modules\Administration\Commands\Handler\UsersGroupsUpdate', // Real, not stub
+        ]);
+
+        $url = route('apiv1.admin.users.groups.update', [
+            'id'      => 0
+        ]);
+        $response = $this->json('PUT', $url, [
+            'id'      => 0,
+            'memberOf' => [
+                0 => 0,
+                1 => 1,
+            ]
+        ]);
+
+        $response
+            ->assertStatus(Response::HTTP_OK)
+        /*->assertJsonFragment( // TODO: I foresaw the future ;-(
+                [
+                    [
+                        [
+                            "DESCRIPCION" => "Grupo Base",
+                            "ID_GRUPO" => 1,
+                            "NOMBRE" => "Base",
+                            "pivot" => [
+                                "ID_GRUPO" => 1,
+                                "ID_USUARIO" => 0,
+                            ],
+                        ],
+                        [
+                            "DESCRIPCION" => "Grupo de Administradores de TAU",
+                            "ID_GRUPO" => 0,
+                            "NOMBRE" => "Administradores",
+                            "pivot" => [
+                                "ID_GRUPO" => 0,
+                                "ID_USUARIO" => 0,
+                            ],
+                        ],
+                    ],
+                ]
+            );*/
+            ->assertJsonFragment([
+                'ID_GRUPO'    => 0,
+                'NOMBRE'      => 'Administradores',
+                'DESCRIPCION' => 'Grupo de Administradores de TAU'
+            ])->assertJsonFragment([
+                'ID_GRUPO'    => 1,
+                'NOMBRE'      => 'Base',
+                'DESCRIPCION' => 'Grupo Base'
+            ]);
+
+
+        $this->assertNotRepeatedQueries();
     }
 }

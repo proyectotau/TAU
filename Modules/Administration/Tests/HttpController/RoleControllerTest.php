@@ -72,7 +72,9 @@ class RoleControllerTest extends TestCase
 
         $response
             ->assertStatus(Response::HTTP_OK)
-            ->assertJson([]);
+            ->assertExactJson([
+                'criteria' => null
+            ]);
     }
 
     public function test_RolesController_index_with_criteria(){
@@ -92,7 +94,7 @@ class RoleControllerTest extends TestCase
 
         $response
             ->assertStatus(Response::HTTP_OK)
-            ->assertJson([
+            ->assertExactJson([
                 'criteria' => 'ALL'
             ]);
     }
@@ -187,5 +189,86 @@ class RoleControllerTest extends TestCase
             ->assertJson([
                 'id'    => 1
             ]);
+    }
+
+    public function test_RolesController_All_Groups(){
+        $this->withoutExceptionHandling();
+
+        $this->bindsCommandToHandler([
+            'Modules\Administration\Commands\RolesGroups' =>
+            'Modules\Administration\Commands\Handler\RolesGroups', // Real, not stub
+        ]);
+
+        $url = route('apiv1.admin.roles.groups', [
+            'id'      => 0
+        ]);
+        $response = $this->json('GET', $url, [
+            'id'      => 0
+        ]);
+
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJsonFragment([
+                'ID_GRUPO'    => 0,
+                'NOMBRE'      => 'Administradores',
+                'DESCRIPCION' => 'Grupo de Administradores de TAU'
+            ]);
+
+        $this->assertNotRepeatedQueries();
+    }
+
+    public function test_RolesController_Available_Group(){
+        $this->withoutExceptionHandling();
+
+        $this->bindsCommandToHandler([
+            'Modules\Administration\Commands\RolesGroupsNotIn' =>
+            'Modules\Administration\Commands\Handler\RolesGroupsNotIn', // Real, not stub
+        ]);
+
+        $url = route('apiv1.admin.roles.groupsnotin', [
+            'id'      => 0
+        ]);
+        $response = $this->json('GET', $url, [
+            'id'      => 0
+        ]);
+
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJsonFragment([
+                'ID_GRUPO'    => 1,
+                'NOMBRE'      => 'Base',
+                'DESCRIPCION' => 'Grupo Base'
+            ]);
+
+        $this->assertNotRepeatedQueries();
+    }
+
+    public function test_RolesController_All_Modules(){
+        $this->markTestSkipped('test_RolesController_All_Modules');
+        return;
+
+        $this->withoutExceptionHandling();
+
+        $this->bindsCommandToHandler([
+            'Modules\Administration\Commands\RolesModules' =>
+            'Modules\Administration\Commands\Handler\RolesModules', // Real, not stub
+        ]);
+
+        $url = route('apiv1.admin.roles.modules', [
+            'id'      => 1
+        ]);
+        $response = $this->json('GET', $url, [
+            'id'      => 1
+        ]);
+
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJsonFragment([
+                'ID_GRUPO'    => 0,
+                'NOMBRE'      => 'Administradores',
+                'DESCRIPCION' => 'Grupo de Administradores de TAU'
+            ]);
+
+        $this->assertNotRepeatedQueries();
     }
 }

@@ -86,7 +86,9 @@ class GroupControllerTest extends TestCase
 
         $response
             ->assertStatus(Response::HTTP_OK)
-            ->assertJson([]);
+            ->assertExactJson([
+                'criteria' => null
+            ]);
     }
 
     public function test_GroupsController_index_with_criteria(){
@@ -106,7 +108,7 @@ class GroupControllerTest extends TestCase
 
         $response
             ->assertStatus(Response::HTTP_OK)
-            ->assertJson([
+            ->assertExactJson([
                 'criteria' => 'ALL'
             ]);
     }
@@ -142,17 +144,17 @@ class GroupControllerTest extends TestCase
         ]);
 
         $url = route('apiv1.admin.groups.show', [
-            'id' => 1
+            'id' => 0
         ]);
 
         $response = $this->json('GET', $url, [
-                'id' => 1
+                'id' => 0
             ]);
 
         $response
             ->assertStatus(Response::HTTP_OK)
             ->assertJson([
-                'id'      => 1,
+                'id'      => 0,
                 'name'    => 'The Name',
                 'description' => 'The Description'
             ]);
@@ -201,5 +203,176 @@ class GroupControllerTest extends TestCase
             ->assertJson([
                 'id'    => 1
             ]);
+    }
+
+    public function test_GroupsController_Users_Members(){
+        $this->withoutExceptionHandling();
+
+        $this->bindsCommandToHandler([
+            'Modules\Administration\Commands\GroupsUsers' =>
+            'Modules\Administration\Commands\Handler\GroupsUsers', // Real, not stub
+        ]);
+
+        $url = route('apiv1.admin.groups.users', [
+            'id'      => 0
+        ]);
+
+        $response = $this->json('GET', $url, [
+            'id'      => 0
+        ]);
+
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJsonFragment([
+                'ID_USUARIO' => 0,
+                'USUARIO_RED' => 'Administrador',
+                'NOMBRE' => 'Administrador',
+                'APELLIDOS' => 'TAU',
+            ]);
+    }
+
+    public function test_GroupsController_Users_Not_Members(){
+        $this->withoutExceptionHandling();
+
+        $this->bindsCommandToHandler([
+            'Modules\Administration\Commands\GroupsUsersNotIn' =>
+            'Modules\Administration\Commands\Handler\GroupsUsersNotIn', // Real, not stub
+        ]);
+
+        $url = route('apiv1.admin.groups.usersnotin', [
+            'id'      => 0
+        ]);
+
+        $response = $this->json('GET', $url, [
+            'id'      => 0
+        ]);
+
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJsonMissing([
+                'ID_USUARIO' => 0,
+                'USUARIO_RED' => 'Administrador',
+                'NOMBRE' => 'Administrador',
+                'APELLIDOS' => 'TAU',
+            ]);
+    }
+
+    public function test_GroupController_Sync_New_List_Of_Users(){
+        $this->withoutExceptionHandling();
+
+        $this->bindsCommandToHandler([
+            'Modules\Administration\Commands\GroupsUsersUpdate' =>
+            'Modules\Administration\Commands\Handler\GroupsUsersUpdate', // Real, not stub
+        ]);
+
+        $url = route('apiv1.admin.groups.users.update', [
+            'id'      => 0
+        ]);
+        $response = $this->json('PUT', $url, [
+            'id'      => 0,
+            'memberOf' => [
+                0 => 0,
+            ]
+        ]);
+
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJsonFragment([
+                'ID_USUARIO' => 0,
+                'USUARIO_RED' => 'Administrador',
+                'NOMBRE' => 'Administrador',
+                'APELLIDOS' => 'TAU',
+            ]);
+        /*->assertJson([
+            'id'      => 0,
+            'name'    => 'The Name',
+            'surname' => 'The Surname'
+        ]);*/
+    }
+
+    ////
+
+    public function test_GroupsController_Has_Roles(){
+        $this->withoutExceptionHandling();
+
+        $this->bindsCommandToHandler([
+            'Modules\Administration\Commands\GroupsRoles' =>
+                'Modules\Administration\Commands\Handler\GroupsRoles', // Real, not stub
+        ]);
+
+        $url = route('apiv1.admin.groups.roles', [
+            'id'      => 0
+        ]);
+
+        $response = $this->json('GET', $url, [
+            'id'      => 0
+        ]);
+
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJsonFragment([
+                'ID_PERFIL' => 0,
+                'Nombre' => 'Administracion',
+                'DESCRIPCION' => 'El grupo con este perfil puede acceder a todos los metodos de todas las clases'
+            ]);
+    }
+
+    public function test_GroupsController_Has_not_Roles(){
+        $this->withoutExceptionHandling();
+
+        $this->bindsCommandToHandler([
+            'Modules\Administration\Commands\GroupsRolesNotIn' =>
+                'Modules\Administration\Commands\Handler\GroupsRolesNotIn', // Real, not stub
+        ]);
+
+        $url = route('apiv1.admin.groups.rolesnotin', [
+            'id'      => 0
+        ]);
+
+        $response = $this->json('GET', $url, [
+            'id'      => 0
+        ]);
+
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJsonFragment([
+                'ID_PERFIL' => 1,
+                'Nombre' => 'Perfil Base',
+                'DESCRIPCION' => 'Acceso basico a los modulos iniciales usados en el Tema Guay'
+            ]);
+    }
+
+    public function test_GroupController_Sync_New_List_Of_Roles(){
+        $this->withoutExceptionHandling();
+
+        $this->bindsCommandToHandler([
+            'Modules\Administration\Commands\GroupsRolesUpdate' =>
+            'Modules\Administration\Commands\Handler\GroupsRolesUpdate', // Real, not stub
+        ]);
+
+        $url = route('apiv1.admin.groups.roles.update', [
+            'id'      => 0
+        ]);
+        $response = $this->json('PUT', $url, [
+            'id'      => 0,
+            'memberOf' => [
+                0 => 0,
+                1 => 1,
+            ]
+        ]);
+
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJsonFragment([
+                'ID_PERFIL'    => 0,
+                'Nombre'      => 'Administracion',
+                'DESCRIPCION' => 'El grupo con este perfil puede acceder a todos los metodos de todas las clases'
+            ])->assertJsonFragment([
+                'ID_PERFIL'    => 1,
+                'Nombre'      => 'Perfil Base',
+                'DESCRIPCION' => 'Acceso basico a los modulos iniciales usados en el Tema Guay'
+            ]);
+
+        $this->assertNotRepeatedQueries();
     }
 }

@@ -2,7 +2,8 @@
 
 namespace Tests;
 
-use Laravel\Dusk\TestCase as BaseTestCase;
+//use Laravel\Dusk\TestCase as BaseTestCase;
+use BeyondCode\DuskDashboard\Testing\TestCase as BaseTestCase;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\Remote\DesiredCapabilities;

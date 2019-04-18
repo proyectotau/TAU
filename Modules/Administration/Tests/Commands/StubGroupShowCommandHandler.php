@@ -29,7 +29,7 @@ class StubGroupShowCommandHandler implements Handler // TODO: extends BaseHandle
     public function handle($command)
     {
         $result = [
-            'id'      => 1,
+            'id'      => 0,
             'name'    => 'The Name',
             'description' => 'The Description'
         ];

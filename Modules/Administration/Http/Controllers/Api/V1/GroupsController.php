@@ -91,4 +91,75 @@ class GroupsController extends Controller
 
         return $response;
     }
+
+    /*
+     * Relations
+     */
+
+    /*
+     * Given a User ID, index User's Groups and User's Available Groups in a selection box
+     * @param id Group ID
+     */
+    public function groupsUsers($id){
+        $users = AdminGroupsManager::groupsUsers([
+            'id' => $id,
+        ])->toJson();
+
+        return $users;
+    }
+
+    public function groupsUsersNotIn(Request $request)
+    {
+        $users_available = AdminGroupsManager::GroupsUsersNotIn([
+            'id' => $request->id
+        ])->toJson();
+
+        return $users_available;
+    }
+
+    public function groupsUsersUpdate(Request $request){
+        $users = AdminGroupsManager::groupsUsersUpdate([
+            'id' => $request->id,
+            'memberOf' => $request->memberOf,
+        ])->toJson();
+
+        return $users;
+    }
+
+    /*
+     * Given a Group ID, index Roles that grant access to the members of that Group
+     */
+    public function groupsRoles($id){
+        $roles = AdminGroupsManager::groupsRoles([
+            'id' => $id,
+        ])->toJson();
+
+        return $roles;
+    }
+
+    /*
+     * Given a Group ID, index to Roles where Group not belongs to
+     * @param id Group ID
+     */
+    public function groupsRolesNotIn(Request $request)
+    {
+        $roles_available = AdminGroupsManager::GroupsRolesNotIn([
+            'id' => $request->id
+        ])->toJson();
+
+        return $roles_available;
+    }
+
+    /*
+     * Update new list Group's Roles for a given Group ID
+     * @param id Group ID
+     */
+    public function groupsRolesUpdate(Request $request){
+        $roles = AdminGroupsManager::groupsRolesUpdate([
+            'id' => $request->id,
+            'memberOf' => $request->memberOf,
+        ])->toJson();
+
+        return $roles;
+    }
 }

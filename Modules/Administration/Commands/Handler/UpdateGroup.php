@@ -23,10 +23,11 @@ class UpdateGroup implements Handler
     {
         $group = $this->group->find($command->id);
 
-        $this->group->name = $command->name;
-        $this->group->description = $command->description;
-        $this->group->save();
+        $group->name = $command->name;
+        $group->description = $command->description;
 
-        return $this->group;
+        $group->update();
+
+        return $group;
     }
 }

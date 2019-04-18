@@ -23,11 +23,12 @@ class UpdateUser implements Handler
     {
         $user = $this->user->find($command->id);
 
-        $this->user->login = $command->login;
-        $this->user->name = $command->name;
-        $this->user->surname = $command->surname;
-        $this->user->save();
+        $user->login = $command->login;
+        $user->name = $command->name;
+        $user->surname = $command->surname;
 
-        return $this->user;
+        $user->update();
+
+        return $user;
     }
 }

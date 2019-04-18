@@ -106,4 +106,53 @@ class UsersController extends Controller
 
         return redirect()->route('admin.users.index');
     }
+
+    /*
+     * Relations
+     */
+
+    /*
+     * Given a User ID, index User's Groups and User's Available Groups in a selection box
+     * @param id User ID
+     */
+    public function usersGroups($id){
+        $groups = AdminUsersManager::usersGroups([
+            'id' => $id,
+        ])->toObject();
+
+        $groups_available = AdminUsersManager::usersGroupsNotIn([
+            'id' => $id,
+        ])->toObject();
+
+        $user = AdminUsersManager::show([
+            'id' => $id
+        ])->toObject();
+
+        $high = min(max(count($groups), count($groups_available))+1, 20);
+        return view('administration::users.groups', compact('user', 'groups', 'groups_available', 'high'));
+    }
+
+    /**
+     * Update new list User's Groups for a given User ID
+     */
+    public function usersGroupsUpdate(Request $request){
+        $id = $request->id;
+        $memberOf = $request->miembro; // TODO rename miembro in view
+
+        $groups = AdminUsersManager::usersGroupsUpdate([
+            'id' => $id,
+            'memberOf' => $memberOf,
+        ])->toObject();
+
+        $groups_available = AdminUsersManager::usersGroupsNotIn([
+            'id' => $id,
+        ])->toObject();
+
+        $user = AdminUsersManager::show([
+            'id' => $id
+        ])->toObject();
+
+        $high = min(max(count($groups), count($groups_available))+1, 20);
+        return view('administration::users.groups', compact('user', 'groups', 'groups_available', 'high'));
+    }
 }

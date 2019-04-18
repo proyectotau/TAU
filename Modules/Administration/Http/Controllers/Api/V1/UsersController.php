@@ -19,6 +19,11 @@ class UsersController extends Controller
         ])->toJson();
     }
 
+    public function testview(Request $request)
+    {
+        return view('testviewc', ['user' => null]);
+    }
+
     /**
      * Display a listing of the resource User
      * @return Response
@@ -91,5 +96,46 @@ class UsersController extends Controller
         ])->toJson();
 
         return $response;
+    }
+
+    /*
+     * Relations
+     */
+
+    /*
+     * Given a User ID, index to User's Groups
+     * @param id User ID
+     */
+    public function usersGroups(Request $request){
+        $groups = AdminUsersManager::usersGroups([
+            'id' => $request->id
+        ])->toJson();
+
+        return $groups;
+    }
+
+    /*
+     * Given a User ID, index to Groups where User not belongs to
+     * @param id User ID
+     */
+    public function usersGroupsNotIn(Request $request){
+        $groups_available = AdminUsersManager::usersGroupsNotIn([
+            'id' => $request->id
+        ])->toJson();
+
+        return $groups_available;
+    }
+
+    /**
+     * Update new list User's Groups for a given User ID
+     * @return The Same that usersGroups()
+     */
+    public function usersGroupsUpdate(Request $request){
+        $groups = AdminUsersManager::usersGroupsUpdate([
+            'id' => $request->id,
+            'memberOf' => $request->memberOf,
+        ])->toJson();
+
+        return $groups;
     }
 }

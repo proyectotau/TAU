@@ -19,7 +19,7 @@
                     <td>Login as</td>
                     <td>Name</td>
                     <td>Surname</td>
-                    <td colspan="3">Actions</td>
+                    <td colspan="4">Actions</td>
                 </tr>
                 </thead>
                 <tbody>
@@ -50,6 +50,12 @@
                                         {{ insertTagForDuskTesting('button-destroy', $user->id, 1) }}
                                     >Delete this User</button>
                             </form>
+                        </td>
+                        <td>
+                            <a class="btn btn-small btn-info"
+                               href="{{ route('admin.users.groups', $user->id) }}"
+                                    {{ insertTagForDuskTesting('link-usersgroups', $user->id, 1) }}
+                            >User's Groups</a>
                         </td>
                     </tr>
                 @endforeach

@@ -43,9 +43,9 @@ class Role extends Model implements Repository
     }
 
     /**
-     * The groups that has a role.
+     * The role belongs To Many Groups
      */
-    public function roles()
+    public function groups()
     {
         return $this->belongsToMany(Group::class,'grupo_perfil','ID_PERFIL', 'ID_GRUPO');
 	}

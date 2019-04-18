@@ -8,9 +8,7 @@
 
 namespace Modules\Administration\Repositories;
 
-
 use Illuminate\Support\Collection;
-
 
 class Model extends Collection implements Repository
 {
@@ -18,7 +16,6 @@ class Model extends Collection implements Repository
         echo 'Modules\Administration\Repositories\Model::'.$method.': pending of Implementation'.PHP_EOL;
         return;
     }
-
 
     /**
      * Get the queueable identity for the entity.

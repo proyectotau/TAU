@@ -8,6 +8,9 @@
 
 namespace Modules\Administration;
 
+use Illuminate\Http\Response;
+use Illuminate\Http\JsonResponse;
+
 /*
  * This is Application Service for Users Administration Module
  *
@@ -15,15 +18,16 @@ namespace Modules\Administration;
  *      Route
  *      Controller
  *      Artisan Commands
- *      Programatically: $u = AdminUsersManager::store(['login'=>'login', 'name'=>'name', 'surname'=>'surname']);
  *      Queue
  *      Event handler
  *      others...
+  *     Programatically: $u = AdminUsersManager::store(['login'=>'login', 'name'=>'name', 'surname'=>'surname']);
  */
 
 class AdminUsersManager
 {
-    public static $response =  null;
+    private static $response =  null;
+    private static $jsonresponse = null;
 
     static public function index(array $data, array $middleware = []){
         static::$response = resolve('admin.commandbus')
@@ -56,6 +60,32 @@ class AdminUsersManager
         return new static();
     }
 
+    /*
+     * Relations
+     */
+
+    static public function usersGroups(array $data, array $middleware = []){
+        static::$response = resolve('admin.commandbus')
+            ->dispatch('Modules\Administration\Commands\UsersGroups', $data, $middleware);
+        return new static();
+    }
+
+    static public function usersGroupsNotIn(array $data, array $middleware = []){
+        static::$response = resolve('admin.commandbus')
+            ->dispatch('Modules\Administration\Commands\UsersGroupsNotIn', $data, $middleware);
+        return new static();
+    }
+
+    static public function usersGroupsUpdate(array $data, array $middleware = []){
+        static::$response = resolve('admin.commandbus')
+            ->dispatch('Modules\Administration\Commands\UsersGroupsUpdate', $data, $middleware);
+        return new static();
+    }
+
+    /*
+     * Miscellaneous
+     */
+
     static public function test(mixed $data, array $middleware = []){
         static::$response = $data;
         return new static();
@@ -66,7 +96,9 @@ class AdminUsersManager
     }
 
     static public function toJson(){
-        return json_encode(static::$response);
+        static::$jsonresponse = new JsonResponse();
+        static::$jsonresponse->setData(static::$response);
+        return static::$jsonresponse;
     }
 
     static public function toObject(){

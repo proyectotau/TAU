@@ -104,4 +104,76 @@ class GroupsController extends Controller
 
         return redirect()->route('admin.groups.index');
     }
+
+    /*
+     * Relations
+     */
+
+
+    /*
+     * Given a Group ID, index Group's Users and User's Available Groups in a selection box
+     * @param id Group ID
+     * @comment group's Users
+     */
+    public function groupsUsers($id){
+        $users = AdminGroupsManager::groupsUsers([
+            'id' => $id,
+        ])->toObject();
+
+        $users_available = AdminGroupsManager::groupsUsersNotIn([
+            'id' => $id,
+        ])->toObject();
+
+        $group = AdminGroupsManager::show([
+            'id' => $id
+        ])->toObject();
+
+        $high = min(max(count($users), count($users_available))+1, 20);
+        return view('administration::groups.roles', compact('users', 'users_available', 'group', 'high'));
+    }
+
+    /*
+     * Given a Group ID, index Group's Roles and Group's Available Roles in a selection box
+     * @param id Group ID
+     */
+    public function groupsRoles($id){
+        $roles = AdminGroupsManager::groupsRoles([
+            'id' => $id,
+        ])->toObject();
+
+        $roles_available = AdminGroupsManager::groupsRolesNotIn([
+            'id' => $id,
+        ])->toObject();
+
+        $group = AdminGroupsManager::show([
+            'id' => $id
+        ])->toObject();
+
+        $high = min(max(count($roles), count($roles_available))+1, 20);
+        return view('administration::groups.roles', compact('roles', 'roles_available', 'group', 'high'));
+    }
+
+    /**
+     * Update new list Group's Roles for a given Group ID
+     */
+    public function groupsRolesUpdate(Request $request){
+        $id = $request->id;
+        $memberOf = $request->miembro; // TODO rename miembro in view
+
+        $roles = AdminGroupsManager::groupsRolesUpdate([
+            'id' => $id,
+            'memberOf' => $memberOf,
+        ])->toObject();
+
+        $roles_available = AdminGroupsManager::groupsRolesNotIn([
+            'id' => $id,
+        ])->toObject();
+
+        $group = AdminGroupsManager::show([
+            'id' => $id
+        ])->toObject();
+
+        $high = min(max(count($roles), count($roles_available))+1, 20);
+        return view('administration::groups.roles', compact('group', 'roles', 'roles_available', 'high'));
+	}
 }

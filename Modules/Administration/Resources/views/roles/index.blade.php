@@ -17,7 +17,7 @@
                     <td>Id</td>
                     <td>Name</td>
                     <td>Description</td>
-                    <td colspan="3">Actions</td>
+                    <td colspan="4">Actions</td>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,6 +47,12 @@
                                         {{ insertTagForDuskTesting('button-destroy', $role->id, 1) }}
                                     >Delete this Role</button>
                             </form>
+                        </td>
+                        <td>
+                            <a class="btn btn-small btn-info"
+                               href="{{ route('admin.roles.modules', $role->id) }}"
+                                    {{ insertTagForDuskTesting('link-rolesmodules', $role->id, 1) }}
+                            >Group's Roles</a>
                         </td>
                     </tr>
                 @endforeach

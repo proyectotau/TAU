@@ -2,6 +2,9 @@
 
 namespace Modules\Administration;
 
+use Illuminate\Http\Response;
+use Illuminate\Http\JsonResponse;
+
 /*
  * This is Application Service for Roles Administration Module
  *
@@ -17,7 +20,8 @@ namespace Modules\Administration;
 
 class AdminRolesManager
 {
-    public static $response =  null;
+    private static $response =  null;
+    private static $jsonresponse = null;
 
     static public function index(array $data, array $middleware = []){
         static::$response = resolve('admin.commandbus')
@@ -49,6 +53,18 @@ class AdminRolesManager
         return new static();
     }
 
+    static public function rolesGroups(array $data, array $middleware = []){
+        static::$response = resolve('admin.commandbus')
+            ->dispatch('Modules\Administration\Commands\RolesGroups', $data, $middleware);
+        return new static();
+    }
+
+    static public function rolesGroupsNotIn(array $data, array $middleware = []){
+        static::$response = resolve('admin.commandbus')
+            ->dispatch('Modules\Administration\Commands\RolesGroupsNotIn', $data, $middleware);
+        return new static();
+    }
+
     static public function test(mixed $data, array $middleware = []){
         static::$response = $data;
         return new static();
@@ -59,7 +75,9 @@ class AdminRolesManager
     }
 
     static public function toJson(){
-        return json_encode(static::$response);
+        static::$jsonresponse = new JsonResponse();
+        static::$jsonresponse->setData(static::$response);
+        return static::$jsonresponse;
     }
 
     static public function toObject(){
